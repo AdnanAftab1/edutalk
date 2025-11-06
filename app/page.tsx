@@ -93,6 +93,11 @@ function Register() {
           <input id="confirm" type="password" placeholder="Re-enter password" className="bg-white/20 backdrop-blur-md border-white/30 mx-2 px-2 rounded-lg" />
         </div>
 
+        <div className="w-full flex justify-between">
+          <label htmlFor="files">Authorization file</label>
+          <input id="files" type="file"  className="bg-white/20 backdrop-blur-md border-white/30 mx-2 px-2 w-min rounded-lg" />
+        </div>
+
         <div className="w-full flex justify-center items-center">
           <button className="bg-[#F97316] hover:bg-orange-600 flex  flex-row text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">Register</button>
         </div>
