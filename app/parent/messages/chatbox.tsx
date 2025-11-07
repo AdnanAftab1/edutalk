@@ -9,7 +9,7 @@ export default function Chatbox() {
         { text: "I am fine", isSender: false }
     ]);
 
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState("") ;
 
     function handleSend() {
         if (input.trim() === "") return;

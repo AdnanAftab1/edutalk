@@ -1,6 +1,6 @@
 import  Link from "next/link";
-import Meetings from './meetings'
-import View_Announcements from "./anouncements";
+import { AcademicTable } from "./record";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white ">
@@ -10,9 +10,9 @@ export default function Home() {
 
       <Navbar />
       <main>
-        <div className="flex flex-wrap">
-          <View_Announcements/>
-          <Meetings/>
+        <div className="flex justify-center items-center w-full ">
+        <AcademicTable/>
+
         </div>
       </main>
     </div>
@@ -42,14 +42,15 @@ const Navbar = () => {
         </div>
 
         <div className="w-full flex justify-center items-center gap-x-10 ">
-          <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Attendance</p>
-          <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Academimcs</p>
+          <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Attendance</p> 
+          <p className="font-['Inter'] text-lg text-amber-600 duration-200">View Academics</p>
           <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Messages</p>
-          
         </div>
       </div>
      
     </nav>
   );
 };
+
+
 

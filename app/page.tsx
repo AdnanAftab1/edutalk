@@ -18,16 +18,14 @@ export default function Home() {
           <div className="section-container relative z-10 text-center w-full flex flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center max-w-4xl mx-auto ">
               <div className="animate-fade-down">
-                <span className="inline-block bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full text-sm font-medium mb-6 border border-[#F97316]/20">
-                  Introducing Sassland 2.0
-                </span>
+                
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-                  Transform Your Business With Our <span className="bg-gradient-to-r  from-orange-400 to-orange-600 bg-clip-text text-transparent">SaaS Solution</span>
+                  Enhance academic communication with <span className="bg-gradient-to-r  from-orange-400 to-orange-600 bg-clip-text text-transparent">Edutalk</span>
                 </h1>
 
                 <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                  Streamline your operations, boost productivity, and enhance customer satisfaction with our cutting-edge SaaS platform. Experience seamless integration and unparalleled support.
+                  Achieve effective academic communication
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mx-4 ">

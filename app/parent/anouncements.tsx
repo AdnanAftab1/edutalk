@@ -1,7 +1,7 @@
 import { Dialog,DialogContent,DialogTrigger,DialogTitle } from "@radix-ui/react-dialog";
 
 
-export default function Announcements(){
+export default function View_Announcements(){
     const Announcemetns = [
   {
     title: "Mid-term Exams Tentative Dates",
