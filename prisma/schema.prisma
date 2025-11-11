@@ -1,0 +1,57 @@
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../appi/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String @unique
+  password String
+  role     Role   @default(Parent)
+  status   Status @default(Unverified)
+  Announcements Annoucements[]
+}
+
+model Annoucements {
+  id String @id @default(uuid())
+  Text String 
+  SenderId String
+  Sender User @relation( fields:[SenderId],references:[id] ,onDelete:Cascade)
+  Title String
+  Date DateTime
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+enum Role {
+  Parent
+  Teacher
+  Admin
+}
+
+enum Status {
+  Unverified
+  Rejected
+  Successfull
+}

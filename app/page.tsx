@@ -1,7 +1,13 @@
+"use client"
+
+
 import { Dialog } from "@/components/ui/dialog";
 import Navbar from "./comps/Navbar";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Hand } from 'lucide-react';
 import { DialogContent, DialogTrigger, DialogTitle } from "@radix-ui/react-dialog";
+import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
@@ -26,7 +32,7 @@ export default function Home() {
 
                 <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
                   Achieve effective academic communication
-                </p>
+                </p>  
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mx-4 ">
                   <Dialog>
@@ -104,7 +110,37 @@ function Register() {
   );
 }
 
+
 function Login() {
+  const [username,setuser]=useState("");
+  const [password,setpass]=useState("");
+  const router=useRouter();
+
+
+  async function HandleLogin(){
+try{
+  
+    console.log("Login Started")
+       const res = await axios.post("/api/login", {
+        username,
+        password,
+      });
+    
+      console.log(res);
+
+    if(res.status===200){
+      router.push('/parent');
+    }
+    
+    console.log("Login Done");
+
+}catch{
+  alert("Error")
+}
+
+  }
+
+
   return (
     <div className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-xl">
       <DialogTitle className="text-2xl font-semibold mb-4 text-center">
@@ -119,6 +155,7 @@ function Login() {
             type="text"
             placeholder="Enter your username"
             className="bg-white/20 backdrop-blur-md border-white/30 mx-2 px-2 rounded-lg"
+            onChange={(e)=>setuser(e.target.value)}
           />
         </div>
 
@@ -129,11 +166,14 @@ function Login() {
             type="password"
             placeholder="Enter your password"
             className="bg-white/20 backdrop-blur-md border-white/30 mx-2 px-2 rounded-lg"
+            onChange={(e)=>setpass(e.target.value)}
           />
         </div>
 
         <div className="w-full flex justify-center items-center">
-          <button className="bg-[#F97316] hover:bg-orange-600 flex flex-row text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+          <button className="bg-[#F97316] hover:bg-orange-600 flex flex-row text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+            onClick={HandleLogin}
+          >
             Login
           </button>
         </div>

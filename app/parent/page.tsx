@@ -1,7 +1,7 @@
 import  Link from "next/link";
 import Meetings from './meetings'
 import View_Announcements from "./anouncements";
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen bg-black text-white ">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#F97316] opacity-10 rounded-full blur-[100px]"></div>

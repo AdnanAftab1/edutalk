@@ -1,67 +1,30 @@
+"use client"
 import { Dialog,DialogContent,DialogTrigger,DialogTitle } from "@radix-ui/react-dialog";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+interface Anns{
+    title: string;
+    date: string;
+    content: string;
+} 
 
 export default function View_Announcements(){
-    const Announcemetns = [
-  {
-    title: "Mid-term Exams Tentative Dates",
-    date: "2024-07-15",
-    content: "Dear Parents, please note that the mid-term exams are scheduled from August 1st to August 10th. Ensure your child is well-prepared."
-  },
-  {
-    title: "Campus Wi-Fi Maintenance Scheduled",
-    date: "2024-07-20",
-    content: "Wi-Fi services will be temporarily unavailable from 10:00 AM to 1:00 PM for maintenance."
-  },
-  {
-    title: "New Library Books Added",
-    date: "2024-07-22",
-    content: "The library has added 500+ new titles across technology, literature, and science."
-  },
-  {
-    title: "Holiday Notice: Independence Day",
-    date: "2024-08-15",
-    content: "The campus will remain closed on account of Independence Day. Regular classes resume the next day."
-  },{
-    title: "Mid-term Exams Tentative Dates",
-    date: "2024-07-15",
-    content: "Dear Parents, please note that the mid-term exams are scheduled from August 1st to August 10th. Ensure your child is well-prepared."
-  },
-  {
-    title: "Campus Wi-Fi Maintenance Scheduled",
-    date: "2024-07-20",
-    content: "Wi-Fi services will be temporarily unavailable from 10:00 AM to 1:00 PM for maintenance."
-  },
-  {
-    title: "New Library Books Added",
-    date: "2024-07-22",
-    content: "The library has added 500+ new titles across technology, literature, and science."
-  },
-  {
-    title: "Holiday Notice: Independence Day",
-    date: "2024-08-15",
-    content: "The campus will remain closed on account of Independence Day. Regular classes resume the next day."
-  },{
-    title: "Mid-term Exams Tentative Dates",
-    date: "2024-07-15",
-    content: "Dear Parents, please note that the mid-term exams are scheduled from August 1st to August 10th. Ensure your child is well-prepared."
-  },
-  {
-    title: "Campus Wi-Fi Maintenance Scheduled",
-    date: "2024-07-20",
-    content: "Wi-Fi services will be temporarily unavailable from 10:00 AM to 1:00 PM for maintenance."
-  },
-  {
-    title: "New Library Books Added",
-    date: "2024-07-22",
-    content: "The library has added 500+ new titles across technology, literature, and science."
-  },
-  {
-    title: "Holiday Notice: Independence Day",
-    date: "2024-08-15",
-    content: "The campus will remain closed on account of Independence Day. Regular classes resume the next day."
-  }
-];
+    const [Announcemetns,setAnnoucements] =useState<Anns[]>([]);
+    useEffect( ()=>{
+      async function Load() {
+          axios.get('http://localhost:3000/api/auth/parent/announcements').then((data)=>{
+            if(data.status===200){
+                setAnnoucements(data.data)
+            }
+          }).catch((err)=>{
+            console.log("Error occured");
+          });
+      }
+      Load()
+
+    })
+
     return (
         <div className="text-2xl font-['Inter'] relative  font-semibold w-2xl bg-gradient-to-b from-slate-500/50 m-12 p-5 rounded-lg flex flex-col justify-center items-center max-h-96 ">
             <p>Announcements</p>
