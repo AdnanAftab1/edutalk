@@ -129,11 +129,60 @@ exports.Prisma.UserScalarFieldEnum = {
   status: 'status'
 };
 
+exports.Prisma.ParentScalarFieldEnum = {
+  Pid: 'Pid',
+  StudentName: 'StudentName',
+  ClassId: 'ClassId'
+};
+
+exports.Prisma.TeacherScalarFieldEnum = {
+  Tid: 'Tid',
+  TeacherName: 'TeacherName'
+};
+
+exports.Prisma.SubjectScalarFieldEnum = {
+  Sid: 'Sid',
+  Name: 'Name',
+  ClassId: 'ClassId',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.ClassScalarFieldEnum = {
+  id: 'id',
+  Name: 'Name'
+};
+
 exports.Prisma.AnnoucementsScalarFieldEnum = {
   id: 'id',
   Text: 'Text',
   SenderId: 'SenderId',
   Title: 'Title',
+  Date: 'Date'
+};
+
+exports.Prisma.Meeting_RequestScalarFieldEnum = {
+  id: 'id',
+  SenderId: 'SenderId',
+  date: 'date',
+  content: 'content',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.AttendanceScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  isPresent: 'isPresent',
+  Issue_For: 'Issue_For',
+  ParentId: 'ParentId'
+};
+
+exports.Prisma.AcademicsScalarFieldEnum = {
+  ExamName: 'ExamName',
+  id: 'id',
+  Pid: 'Pid',
+  SubjectID: 'SubjectID',
+  Grade: 'Grade',
+  ReportLink: 'ReportLink',
   Date: 'Date'
 };
 
@@ -148,11 +197,60 @@ exports.Prisma.UserOrderByRelevanceFieldEnum = {
   password: 'password'
 };
 
+exports.Prisma.ParentOrderByRelevanceFieldEnum = {
+  Pid: 'Pid',
+  StudentName: 'StudentName',
+  ClassId: 'ClassId'
+};
+
+exports.Prisma.TeacherOrderByRelevanceFieldEnum = {
+  Tid: 'Tid',
+  TeacherName: 'TeacherName'
+};
+
+exports.Prisma.SubjectOrderByRelevanceFieldEnum = {
+  Sid: 'Sid',
+  Name: 'Name',
+  ClassId: 'ClassId',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.ClassOrderByRelevanceFieldEnum = {
+  id: 'id',
+  Name: 'Name'
+};
+
 exports.Prisma.AnnoucementsOrderByRelevanceFieldEnum = {
   id: 'id',
   Text: 'Text',
   SenderId: 'SenderId',
   Title: 'Title'
+};
+
+exports.Prisma.Meeting_RequestOrderByRelevanceFieldEnum = {
+  id: 'id',
+  SenderId: 'SenderId',
+  content: 'content',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.AttendanceOrderByRelevanceFieldEnum = {
+  Issue_For: 'Issue_For',
+  ParentId: 'ParentId'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
+exports.Prisma.AcademicsOrderByRelevanceFieldEnum = {
+  ExamName: 'ExamName',
+  id: 'id',
+  Pid: 'Pid',
+  SubjectID: 'SubjectID',
+  Grade: 'Grade',
+  ReportLink: 'ReportLink'
 };
 exports.Role = exports.$Enums.Role = {
   Parent: 'Parent',
@@ -168,7 +266,14 @@ exports.Status = exports.$Enums.Status = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Annoucements: 'Annoucements'
+  Parent: 'Parent',
+  Teacher: 'Teacher',
+  Subject: 'Subject',
+  Class: 'Class',
+  Annoucements: 'Annoucements',
+  Meeting_Request: 'Meeting_Request',
+  Attendance: 'Attendance',
+  Academics: 'Academics'
 };
 
 /**

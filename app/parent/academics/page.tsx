@@ -1,5 +1,9 @@
+'use client'
 import  Link from "next/link";
 import { AcademicTable } from "./record";
+import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function Home() {
   return (
@@ -8,7 +12,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
           <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
 
-      <Navbar />
+      <Navbar selected={'academics'}/>
       <main>
         <div className="flex justify-center items-center w-full ">
         <AcademicTable/>
@@ -21,10 +25,23 @@ export default function Home() {
 
 
 
+interface SelectedProps{
+  selected:'messages'|'attendance'|'academics'|'None'
+}
 
 
-
-const Navbar = () => {
+export function Navbar({selected}:SelectedProps) {
+  const router=useRouter();
+  async function HandleLogout(){
+    console.log("Logout Clicked");
+     axios.post('http://localhost:3000/api/logout').then((data)=>{
+            if(data.status===200){
+                router.push('/');
+            }
+          }).catch((err)=>{
+            console.log("Error occured",err);
+          });
+  }
   
   return (
     <nav className="bg-black bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
@@ -40,16 +57,17 @@ const Navbar = () => {
           </div>
           
         </div>
-
+        
         <div className="w-full flex justify-center items-center gap-x-10 ">
-          <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Attendance</p> 
-          <p className="font-['Inter'] text-lg text-amber-600 duration-200">View Academics</p>
-          <p className="font-['Inter'] text-lg hover:text-amber-600 duration-200">View Messages</p>
+          <Link href={'/parent/attendance'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='attendance'?'text-amber-600':'')}> Attendance</Link> 
+          <Link href={'/parent/academics'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='academics'?'text-amber-600':'')}> Academics</Link>
+          <Link href={'/parent/messages'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='messages'?'text-amber-600':'')}> Messages</Link>
         </div>
+        <div className="w-min p-3 font-bold text-xl font-['Inter'] bg-gradient-to-r from-red-600 to-red-900  bg-clip-text text-transparent cursor-pointer" onClick={HandleLogout}>Logout</div>
       </div>
-     
     </nav>
   );
+  
 };
 
 

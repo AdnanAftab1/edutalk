@@ -48,7 +48,10 @@ const DB =new PrismaClient();
 
     console.log("\n\n\n\n\n\n\n User authenticated as", user.role);
 
-    return user.id;
+    return {
+      id:user.id,
+      role:user.role
+    };
   } catch (err) {
     console.log("Invalid token:",err);
     return NextResponse.json(

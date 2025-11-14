@@ -20,6 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import axios from "axios"
 
 export type AcademicRecord = {
   subject: string
@@ -28,16 +29,11 @@ export type AcademicRecord = {
   grade: string
   date: string
   semester: string
-  exam: string
+  exam: string,
+  ReportLink?:string
 }
 
-const data: AcademicRecord[] = [
-  { subject: "Mathematics", class: "10A", teacher: "Mr. Sharma", grade: "A", date: "2025-03-12", semester: "Semester 2", exam: "Mid Term" },
-  { subject: "Physics", class: "10A", teacher: "Mrs. Gupta", grade: "B+", date: "2025-03-15", semester: "Semester 2", exam: "Mid Term" },
-  { subject: "Chemistry", class: "10A", teacher: "Dr. Kumar", grade: "A-", date: "2025-03-18", semester: "Semester 2", exam: "Mid Term" },
-  { subject: "English", class: "10A", teacher: "Ms. D'Souza", grade: "A", date: "2025-03-20", semester: "Semester 2", exam: "Mid Term" },
-  { subject: "Biology", class: "10A", teacher: "Mr. Ramesh", grade: "B", date: "2025-03-22", semester: "Semester 2", exam: "Mid Term" },
-]
+
 
 export const columns: ColumnDef<AcademicRecord>[] = [
   {
@@ -86,7 +82,30 @@ export const columns: ColumnDef<AcademicRecord>[] = [
 
 export function AcademicTable() {
   const [sorting, setSorting] = React.useState<SortingState>([])
+//   const data: AcademicRecord[] = [
+//   { subject: "Mathematics", class: "10A", teacher: "Mr. Sharma", grade: "A", date: "2025-03-12", semester: "Semester 2", exam: "Mid Term" },
+//   { subject: "Physics", class: "10A", teacher: "Mrs. Gupta", grade: "B+", date: "2025-03-15", semester: "Semester 2", exam: "Mid Term" },
+//   { subject: "Chemistry", class: "10A", teacher: "Dr. Kumar", grade: "A-", date: "2025-03-18", semester: "Semester 2", exam: "Mid Term" },
+//   { subject: "English", class: "10A", teacher: "Ms. D'Souza", grade: "A", date: "2025-03-20", semester: "Semester 2", exam: "Mid Term" },
+//   { subject: "Biology", class: "10A", teacher: "Mr. Ramesh", grade: "B", date: "2025-03-22", semester: "Semester 2", exam: "Mid Term" },
+// ]
+  const  [data,setData]=React.useState<AcademicRecord[]>([{ subject: "Mathematics", class: "10A", teacher: "Mr. Sharma", grade: "A", date: "2025-03-12", semester: "Semester 2", exam: "Mid Term" }])
+  React.useEffect(()=>{
+    async function Load() {
+           axios.get('http://localhost:3000/api/auth/parent/attendance').then((data)=>{
+            if(data.status===200){
+              const op:AcademicRecord[]=data.data;
+              console.log(op);  
+              setData(op);
+            }
+          }).catch((err)=>{
+            console.log("Error occured",err);
+          });
+      }
+      Load()
+  },[])
 
+  
   const table = useReactTable({
     data,
     columns,

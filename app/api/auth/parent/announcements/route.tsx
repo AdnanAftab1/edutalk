@@ -3,11 +3,11 @@ import { NextRequest } from "next/server";
 
 export async function GET(req:NextRequest){
     
-    const UserId=await VerifyUser(req);
-
-    if (UserId instanceof Response) return UserId;
-
-    const announcements=await DB.annoucements.findMany();
+    const User=await VerifyUser(req);
+    
+    if (User instanceof Response) return User;
+    try {
+        const announcements=await DB.annoucements.findMany();
 
     const ann=announcements.map((item)=>{
         return {
@@ -18,4 +18,10 @@ export async function GET(req:NextRequest){
     })
 
     return Response.json(ann)
+    } catch {
+        return Response.json({
+            message:"Database error"
+        })
+    }
+    
 }

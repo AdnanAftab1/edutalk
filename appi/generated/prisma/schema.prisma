@@ -15,13 +15,87 @@ model User {
   role          Role           @default(Parent)
   status        Status         @default(Unverified)
   Announcements Annoucements[]
+  Parent        Parent?
+  Teacher       Teacher?
+}
+
+model Parent {
+  Pid         String            @id @unique
+  User        User              @relation(references: [id], fields: [Pid])
+  StudentName String
+  ClassId     String
+  Class       Class             @relation(fields: [ClassId], references: [id])
+  MeetReqSend Meeting_Request[] @relation(name: "reqTeach")
+  Attendance  Attendance[]
+  Academics   Academics[]
+}
+
+model Teacher {
+  Tid            String            @id @unique
+  TeacherName    String            @unique
+  User           User              @relation(references: [id], fields: [Tid])
+  MeetReqRecieve Meeting_Request[] @relation(name: "recTeach")
+  Subjects       Subject[]
+}
+
+model Subject {
+  Sid       String      @id @default(uuid())
+  Name      String
+  ClassId   String
+  Class     Class       @relation(references: [id], fields: [ClassId])
+  TeacherId String
+  Teacher   Teacher     @relation(references: [Tid], fields: [TeacherId])
+  Academics Academics[]
+}
+
+model Class {
+  id         String       @id @default(uuid())
+  Name       String       @unique
+  Parent     Parent[]
+  Subjects   Subject[]
+  Attendance Attendance[]
 }
 
 model Annoucements {
-  id       String @id @default(uuid())
+  id       String   @id @default(uuid())
   Text     String
   SenderId String
-  Sender   User   @relation(fields: [SenderId], references: [id], onDelete: Cascade)
+  Sender   User     @relation(fields: [SenderId], references: [id], onDelete: Cascade)
+  Title    String
+  Date     DateTime
+}
+
+model Meeting_Request {
+  id        String   @id @default(uuid())
+  SenderId  String
+  Sender    Parent   @relation(name: "reqTeach", fields: [SenderId], references: [Pid])
+  date      DateTime
+  content   String
+  TeacherId String
+  Teacher   Teacher  @relation(name: "recTeach", fields: [TeacherId], references: [Tid])
+}
+
+model Attendance {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  isPresent Boolean
+  Issue_For String
+  Class     Class    @relation(fields: [Issue_For], references: [id])
+  ParentId  String
+  Parent    Parent   @relation(fields: [ParentId], references: [Pid])
+}
+
+model Academics {
+  ExamName   String
+  id         String   @id @default(uuid())
+  Pid        String
+  Tid        String
+  SubjectID  String
+  Grade      String
+  ReportLink String?
+  Date       DateTime
+  Parent     Parent   @relation(references: [Pid], fields: [Pid])
+  Subject    Subject  @relation(references: [Sid], fields: [SubjectID])
 }
 
 enum Role {

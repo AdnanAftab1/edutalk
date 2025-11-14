@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { Prisma,PrismaClient } from "../../../../appi/generated/prisma";
+import { Prisma,PrismaClient } from "../../../appi/generated/prisma";
 import * as jwt from 'jsonwebtoken';
 import { DB } from "../essentials";
 

@@ -101,11 +101,60 @@ exports.Prisma.UserScalarFieldEnum = {
   status: 'status'
 };
 
+exports.Prisma.ParentScalarFieldEnum = {
+  Pid: 'Pid',
+  StudentName: 'StudentName',
+  ClassId: 'ClassId'
+};
+
+exports.Prisma.TeacherScalarFieldEnum = {
+  Tid: 'Tid',
+  TeacherName: 'TeacherName'
+};
+
+exports.Prisma.SubjectScalarFieldEnum = {
+  Sid: 'Sid',
+  Name: 'Name',
+  ClassId: 'ClassId',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.ClassScalarFieldEnum = {
+  id: 'id',
+  Name: 'Name'
+};
+
 exports.Prisma.AnnoucementsScalarFieldEnum = {
   id: 'id',
   Text: 'Text',
   SenderId: 'SenderId',
   Title: 'Title',
+  Date: 'Date'
+};
+
+exports.Prisma.Meeting_RequestScalarFieldEnum = {
+  id: 'id',
+  SenderId: 'SenderId',
+  date: 'date',
+  content: 'content',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.AttendanceScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  isPresent: 'isPresent',
+  Issue_For: 'Issue_For',
+  ParentId: 'ParentId'
+};
+
+exports.Prisma.AcademicsScalarFieldEnum = {
+  ExamName: 'ExamName',
+  id: 'id',
+  Pid: 'Pid',
+  SubjectID: 'SubjectID',
+  Grade: 'Grade',
+  ReportLink: 'ReportLink',
   Date: 'Date'
 };
 
@@ -120,11 +169,60 @@ exports.Prisma.UserOrderByRelevanceFieldEnum = {
   password: 'password'
 };
 
+exports.Prisma.ParentOrderByRelevanceFieldEnum = {
+  Pid: 'Pid',
+  StudentName: 'StudentName',
+  ClassId: 'ClassId'
+};
+
+exports.Prisma.TeacherOrderByRelevanceFieldEnum = {
+  Tid: 'Tid',
+  TeacherName: 'TeacherName'
+};
+
+exports.Prisma.SubjectOrderByRelevanceFieldEnum = {
+  Sid: 'Sid',
+  Name: 'Name',
+  ClassId: 'ClassId',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.ClassOrderByRelevanceFieldEnum = {
+  id: 'id',
+  Name: 'Name'
+};
+
 exports.Prisma.AnnoucementsOrderByRelevanceFieldEnum = {
   id: 'id',
   Text: 'Text',
   SenderId: 'SenderId',
   Title: 'Title'
+};
+
+exports.Prisma.Meeting_RequestOrderByRelevanceFieldEnum = {
+  id: 'id',
+  SenderId: 'SenderId',
+  content: 'content',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.AttendanceOrderByRelevanceFieldEnum = {
+  Issue_For: 'Issue_For',
+  ParentId: 'ParentId'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
+exports.Prisma.AcademicsOrderByRelevanceFieldEnum = {
+  ExamName: 'ExamName',
+  id: 'id',
+  Pid: 'Pid',
+  SubjectID: 'SubjectID',
+  Grade: 'Grade',
+  ReportLink: 'ReportLink'
 };
 exports.Role = exports.$Enums.Role = {
   Parent: 'Parent',
@@ -140,7 +238,14 @@ exports.Status = exports.$Enums.Status = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Annoucements: 'Annoucements'
+  Parent: 'Parent',
+  Teacher: 'Teacher',
+  Subject: 'Subject',
+  Class: 'Class',
+  Annoucements: 'Annoucements',
+  Meeting_Request: 'Meeting_Request',
+  Attendance: 'Attendance',
+  Academics: 'Academics'
 };
 /**
  * Create the Client
@@ -189,13 +294,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../appi/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id            String         @id @default(uuid())\n  name          String         @unique\n  password      String\n  role          Role           @default(Parent)\n  status        Status         @default(Unverified)\n  Announcements Annoucements[]\n}\n\nmodel Annoucements {\n  id       String   @id @default(uuid())\n  Text     String\n  SenderId String\n  Sender   User     @relation(fields: [SenderId], references: [id], onDelete: Cascade)\n  Title    String\n  Date     DateTime\n}\n\nenum Role {\n  Parent\n  Teacher\n  Admin\n}\n\nenum Status {\n  Unverified\n  Rejected\n  Successfull\n}\n",
-  "inlineSchemaHash": "f45d11f4cf62bc226f77608e137a1ecbc6207c29d0419148a5bde6b41b3d3443",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../appi/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id            String         @id @default(uuid())\n  name          String         @unique\n  password      String\n  role          Role           @default(Parent)\n  status        Status         @default(Unverified)\n  Announcements Annoucements[]\n  Parent        Parent?\n  Teacher       Teacher?\n}\n\nmodel Parent {\n  Pid         String            @id @unique\n  User        User              @relation(references: [id], fields: [Pid])\n  StudentName String\n  ClassId     String\n  Class       Class             @relation(fields: [ClassId], references: [id])\n  MeetReqSend Meeting_Request[] @relation(name: \"reqTeach\")\n  Attendance  Attendance[]\n  Academics   Academics[]\n}\n\nmodel Teacher {\n  Tid            String            @id @unique\n  TeacherName    String            @unique\n  User           User              @relation(references: [id], fields: [Tid])\n  MeetReqRecieve Meeting_Request[] @relation(name: \"recTeach\")\n  Subjects       Subject[]\n}\n\nmodel Subject {\n  Sid       String      @id @default(uuid())\n  Name      String\n  ClassId   String\n  Class     Class       @relation(references: [id], fields: [ClassId])\n  TeacherId String\n  Teacher   Teacher     @relation(references: [Tid], fields: [TeacherId])\n  Academics Academics[]\n}\n\nmodel Class {\n  id         String       @id @default(uuid())\n  Name       String       @unique\n  Parent     Parent[]\n  Subjects   Subject[]\n  Attendance Attendance[]\n}\n\nmodel Annoucements {\n  id       String   @id @default(uuid())\n  Text     String\n  SenderId String\n  Sender   User     @relation(fields: [SenderId], references: [id], onDelete: Cascade)\n  Title    String\n  Date     DateTime\n}\n\nmodel Meeting_Request {\n  id        String   @id @default(uuid())\n  SenderId  String\n  Sender    Parent   @relation(name: \"reqTeach\", fields: [SenderId], references: [Pid])\n  date      DateTime\n  content   String\n  TeacherId String\n  Teacher   Teacher  @relation(name: \"recTeach\", fields: [TeacherId], references: [Tid])\n}\n\nmodel Attendance {\n  id        Int      @id @default(autoincrement())\n  date      DateTime\n  isPresent Boolean\n  Issue_For String\n  Class     Class    @relation(fields: [Issue_For], references: [id])\n  ParentId  String\n  Parent    Parent   @relation(fields: [ParentId], references: [Pid])\n}\n\nmodel Academics {\n  ExamName   String\n  id         String   @id @default(uuid())\n  Pid        String\n  SubjectID  String\n  Grade      String\n  ReportLink String?\n  Date       DateTime\n  Parent     Parent   @relation(references: [Pid], fields: [Pid])\n  Subject    Subject  @relation(references: [Sid], fields: [SubjectID])\n}\n\nenum Role {\n  Parent\n  Teacher\n  Admin\n}\n\nenum Status {\n  Unverified\n  Rejected\n  Successfull\n}\n",
+  "inlineSchemaHash": "a9086df1dd0274569ac8bffd70d4f4257a83d9703ed36f9d162ecc9c725a9f91",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"Status\"},{\"name\":\"Announcements\",\"kind\":\"object\",\"type\":\"Annoucements\",\"relationName\":\"AnnoucementsToUser\"}],\"dbName\":null},\"Annoucements\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Text\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"SenderId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Sender\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"AnnoucementsToUser\"},{\"name\":\"Title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"Status\"},{\"name\":\"Announcements\",\"kind\":\"object\",\"type\":\"Annoucements\",\"relationName\":\"AnnoucementsToUser\"},{\"name\":\"Parent\",\"kind\":\"object\",\"type\":\"Parent\",\"relationName\":\"ParentToUser\"},{\"name\":\"Teacher\",\"kind\":\"object\",\"type\":\"Teacher\",\"relationName\":\"TeacherToUser\"}],\"dbName\":null},\"Parent\":{\"fields\":[{\"name\":\"Pid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"User\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"ParentToUser\"},{\"name\":\"StudentName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"ClassId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Class\",\"kind\":\"object\",\"type\":\"Class\",\"relationName\":\"ClassToParent\"},{\"name\":\"MeetReqSend\",\"kind\":\"object\",\"type\":\"Meeting_Request\",\"relationName\":\"reqTeach\"},{\"name\":\"Attendance\",\"kind\":\"object\",\"type\":\"Attendance\",\"relationName\":\"AttendanceToParent\"},{\"name\":\"Academics\",\"kind\":\"object\",\"type\":\"Academics\",\"relationName\":\"AcademicsToParent\"}],\"dbName\":null},\"Teacher\":{\"fields\":[{\"name\":\"Tid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"TeacherName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"User\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"TeacherToUser\"},{\"name\":\"MeetReqRecieve\",\"kind\":\"object\",\"type\":\"Meeting_Request\",\"relationName\":\"recTeach\"},{\"name\":\"Subjects\",\"kind\":\"object\",\"type\":\"Subject\",\"relationName\":\"SubjectToTeacher\"}],\"dbName\":null},\"Subject\":{\"fields\":[{\"name\":\"Sid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"ClassId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Class\",\"kind\":\"object\",\"type\":\"Class\",\"relationName\":\"ClassToSubject\"},{\"name\":\"TeacherId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Teacher\",\"kind\":\"object\",\"type\":\"Teacher\",\"relationName\":\"SubjectToTeacher\"},{\"name\":\"Academics\",\"kind\":\"object\",\"type\":\"Academics\",\"relationName\":\"AcademicsToSubject\"}],\"dbName\":null},\"Class\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Parent\",\"kind\":\"object\",\"type\":\"Parent\",\"relationName\":\"ClassToParent\"},{\"name\":\"Subjects\",\"kind\":\"object\",\"type\":\"Subject\",\"relationName\":\"ClassToSubject\"},{\"name\":\"Attendance\",\"kind\":\"object\",\"type\":\"Attendance\",\"relationName\":\"AttendanceToClass\"}],\"dbName\":null},\"Annoucements\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Text\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"SenderId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Sender\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"AnnoucementsToUser\"},{\"name\":\"Title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Meeting_Request\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"SenderId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Sender\",\"kind\":\"object\",\"type\":\"Parent\",\"relationName\":\"reqTeach\"},{\"name\":\"date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"content\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"TeacherId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Teacher\",\"kind\":\"object\",\"type\":\"Teacher\",\"relationName\":\"recTeach\"}],\"dbName\":null},\"Attendance\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"isPresent\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"Issue_For\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Class\",\"kind\":\"object\",\"type\":\"Class\",\"relationName\":\"AttendanceToClass\"},{\"name\":\"ParentId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Parent\",\"kind\":\"object\",\"type\":\"Parent\",\"relationName\":\"AttendanceToParent\"}],\"dbName\":null},\"Academics\":{\"fields\":[{\"name\":\"ExamName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Pid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"SubjectID\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Grade\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"ReportLink\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"Parent\",\"kind\":\"object\",\"type\":\"Parent\",\"relationName\":\"AcademicsToParent\"},{\"name\":\"Subject\",\"kind\":\"object\",\"type\":\"Subject\",\"relationName\":\"AcademicsToSubject\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

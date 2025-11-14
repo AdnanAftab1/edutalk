@@ -25,8 +25,10 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartRadialStacked() {
-  const totalVisitors = chartData[0].present + chartData[0].absent
+export function ChartRadialStacked({present,absent}:{present:number,absent:number}) {
+  const chartData = [{ month: "january", present, absent }]
+
+  const totalVisitors = chartData[0].present + chartData[0].absent;
 
   return (
     <div className="flex flex-col bg-transparent text-white justify-center items-center space-y-4 w-1/3">

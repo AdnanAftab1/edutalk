@@ -31,17 +31,18 @@ export async function POST(req:Request){
     
     const token=jwt.sign(User.id,"secretkey");
 
-    cooked.set("token",token,{
-        httpOnly:true,  
-        secure:true,  
-        path:"/",
-        maxAge:60*60*24*2
-    })
     const prevToken=cooked.get("token");
+    console.log(prevToken);
 
     if(prevToken){
         return Response.json({message:"Already logged in",token:prevToken.value},{status:200});
     }
+
+    cooked.set("token",token,{
+        path:"/",
+        maxAge:60*60*24*2
+    })
+    
     // return Response.redirect(new URL('/parent',req.url));
     return Response.json({message:"Login Successful",token:token},{status:200})
     }

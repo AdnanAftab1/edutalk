@@ -23,7 +23,7 @@ export default function View_Announcements(){
       }
       Load()
 
-    })
+    },[])
 
     return (
         <div className="text-2xl font-['Inter'] relative  font-semibold w-2xl bg-gradient-to-b from-slate-500/50 m-12 p-5 rounded-lg flex flex-col justify-center items-center max-h-96 ">
