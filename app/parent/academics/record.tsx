@@ -92,7 +92,7 @@ export function AcademicTable() {
   const  [data,setData]=React.useState<AcademicRecord[]>([{ subject: "Mathematics", class: "10A", teacher: "Mr. Sharma", grade: "A", date: "2025-03-12", semester: "Semester 2", exam: "Mid Term" }])
   React.useEffect(()=>{
     async function Load() {
-           axios.get('http://localhost:3000/api/auth/parent/attendance').then((data)=>{
+           axios.get('http://localhost:3000/api/auth/parent/academics').then((data)=>{
             if(data.status===200){
               const op:AcademicRecord[]=data.data;
               console.log(op);  

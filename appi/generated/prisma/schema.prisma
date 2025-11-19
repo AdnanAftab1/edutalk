@@ -17,17 +17,25 @@ model User {
   Announcements Annoucements[]
   Parent        Parent?
   Teacher       Teacher?
+  Admin         Admin?
+}
+
+model Admin {
+  id     String @id @default(uuid())
+  UserId String @unique
+  User   User   @relation(references: [id], fields: [UserId])
 }
 
 model Parent {
-  Pid         String            @id @unique
-  User        User              @relation(references: [id], fields: [Pid])
-  StudentName String
-  ClassId     String
-  Class       Class             @relation(fields: [ClassId], references: [id])
-  MeetReqSend Meeting_Request[] @relation(name: "reqTeach")
-  Attendance  Attendance[]
-  Academics   Academics[]
+  Pid          String            @id @unique
+  User         User              @relation(references: [id], fields: [Pid])
+  StudentName  String
+  ClassId      String
+  Class        Class             @relation(fields: [ClassId], references: [id])
+  MeetReqSend  Meeting_Request[] @relation(name: "reqTeach")
+  Attendance   Attendance[]
+  Academics    Academics[]
+  ChatMessages ChatMessages[]
 }
 
 model Teacher {
@@ -36,6 +44,7 @@ model Teacher {
   User           User              @relation(references: [id], fields: [Tid])
   MeetReqRecieve Meeting_Request[] @relation(name: "recTeach")
   Subjects       Subject[]
+  ChatMessages   ChatMessages[]
 }
 
 model Subject {
@@ -89,13 +98,22 @@ model Academics {
   ExamName   String
   id         String   @id @default(uuid())
   Pid        String
-  Tid        String
   SubjectID  String
   Grade      String
   ReportLink String?
   Date       DateTime
   Parent     Parent   @relation(references: [Pid], fields: [Pid])
   Subject    Subject  @relation(references: [Sid], fields: [SubjectID])
+}
+
+model ChatMessages {
+  MessageId String   @id @default(uuid())
+  Pid       String
+  Tid       String
+  Parent    Parent   @relation(references: [Pid], fields: [Pid])
+  Teacher   Teacher  @relation(references: [Tid], fields: [Tid])
+  Content   String
+  Date      DateTime
 }
 
 enum Role {

@@ -129,6 +129,11 @@ exports.Prisma.UserScalarFieldEnum = {
   status: 'status'
 };
 
+exports.Prisma.AdminScalarFieldEnum = {
+  id: 'id',
+  UserId: 'UserId'
+};
+
 exports.Prisma.ParentScalarFieldEnum = {
   Pid: 'Pid',
   StudentName: 'StudentName',
@@ -186,6 +191,14 @@ exports.Prisma.AcademicsScalarFieldEnum = {
   Date: 'Date'
 };
 
+exports.Prisma.ChatMessagesScalarFieldEnum = {
+  MessageId: 'MessageId',
+  Pid: 'Pid',
+  Tid: 'Tid',
+  Content: 'Content',
+  Date: 'Date'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -195,6 +208,11 @@ exports.Prisma.UserOrderByRelevanceFieldEnum = {
   id: 'id',
   name: 'name',
   password: 'password'
+};
+
+exports.Prisma.AdminOrderByRelevanceFieldEnum = {
+  id: 'id',
+  UserId: 'UserId'
 };
 
 exports.Prisma.ParentOrderByRelevanceFieldEnum = {
@@ -252,6 +270,13 @@ exports.Prisma.AcademicsOrderByRelevanceFieldEnum = {
   Grade: 'Grade',
   ReportLink: 'ReportLink'
 };
+
+exports.Prisma.ChatMessagesOrderByRelevanceFieldEnum = {
+  MessageId: 'MessageId',
+  Pid: 'Pid',
+  Tid: 'Tid',
+  Content: 'Content'
+};
 exports.Role = exports.$Enums.Role = {
   Parent: 'Parent',
   Teacher: 'Teacher',
@@ -266,6 +291,7 @@ exports.Status = exports.$Enums.Status = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Admin: 'Admin',
   Parent: 'Parent',
   Teacher: 'Teacher',
   Subject: 'Subject',
@@ -273,7 +299,8 @@ exports.Prisma.ModelName = {
   Annoucements: 'Annoucements',
   Meeting_Request: 'Meeting_Request',
   Attendance: 'Attendance',
-  Academics: 'Academics'
+  Academics: 'Academics',
+  ChatMessages: 'ChatMessages'
 };
 
 /**

@@ -24,7 +24,7 @@ export async function POST(req:Request){
         return Response.json({message:"Error in 1st DB Call"},{status:400});
     })
 
-
+    
     if(!User){
         return Response.json({message:"User Not Found..."},{status:400});
     }
@@ -35,16 +35,18 @@ export async function POST(req:Request){
     console.log(prevToken);
 
     if(prevToken){
-        return Response.json({message:"Already logged in",token:prevToken.value},{status:200});
+        return Response.json({message:"Already logged in",token:prevToken.value,role:User.role},{status:200});
     }
 
     cooked.set("token",token,{
+        httpOnly:true,
         path:"/",
         maxAge:60*60*24*2
     })
     
+    
     // return Response.redirect(new URL('/parent',req.url));
-    return Response.json({message:"Login Successful",token:token},{status:200})
+    return Response.json({message:"Login Successful",token:token,role:User.role},{status:200})
     }
     catch(err){ 
         console.log("Error in Api:");

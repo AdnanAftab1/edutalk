@@ -38,7 +38,7 @@ export function Navbar({selected}:SelectedProps) {
             if(data.status===200){
                 router.push('/');
             }
-          }).catch((err)=>{
+          }).catch((err)=>{ 
             console.log("Error occured",err);
           });
   }
