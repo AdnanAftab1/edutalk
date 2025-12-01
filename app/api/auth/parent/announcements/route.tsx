@@ -9,13 +9,13 @@ export async function GET(req:NextRequest){
     try {
         const announcements=await DB.annoucements.findMany();
 
-    const ann=announcements.map((item)=>{
-        return {
-            title:item.Title,
-            date:`${item.Date.getDate()}-${item.Date.getMonth()}-${item.Date.getFullYear()}`,
-            content:item.Text
-        }
-    })
+        const ann=announcements.map((item)=>{
+            return {
+                title:item.Title,
+                date:`${item.Date.getDate()}-${item.Date.getMonth()}-${item.Date.getFullYear()}`,
+                content:item.Text
+            }
+        })
 
     return Response.json(ann)
     } catch {
