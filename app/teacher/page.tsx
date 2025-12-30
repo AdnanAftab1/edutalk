@@ -1,147 +1,137 @@
-'use client'
+'use client';
 
+import { useEffect, useMemo, useState } from "react";
 
-import Link from "next/link";
-import TeacherMeetingRequests from './meeting-requests'
-import Create_Announcements from "./announcements";
-import UpcomingClasses from "./upcoming-classes";
+type SubjectClassInfo = {
+  Name: string;             
+  ClassName: string;
+  NumberOfStudents: number;
+  ClassId: string;
+};
 
-export default function TeacherHome() {
-  return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Blue gradient background for teacher theme */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#3B82F6] opacity-10 rounded-full blur-[100px]"></div>
-      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-blue-700 opacity-15 rounded-full blur-[80px]"></div>
-      <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-blue-400 opacity-10 rounded-full blur-[70px]"></div>
+type Student = { StudentName: string; Pid: string };
 
-      <TeacherNavbar selected={'None'} />
-      
-      <main className="relative z-10">
-        <div className="container mx-auto px-4 py-8">
-          {/* Welcome Section */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Welcome, Teacher</h1>
-            <p className="text-gray-400">Manage your classes, students, and announcements</p>
-          </div>
+type ClassStudentsResponse = {
+  Name: string;
+  Parent: Student[];
+};
 
-          {/* Main Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Create Announcements Table - Front Page
-            <Create_Announcements/>
-            
-            <TeacherMeetingRequests/>
-            
-            <UpcomingClasses/> 
-            */}
-          </div>
-        </div>
+export default function StudentsPage() {
+  const [subjectInfos, setSubjectInfos] = useState<SubjectClassInfo[]>([]);
+  const [studentsByClassId, setStudentsByClassId] = useState<Record<string, Student[]>>({});
+  const [loading, setLoading] = useState(true);
+
+  const classes = useMemo(() => {
+    const map = new Map<string, { classId: string; className: string; subjects: string[]; expectedCount?: number }>();
+
+    for (const row of subjectInfos) {
+      const existing = map.get(row.ClassId);
+      if (!existing) {
+        map.set(row.ClassId, {
+          classId: row.ClassId,
+          className: row.ClassName,
+          subjects: [row.Name],
+          expectedCount: row.NumberOfStudents,
+        });
+      } else {
+        existing.subjects.push(row.Name);
+        existing.expectedCount = row.NumberOfStudents;
+      }
+    }
+
+    return Array.from(map.values());
+  }, [subjectInfos]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      try {
+        setLoading(true);
+
+        const sRes = await fetch("/api/auth/teacher/classes", { method: "GET" });
+        if (!sRes.ok) throw new Error("Failed to fetch subjects");
+        const sData: SubjectClassInfo[] = await sRes.json();
+
+        if (cancelled) return;
+        setSubjectInfos(sData);
+
+        const uniqueClassIds = Array.from(new Set(sData.map(x => x.ClassId)));
+
+        const results = await Promise.all(
+          uniqueClassIds.map(async (classId) => {
+            const r = await fetch(`/api/auth/teacher/classes/classdetails?classid=${classId}`, { method: "GET" });
+            if (!r.ok) throw new Error(`Failed to fetch students for class ${classId}`);
+            const data: ClassStudentsResponse = await r.json();
+            return { classId, students: data.Parent };
+          })
+        );
+
+        if (cancelled) return;
+
+        const dict: Record<string, Student[]> = {};
+        for (const row of results) dict[row.classId] = row.students;
+
+        setStudentsByClassId(dict);
+      } catch (e) {
+        console.log(e);
+        setSubjectInfos([]);
+        setStudentsByClassId({});
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <main className="relative z-10 container mx-auto px-4 py-8 text-gray-300">
+        Loading students...
       </main>
-    </div>
-  );
-}
-
-
-
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import { cn } from "@/lib/utils"; // assuming you have this utility
-
-interface SelectedProps {
-  selected: 'messages' | 'attendance' | 'academics' | 'students' | 'classes' | 'None'
-}
-
-export function TeacherNavbar({ selected }: SelectedProps) {
-  const router = useRouter();
-  
-  async function HandleLogout() {
-    console.log("Logout Clicked");
-    axios.post('http://localhost:3000/api/logout')
-      .then((data) => {
-        if (data.status === 200) {
-          router.push('/');
-        }
-      })
-      .catch((err) => {
-        console.log("Error occurred", err);
-      });
+    );
   }
-  
+
   return (
-    <nav className="bg-black bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
-              <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
-                Edutalk
-              </span>
-              <span className="ml-2 text-xs bg-blue-500/20 text-blue-500 px-2 py-1 rounded font-medium">
-                Teacher
-              </span>
-            </Link>
-          </div>
-        </div>
-        
-        <div className="w-full flex justify-center items-center gap-x-10">
-          <Link 
-            href={'/teacher/classes'} 
-            className={cn(
-              "font-['Inter'] text-lg hover:text-blue-500 duration-200",
-              selected === 'classes' ? 'text-blue-500' : ''
-            )}
-          > 
-            Classes
-          </Link>
-          
-          <Link 
-            href={'/teacher/students'} 
-            className={cn(
-              "font-['Inter'] text-lg hover:text-blue-500 duration-200",
-              selected === 'students' ? 'text-blue-500' : ''
-            )}
-          > 
-            Students
-          </Link>
-          
-          <Link 
-            href={'/teacher/attendance'} 
-            className={cn(
-              "font-['Inter'] text-lg hover:text-blue-500 duration-200",
-              selected === 'attendance' ? 'text-blue-500' : ''
-            )}
-          > 
-            Attendance
-          </Link>
-          
-          <Link 
-            href={'/teacher/academics'} 
-            className={cn(
-              "font-['Inter'] text-lg hover:text-blue-500 duration-200",
-              selected === 'academics' ? 'text-blue-500' : ''
-            )}
-          > 
-            Academics
-          </Link>
-          
-          <Link 
-            href={'/teacher/messages'} 
-            className={cn(
-              "font-['Inter'] text-lg hover:text-blue-500 duration-200",
-              selected === 'messages' ? 'text-blue-500' : ''
-            )}
-          > 
-            Messages
-          </Link>
-        </div>
-        
-        <div 
-          className="w-min p-3 font-bold text-xl font-['Inter'] bg-gradient-to-r from-red-600 to-red-900 bg-clip-text text-transparent cursor-pointer whitespace-nowrap" 
-          onClick={HandleLogout}
-        >
-          Logout
-        </div>
+    <main className="relative z-10 container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-2 text-white">Students</h1>
+      <p className="text-gray-400 mb-6">Grouped by class and the subjects you teach.</p>
+
+      <div className="space-y-6">
+        {classes.map((c) => {
+          const students = studentsByClassId[c.classId] ?? [];
+          return (
+            <section key={c.classId} className="border border-gray-800 rounded-lg p-4 bg-black/40">
+              <div className="flex flex-col gap-1 mb-4">
+                <div className="text-xl font-semibold text-white">{c.className}</div>
+                <div className="text-sm text-gray-400">
+                  Subjects: {c.subjects.join(", ")}
+                </div>
+                <div className="text-sm text-gray-400">
+                  Students: {students.length}{typeof c.expectedCount === "number" ? ` / ${c.expectedCount}` : ""}
+                </div>
+              </div>
+
+              {students.length === 0 ? (
+                <div className="text-gray-500">No students found.</div>
+              ) : (
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {students.map((s) => (
+                    <li key={s.Pid} className="border border-gray-800 rounded p-3 text-white">
+                      {s.StudentName}
+                      <div className="text-xs text-gray-500">{s.Pid}</div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          );
+        })}
       </div>
-    </nav>
+    </main>
   );
 }

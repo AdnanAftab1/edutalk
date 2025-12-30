@@ -9,7 +9,7 @@ export default async function Home() {
           <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
           <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
 
-      <Navbar selected={'None'}/>
+      <Navbar selected={'Annoucements'}/>
       <main>
         <div className="flex flex-wrap">
           <View_Announcements/>

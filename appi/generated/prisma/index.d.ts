@@ -833,6 +833,10 @@ export namespace Prisma {
             args: Prisma.UserCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.UserCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
+          }
           delete: {
             args: Prisma.UserDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$UserPayload>
@@ -848,6 +852,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.UserUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.UserUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
           }
           upsert: {
             args: Prisma.UserUpsertArgs<ExtArgs>
@@ -899,6 +907,10 @@ export namespace Prisma {
             args: Prisma.AdminCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.AdminCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdminPayload>[]
+          }
           delete: {
             args: Prisma.AdminDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$AdminPayload>
@@ -914,6 +926,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.AdminUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AdminUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AdminPayload>[]
           }
           upsert: {
             args: Prisma.AdminUpsertArgs<ExtArgs>
@@ -965,6 +981,10 @@ export namespace Prisma {
             args: Prisma.ParentCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.ParentCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParentPayload>[]
+          }
           delete: {
             args: Prisma.ParentDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$ParentPayload>
@@ -980,6 +1000,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.ParentUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ParentUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParentPayload>[]
           }
           upsert: {
             args: Prisma.ParentUpsertArgs<ExtArgs>
@@ -1031,6 +1055,10 @@ export namespace Prisma {
             args: Prisma.TeacherCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.TeacherCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeacherPayload>[]
+          }
           delete: {
             args: Prisma.TeacherDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$TeacherPayload>
@@ -1046,6 +1074,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.TeacherUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeacherUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeacherPayload>[]
           }
           upsert: {
             args: Prisma.TeacherUpsertArgs<ExtArgs>
@@ -1097,6 +1129,10 @@ export namespace Prisma {
             args: Prisma.SubjectCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.SubjectCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubjectPayload>[]
+          }
           delete: {
             args: Prisma.SubjectDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$SubjectPayload>
@@ -1112,6 +1148,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.SubjectUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SubjectUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SubjectPayload>[]
           }
           upsert: {
             args: Prisma.SubjectUpsertArgs<ExtArgs>
@@ -1163,6 +1203,10 @@ export namespace Prisma {
             args: Prisma.ClassCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.ClassCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ClassPayload>[]
+          }
           delete: {
             args: Prisma.ClassDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$ClassPayload>
@@ -1178,6 +1222,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.ClassUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ClassUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ClassPayload>[]
           }
           upsert: {
             args: Prisma.ClassUpsertArgs<ExtArgs>
@@ -1229,6 +1277,10 @@ export namespace Prisma {
             args: Prisma.AnnoucementsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.AnnoucementsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AnnoucementsPayload>[]
+          }
           delete: {
             args: Prisma.AnnoucementsDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$AnnoucementsPayload>
@@ -1244,6 +1296,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.AnnoucementsUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AnnoucementsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AnnoucementsPayload>[]
           }
           upsert: {
             args: Prisma.AnnoucementsUpsertArgs<ExtArgs>
@@ -1295,6 +1351,10 @@ export namespace Prisma {
             args: Prisma.Meeting_RequestCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.Meeting_RequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Meeting_RequestPayload>[]
+          }
           delete: {
             args: Prisma.Meeting_RequestDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$Meeting_RequestPayload>
@@ -1310,6 +1370,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.Meeting_RequestUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Meeting_RequestUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Meeting_RequestPayload>[]
           }
           upsert: {
             args: Prisma.Meeting_RequestUpsertArgs<ExtArgs>
@@ -1361,6 +1425,10 @@ export namespace Prisma {
             args: Prisma.AttendanceCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.AttendanceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AttendancePayload>[]
+          }
           delete: {
             args: Prisma.AttendanceDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$AttendancePayload>
@@ -1376,6 +1444,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.AttendanceUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AttendanceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AttendancePayload>[]
           }
           upsert: {
             args: Prisma.AttendanceUpsertArgs<ExtArgs>
@@ -1427,6 +1499,10 @@ export namespace Prisma {
             args: Prisma.AcademicsCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.AcademicsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AcademicsPayload>[]
+          }
           delete: {
             args: Prisma.AcademicsDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$AcademicsPayload>
@@ -1442,6 +1518,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.AcademicsUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.AcademicsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AcademicsPayload>[]
           }
           upsert: {
             args: Prisma.AcademicsUpsertArgs<ExtArgs>
@@ -1493,6 +1573,10 @@ export namespace Prisma {
             args: Prisma.ChatMessagesCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
+          createManyAndReturn: {
+            args: Prisma.ChatMessagesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>[]
+          }
           delete: {
             args: Prisma.ChatMessagesDeleteArgs<ExtArgs>
             result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
@@ -1508,6 +1592,10 @@ export namespace Prisma {
           updateMany: {
             args: Prisma.ChatMessagesUpdateManyArgs<ExtArgs>
             result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ChatMessagesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>[]
           }
           upsert: {
             args: Prisma.ChatMessagesUpsertArgs<ExtArgs>
@@ -2102,7 +2190,21 @@ export namespace Prisma {
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
+  export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    password?: boolean
+    role?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["user"]>
 
+  export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    password?: boolean
+    role?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
@@ -2120,6 +2222,8 @@ export namespace Prisma {
     Admin?: boolean | User$AdminArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
+  export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -2253,6 +2357,30 @@ export namespace Prisma {
     createMany<T extends UserCreateManyArgs>(args?: SelectSubset<T, UserCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Users and returns the data saved in the database.
+     * @param {UserCreateManyAndReturnArgs} args - Arguments to create many Users.
+     * @example
+     * // Create many Users
+     * const user = await prisma.user.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Users and only return the `id`
+     * const userWithIdOnly = await prisma.user.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends UserCreateManyAndReturnArgs>(args?: SelectSubset<T, UserCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a User.
      * @param {UserDeleteArgs} args - Arguments to delete one User.
      * @example
@@ -2315,6 +2443,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends UserUpdateManyArgs>(args: SelectSubset<T, UserUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Users and returns the data updated in the database.
+     * @param {UserUpdateManyAndReturnArgs} args - Arguments to update many Users.
+     * @example
+     * // Update many Users
+     * const user = await prisma.user.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Users and only return the `id`
+     * const userWithIdOnly = await prisma.user.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends UserUpdateManyAndReturnArgs>(args: SelectSubset<T, UserUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one User.
@@ -2746,6 +2904,25 @@ export namespace Prisma {
   }
 
   /**
+   * User createManyAndReturn
+   */
+  export type UserCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
+    /**
+     * The data used to create many Users.
+     */
+    data: UserCreateManyInput | UserCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
    * User update
    */
   export type UserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2775,6 +2952,32 @@ export namespace Prisma {
    * User updateMany
    */
   export type UserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Users.
+     */
+    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
+    /**
+     * Filter which Users to update
+     */
+    where?: UserWhereInput
+    /**
+     * Limit how many Users to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * User updateManyAndReturn
+   */
+  export type UserUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
     /**
      * The data used to update Users.
      */
@@ -3098,7 +3301,17 @@ export namespace Prisma {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["admin"]>
 
+  export type AdminSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    UserId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["admin"]>
 
+  export type AdminSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    UserId?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["admin"]>
 
   export type AdminSelectScalar = {
     id?: boolean
@@ -3107,6 +3320,12 @@ export namespace Prisma {
 
   export type AdminOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "UserId", ExtArgs["result"]["admin"]>
   export type AdminInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type AdminIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type AdminIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
 
@@ -3236,6 +3455,30 @@ export namespace Prisma {
     createMany<T extends AdminCreateManyArgs>(args?: SelectSubset<T, AdminCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Admins and returns the data saved in the database.
+     * @param {AdminCreateManyAndReturnArgs} args - Arguments to create many Admins.
+     * @example
+     * // Create many Admins
+     * const admin = await prisma.admin.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Admins and only return the `id`
+     * const adminWithIdOnly = await prisma.admin.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AdminCreateManyAndReturnArgs>(args?: SelectSubset<T, AdminCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdminPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Admin.
      * @param {AdminDeleteArgs} args - Arguments to delete one Admin.
      * @example
@@ -3298,6 +3541,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends AdminUpdateManyArgs>(args: SelectSubset<T, AdminUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Admins and returns the data updated in the database.
+     * @param {AdminUpdateManyAndReturnArgs} args - Arguments to update many Admins.
+     * @example
+     * // Update many Admins
+     * const admin = await prisma.admin.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Admins and only return the `id`
+     * const adminWithIdOnly = await prisma.admin.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AdminUpdateManyAndReturnArgs>(args: SelectSubset<T, AdminUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AdminPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Admin.
@@ -3723,6 +3996,29 @@ export namespace Prisma {
   }
 
   /**
+   * Admin createManyAndReturn
+   */
+  export type AdminCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Admin
+     */
+    select?: AdminSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Admin
+     */
+    omit?: AdminOmit<ExtArgs> | null
+    /**
+     * The data used to create many Admins.
+     */
+    data: AdminCreateManyInput | AdminCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AdminIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Admin update
    */
   export type AdminUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3764,6 +4060,36 @@ export namespace Prisma {
      * Limit how many Admins to update.
      */
     limit?: number
+  }
+
+  /**
+   * Admin updateManyAndReturn
+   */
+  export type AdminUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Admin
+     */
+    select?: AdminSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Admin
+     */
+    omit?: AdminOmit<ExtArgs> | null
+    /**
+     * The data used to update Admins.
+     */
+    data: XOR<AdminUpdateManyMutationInput, AdminUncheckedUpdateManyInput>
+    /**
+     * Filter which Admins to update
+     */
+    where?: AdminWhereInput
+    /**
+     * Limit how many Admins to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AdminIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -3865,18 +4191,21 @@ export namespace Prisma {
     Pid: string | null
     StudentName: string | null
     ClassId: string | null
+    ParentName: string | null
   }
 
   export type ParentMaxAggregateOutputType = {
     Pid: string | null
     StudentName: string | null
     ClassId: string | null
+    ParentName: string | null
   }
 
   export type ParentCountAggregateOutputType = {
     Pid: number
     StudentName: number
     ClassId: number
+    ParentName: number
     _all: number
   }
 
@@ -3885,18 +4214,21 @@ export namespace Prisma {
     Pid?: true
     StudentName?: true
     ClassId?: true
+    ParentName?: true
   }
 
   export type ParentMaxAggregateInputType = {
     Pid?: true
     StudentName?: true
     ClassId?: true
+    ParentName?: true
   }
 
   export type ParentCountAggregateInputType = {
     Pid?: true
     StudentName?: true
     ClassId?: true
+    ParentName?: true
     _all?: true
   }
 
@@ -3976,6 +4308,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName: string
     _count: ParentCountAggregateOutputType | null
     _min: ParentMinAggregateOutputType | null
     _max: ParentMaxAggregateOutputType | null
@@ -3999,6 +4332,7 @@ export namespace Prisma {
     Pid?: boolean
     StudentName?: boolean
     ClassId?: boolean
+    ParentName?: boolean
     User?: boolean | UserDefaultArgs<ExtArgs>
     Class?: boolean | ClassDefaultArgs<ExtArgs>
     MeetReqSend?: boolean | Parent$MeetReqSendArgs<ExtArgs>
@@ -4008,15 +4342,32 @@ export namespace Prisma {
     _count?: boolean | ParentCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["parent"]>
 
+  export type ParentSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Pid?: boolean
+    StudentName?: boolean
+    ClassId?: boolean
+    ParentName?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["parent"]>
 
+  export type ParentSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Pid?: boolean
+    StudentName?: boolean
+    ClassId?: boolean
+    ParentName?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["parent"]>
 
   export type ParentSelectScalar = {
     Pid?: boolean
     StudentName?: boolean
     ClassId?: boolean
+    ParentName?: boolean
   }
 
-  export type ParentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Pid" | "StudentName" | "ClassId", ExtArgs["result"]["parent"]>
+  export type ParentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Pid" | "StudentName" | "ClassId" | "ParentName", ExtArgs["result"]["parent"]>
   export type ParentInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
     Class?: boolean | ClassDefaultArgs<ExtArgs>
@@ -4025,6 +4376,14 @@ export namespace Prisma {
     Academics?: boolean | Parent$AcademicsArgs<ExtArgs>
     ChatMessages?: boolean | Parent$ChatMessagesArgs<ExtArgs>
     _count?: boolean | ParentCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ParentIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+  }
+  export type ParentIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
   }
 
   export type $ParentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4041,6 +4400,7 @@ export namespace Prisma {
       Pid: string
       StudentName: string
       ClassId: string
+      ParentName: string
     }, ExtArgs["result"]["parent"]>
     composites: {}
   }
@@ -4159,6 +4519,30 @@ export namespace Prisma {
     createMany<T extends ParentCreateManyArgs>(args?: SelectSubset<T, ParentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Parents and returns the data saved in the database.
+     * @param {ParentCreateManyAndReturnArgs} args - Arguments to create many Parents.
+     * @example
+     * // Create many Parents
+     * const parent = await prisma.parent.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Parents and only return the `Pid`
+     * const parentWithPidOnly = await prisma.parent.createManyAndReturn({
+     *   select: { Pid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ParentCreateManyAndReturnArgs>(args?: SelectSubset<T, ParentCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Parent.
      * @param {ParentDeleteArgs} args - Arguments to delete one Parent.
      * @example
@@ -4221,6 +4605,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends ParentUpdateManyArgs>(args: SelectSubset<T, ParentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Parents and returns the data updated in the database.
+     * @param {ParentUpdateManyAndReturnArgs} args - Arguments to update many Parents.
+     * @example
+     * // Update many Parents
+     * const parent = await prisma.parent.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Parents and only return the `Pid`
+     * const parentWithPidOnly = await prisma.parent.updateManyAndReturn({
+     *   select: { Pid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ParentUpdateManyAndReturnArgs>(args: SelectSubset<T, ParentUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Parent.
@@ -4419,6 +4833,7 @@ export namespace Prisma {
     readonly Pid: FieldRef<"Parent", 'String'>
     readonly StudentName: FieldRef<"Parent", 'String'>
     readonly ClassId: FieldRef<"Parent", 'String'>
+    readonly ParentName: FieldRef<"Parent", 'String'>
   }
     
 
@@ -4652,6 +5067,29 @@ export namespace Prisma {
   }
 
   /**
+   * Parent createManyAndReturn
+   */
+  export type ParentCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Parent
+     */
+    select?: ParentSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Parent
+     */
+    omit?: ParentOmit<ExtArgs> | null
+    /**
+     * The data used to create many Parents.
+     */
+    data: ParentCreateManyInput | ParentCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ParentIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Parent update
    */
   export type ParentUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4693,6 +5131,36 @@ export namespace Prisma {
      * Limit how many Parents to update.
      */
     limit?: number
+  }
+
+  /**
+   * Parent updateManyAndReturn
+   */
+  export type ParentUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Parent
+     */
+    select?: ParentSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Parent
+     */
+    omit?: ParentOmit<ExtArgs> | null
+    /**
+     * The data used to update Parents.
+     */
+    data: XOR<ParentUpdateManyMutationInput, ParentUncheckedUpdateManyInput>
+    /**
+     * Filter which Parents to update
+     */
+    where?: ParentWhereInput
+    /**
+     * Limit how many Parents to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ParentIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -5020,10 +5488,21 @@ export namespace Prisma {
     MeetReqRecieve?: boolean | Teacher$MeetReqRecieveArgs<ExtArgs>
     Subjects?: boolean | Teacher$SubjectsArgs<ExtArgs>
     ChatMessages?: boolean | Teacher$ChatMessagesArgs<ExtArgs>
+    Class?: boolean | Teacher$ClassArgs<ExtArgs>
     _count?: boolean | TeacherCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["teacher"]>
 
+  export type TeacherSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Tid?: boolean
+    TeacherName?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teacher"]>
 
+  export type TeacherSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Tid?: boolean
+    TeacherName?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teacher"]>
 
   export type TeacherSelectScalar = {
     Tid?: boolean
@@ -5036,7 +5515,14 @@ export namespace Prisma {
     MeetReqRecieve?: boolean | Teacher$MeetReqRecieveArgs<ExtArgs>
     Subjects?: boolean | Teacher$SubjectsArgs<ExtArgs>
     ChatMessages?: boolean | Teacher$ChatMessagesArgs<ExtArgs>
+    Class?: boolean | Teacher$ClassArgs<ExtArgs>
     _count?: boolean | TeacherCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type TeacherIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type TeacherIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $TeacherPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5046,6 +5532,7 @@ export namespace Prisma {
       MeetReqRecieve: Prisma.$Meeting_RequestPayload<ExtArgs>[]
       Subjects: Prisma.$SubjectPayload<ExtArgs>[]
       ChatMessages: Prisma.$ChatMessagesPayload<ExtArgs>[]
+      Class: Prisma.$ClassPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       Tid: string
@@ -5168,6 +5655,30 @@ export namespace Prisma {
     createMany<T extends TeacherCreateManyArgs>(args?: SelectSubset<T, TeacherCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Teachers and returns the data saved in the database.
+     * @param {TeacherCreateManyAndReturnArgs} args - Arguments to create many Teachers.
+     * @example
+     * // Create many Teachers
+     * const teacher = await prisma.teacher.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Teachers and only return the `Tid`
+     * const teacherWithTidOnly = await prisma.teacher.createManyAndReturn({
+     *   select: { Tid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeacherCreateManyAndReturnArgs>(args?: SelectSubset<T, TeacherCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeacherPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Teacher.
      * @param {TeacherDeleteArgs} args - Arguments to delete one Teacher.
      * @example
@@ -5230,6 +5741,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends TeacherUpdateManyArgs>(args: SelectSubset<T, TeacherUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Teachers and returns the data updated in the database.
+     * @param {TeacherUpdateManyAndReturnArgs} args - Arguments to update many Teachers.
+     * @example
+     * // Update many Teachers
+     * const teacher = await prisma.teacher.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Teachers and only return the `Tid`
+     * const teacherWithTidOnly = await prisma.teacher.updateManyAndReturn({
+     *   select: { Tid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeacherUpdateManyAndReturnArgs>(args: SelectSubset<T, TeacherUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeacherPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Teacher.
@@ -5394,6 +5935,7 @@ export namespace Prisma {
     MeetReqRecieve<T extends Teacher$MeetReqRecieveArgs<ExtArgs> = {}>(args?: Subset<T, Teacher$MeetReqRecieveArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Meeting_RequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Subjects<T extends Teacher$SubjectsArgs<ExtArgs> = {}>(args?: Subset<T, Teacher$SubjectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     ChatMessages<T extends Teacher$ChatMessagesArgs<ExtArgs> = {}>(args?: Subset<T, Teacher$ChatMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Class<T extends Teacher$ClassArgs<ExtArgs> = {}>(args?: Subset<T, Teacher$ClassArgs<ExtArgs>>): Prisma__ClassClient<$Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5658,6 +6200,29 @@ export namespace Prisma {
   }
 
   /**
+   * Teacher createManyAndReturn
+   */
+  export type TeacherCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Teacher
+     */
+    select?: TeacherSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Teacher
+     */
+    omit?: TeacherOmit<ExtArgs> | null
+    /**
+     * The data used to create many Teachers.
+     */
+    data: TeacherCreateManyInput | TeacherCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeacherIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Teacher update
    */
   export type TeacherUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5699,6 +6264,36 @@ export namespace Prisma {
      * Limit how many Teachers to update.
      */
     limit?: number
+  }
+
+  /**
+   * Teacher updateManyAndReturn
+   */
+  export type TeacherUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Teacher
+     */
+    select?: TeacherSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Teacher
+     */
+    omit?: TeacherOmit<ExtArgs> | null
+    /**
+     * The data used to update Teachers.
+     */
+    data: XOR<TeacherUpdateManyMutationInput, TeacherUncheckedUpdateManyInput>
+    /**
+     * Filter which Teachers to update
+     */
+    where?: TeacherWhereInput
+    /**
+     * Limit how many Teachers to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeacherIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -5837,6 +6432,25 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * Teacher.Class
+   */
+  export type Teacher$ClassArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Class
+     */
+    select?: ClassSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Class
+     */
+    omit?: ClassOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClassInclude<ExtArgs> | null
+    where?: ClassWhereInput
   }
 
   /**
@@ -6020,7 +6634,23 @@ export namespace Prisma {
     _count?: boolean | SubjectCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["subject"]>
 
+  export type SubjectSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Sid?: boolean
+    Name?: boolean
+    ClassId?: boolean
+    TeacherId?: boolean
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["subject"]>
 
+  export type SubjectSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Sid?: boolean
+    Name?: boolean
+    ClassId?: boolean
+    TeacherId?: boolean
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["subject"]>
 
   export type SubjectSelectScalar = {
     Sid?: boolean
@@ -6035,6 +6665,14 @@ export namespace Prisma {
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
     Academics?: boolean | Subject$AcademicsArgs<ExtArgs>
     _count?: boolean | SubjectCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SubjectIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type SubjectIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }
 
   export type $SubjectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6167,6 +6805,30 @@ export namespace Prisma {
     createMany<T extends SubjectCreateManyArgs>(args?: SelectSubset<T, SubjectCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Subjects and returns the data saved in the database.
+     * @param {SubjectCreateManyAndReturnArgs} args - Arguments to create many Subjects.
+     * @example
+     * // Create many Subjects
+     * const subject = await prisma.subject.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Subjects and only return the `Sid`
+     * const subjectWithSidOnly = await prisma.subject.createManyAndReturn({
+     *   select: { Sid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SubjectCreateManyAndReturnArgs>(args?: SelectSubset<T, SubjectCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubjectPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Subject.
      * @param {SubjectDeleteArgs} args - Arguments to delete one Subject.
      * @example
@@ -6229,6 +6891,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends SubjectUpdateManyArgs>(args: SelectSubset<T, SubjectUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Subjects and returns the data updated in the database.
+     * @param {SubjectUpdateManyAndReturnArgs} args - Arguments to update many Subjects.
+     * @example
+     * // Update many Subjects
+     * const subject = await prisma.subject.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Subjects and only return the `Sid`
+     * const subjectWithSidOnly = await prisma.subject.updateManyAndReturn({
+     *   select: { Sid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SubjectUpdateManyAndReturnArgs>(args: SelectSubset<T, SubjectUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubjectPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Subject.
@@ -6658,6 +7350,29 @@ export namespace Prisma {
   }
 
   /**
+   * Subject createManyAndReturn
+   */
+  export type SubjectCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subject
+     */
+    select?: SubjectSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subject
+     */
+    omit?: SubjectOmit<ExtArgs> | null
+    /**
+     * The data used to create many Subjects.
+     */
+    data: SubjectCreateManyInput | SubjectCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubjectIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Subject update
    */
   export type SubjectUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6699,6 +7414,36 @@ export namespace Prisma {
      * Limit how many Subjects to update.
      */
     limit?: number
+  }
+
+  /**
+   * Subject updateManyAndReturn
+   */
+  export type SubjectUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Subject
+     */
+    select?: SubjectSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Subject
+     */
+    omit?: SubjectOmit<ExtArgs> | null
+    /**
+     * The data used to update Subjects.
+     */
+    data: XOR<SubjectUpdateManyMutationInput, SubjectUncheckedUpdateManyInput>
+    /**
+     * Filter which Subjects to update
+     */
+    where?: SubjectWhereInput
+    /**
+     * Limit how many Subjects to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SubjectIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -6823,16 +7568,19 @@ export namespace Prisma {
   export type ClassMinAggregateOutputType = {
     id: string | null
     Name: string | null
+    ClassTeacherId: string | null
   }
 
   export type ClassMaxAggregateOutputType = {
     id: string | null
     Name: string | null
+    ClassTeacherId: string | null
   }
 
   export type ClassCountAggregateOutputType = {
     id: number
     Name: number
+    ClassTeacherId: number
     _all: number
   }
 
@@ -6840,16 +7588,19 @@ export namespace Prisma {
   export type ClassMinAggregateInputType = {
     id?: true
     Name?: true
+    ClassTeacherId?: true
   }
 
   export type ClassMaxAggregateInputType = {
     id?: true
     Name?: true
+    ClassTeacherId?: true
   }
 
   export type ClassCountAggregateInputType = {
     id?: true
     Name?: true
+    ClassTeacherId?: true
     _all?: true
   }
 
@@ -6928,6 +7679,7 @@ export namespace Prisma {
   export type ClassGroupByOutputType = {
     id: string
     Name: string
+    ClassTeacherId: string
     _count: ClassCountAggregateOutputType | null
     _min: ClassMinAggregateOutputType | null
     _max: ClassMaxAggregateOutputType | null
@@ -6950,25 +7702,47 @@ export namespace Prisma {
   export type ClassSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     Name?: boolean
+    ClassTeacherId?: boolean
     Parent?: boolean | Class$ParentArgs<ExtArgs>
     Subjects?: boolean | Class$SubjectsArgs<ExtArgs>
     Attendance?: boolean | Class$AttendanceArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
     _count?: boolean | ClassCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["class"]>
 
+  export type ClassSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    Name?: boolean
+    ClassTeacherId?: boolean
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["class"]>
 
+  export type ClassSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    Name?: boolean
+    ClassTeacherId?: boolean
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["class"]>
 
   export type ClassSelectScalar = {
     id?: boolean
     Name?: boolean
+    ClassTeacherId?: boolean
   }
 
-  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Name", ExtArgs["result"]["class"]>
+  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Name" | "ClassTeacherId", ExtArgs["result"]["class"]>
   export type ClassInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Parent?: boolean | Class$ParentArgs<ExtArgs>
     Subjects?: boolean | Class$SubjectsArgs<ExtArgs>
     Attendance?: boolean | Class$AttendanceArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
     _count?: boolean | ClassCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ClassIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type ClassIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }
 
   export type $ClassPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6977,10 +7751,12 @@ export namespace Prisma {
       Parent: Prisma.$ParentPayload<ExtArgs>[]
       Subjects: Prisma.$SubjectPayload<ExtArgs>[]
       Attendance: Prisma.$AttendancePayload<ExtArgs>[]
+      Teacher: Prisma.$TeacherPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       Name: string
+      ClassTeacherId: string
     }, ExtArgs["result"]["class"]>
     composites: {}
   }
@@ -7099,6 +7875,30 @@ export namespace Prisma {
     createMany<T extends ClassCreateManyArgs>(args?: SelectSubset<T, ClassCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Classes and returns the data saved in the database.
+     * @param {ClassCreateManyAndReturnArgs} args - Arguments to create many Classes.
+     * @example
+     * // Create many Classes
+     * const class = await prisma.class.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Classes and only return the `id`
+     * const classWithIdOnly = await prisma.class.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ClassCreateManyAndReturnArgs>(args?: SelectSubset<T, ClassCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Class.
      * @param {ClassDeleteArgs} args - Arguments to delete one Class.
      * @example
@@ -7161,6 +7961,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends ClassUpdateManyArgs>(args: SelectSubset<T, ClassUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Classes and returns the data updated in the database.
+     * @param {ClassUpdateManyAndReturnArgs} args - Arguments to update many Classes.
+     * @example
+     * // Update many Classes
+     * const class = await prisma.class.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Classes and only return the `id`
+     * const classWithIdOnly = await prisma.class.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ClassUpdateManyAndReturnArgs>(args: SelectSubset<T, ClassUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Class.
@@ -7324,6 +8154,7 @@ export namespace Prisma {
     Parent<T extends Class$ParentArgs<ExtArgs> = {}>(args?: Subset<T, Class$ParentArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Subjects<T extends Class$SubjectsArgs<ExtArgs> = {}>(args?: Subset<T, Class$SubjectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Attendance<T extends Class$AttendanceArgs<ExtArgs> = {}>(args?: Subset<T, Class$AttendanceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AttendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Teacher<T extends TeacherDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TeacherDefaultArgs<ExtArgs>>): Prisma__TeacherClient<$Result.GetResult<Prisma.$TeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7355,6 +8186,7 @@ export namespace Prisma {
   interface ClassFieldRefs {
     readonly id: FieldRef<"Class", 'String'>
     readonly Name: FieldRef<"Class", 'String'>
+    readonly ClassTeacherId: FieldRef<"Class", 'String'>
   }
     
 
@@ -7588,6 +8420,29 @@ export namespace Prisma {
   }
 
   /**
+   * Class createManyAndReturn
+   */
+  export type ClassCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Class
+     */
+    select?: ClassSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Class
+     */
+    omit?: ClassOmit<ExtArgs> | null
+    /**
+     * The data used to create many Classes.
+     */
+    data: ClassCreateManyInput | ClassCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClassIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Class update
    */
   export type ClassUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -7629,6 +8484,36 @@ export namespace Prisma {
      * Limit how many Classes to update.
      */
     limit?: number
+  }
+
+  /**
+   * Class updateManyAndReturn
+   */
+  export type ClassUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Class
+     */
+    select?: ClassSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Class
+     */
+    omit?: ClassOmit<ExtArgs> | null
+    /**
+     * The data used to update Classes.
+     */
+    data: XOR<ClassUpdateManyMutationInput, ClassUncheckedUpdateManyInput>
+    /**
+     * Filter which Classes to update
+     */
+    where?: ClassWhereInput
+    /**
+     * Limit how many Classes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ClassIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -7952,10 +8837,26 @@ export namespace Prisma {
     SenderId?: boolean
     Title?: boolean
     Date?: boolean
-    Sender?: boolean | UserDefaultArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["annoucements"]>
 
+  export type AnnoucementsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    Text?: boolean
+    SenderId?: boolean
+    Title?: boolean
+    Date?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["annoucements"]>
 
+  export type AnnoucementsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    Text?: boolean
+    SenderId?: boolean
+    Title?: boolean
+    Date?: boolean
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["annoucements"]>
 
   export type AnnoucementsSelectScalar = {
     id?: boolean
@@ -7967,13 +8868,19 @@ export namespace Prisma {
 
   export type AnnoucementsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Text" | "SenderId" | "Title" | "Date", ExtArgs["result"]["annoucements"]>
   export type AnnoucementsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Sender?: boolean | UserDefaultArgs<ExtArgs>
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type AnnoucementsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type AnnoucementsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    User?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $AnnoucementsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Annoucements"
     objects: {
-      Sender: Prisma.$UserPayload<ExtArgs>
+      User: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -8099,6 +9006,30 @@ export namespace Prisma {
     createMany<T extends AnnoucementsCreateManyArgs>(args?: SelectSubset<T, AnnoucementsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Annoucements and returns the data saved in the database.
+     * @param {AnnoucementsCreateManyAndReturnArgs} args - Arguments to create many Annoucements.
+     * @example
+     * // Create many Annoucements
+     * const annoucements = await prisma.annoucements.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Annoucements and only return the `id`
+     * const annoucementsWithIdOnly = await prisma.annoucements.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AnnoucementsCreateManyAndReturnArgs>(args?: SelectSubset<T, AnnoucementsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AnnoucementsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Annoucements.
      * @param {AnnoucementsDeleteArgs} args - Arguments to delete one Annoucements.
      * @example
@@ -8161,6 +9092,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends AnnoucementsUpdateManyArgs>(args: SelectSubset<T, AnnoucementsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Annoucements and returns the data updated in the database.
+     * @param {AnnoucementsUpdateManyAndReturnArgs} args - Arguments to update many Annoucements.
+     * @example
+     * // Update many Annoucements
+     * const annoucements = await prisma.annoucements.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Annoucements and only return the `id`
+     * const annoucementsWithIdOnly = await prisma.annoucements.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AnnoucementsUpdateManyAndReturnArgs>(args: SelectSubset<T, AnnoucementsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AnnoucementsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Annoucements.
@@ -8321,7 +9282,7 @@ export namespace Prisma {
    */
   export interface Prisma__AnnoucementsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    Sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8589,6 +9550,29 @@ export namespace Prisma {
   }
 
   /**
+   * Annoucements createManyAndReturn
+   */
+  export type AnnoucementsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Annoucements
+     */
+    select?: AnnoucementsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Annoucements
+     */
+    omit?: AnnoucementsOmit<ExtArgs> | null
+    /**
+     * The data used to create many Annoucements.
+     */
+    data: AnnoucementsCreateManyInput | AnnoucementsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AnnoucementsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Annoucements update
    */
   export type AnnoucementsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8630,6 +9614,36 @@ export namespace Prisma {
      * Limit how many Annoucements to update.
      */
     limit?: number
+  }
+
+  /**
+   * Annoucements updateManyAndReturn
+   */
+  export type AnnoucementsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Annoucements
+     */
+    select?: AnnoucementsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Annoucements
+     */
+    omit?: AnnoucementsOmit<ExtArgs> | null
+    /**
+     * The data used to update Annoucements.
+     */
+    data: XOR<AnnoucementsUpdateManyMutationInput, AnnoucementsUncheckedUpdateManyInput>
+    /**
+     * Filter which Annoucements to update
+     */
+    where?: AnnoucementsWhereInput
+    /**
+     * Limit how many Annoucements to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AnnoucementsIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -8885,7 +9899,25 @@ export namespace Prisma {
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["meeting_Request"]>
 
+  export type Meeting_RequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    SenderId?: boolean
+    date?: boolean
+    content?: boolean
+    TeacherId?: boolean
+    Sender?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["meeting_Request"]>
 
+  export type Meeting_RequestSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    SenderId?: boolean
+    date?: boolean
+    content?: boolean
+    TeacherId?: boolean
+    Sender?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["meeting_Request"]>
 
   export type Meeting_RequestSelectScalar = {
     id?: boolean
@@ -8897,6 +9929,14 @@ export namespace Prisma {
 
   export type Meeting_RequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "SenderId" | "date" | "content" | "TeacherId", ExtArgs["result"]["meeting_Request"]>
   export type Meeting_RequestInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Sender?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type Meeting_RequestIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Sender?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type Meeting_RequestIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Sender?: boolean | ParentDefaultArgs<ExtArgs>
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }
@@ -9031,6 +10071,30 @@ export namespace Prisma {
     createMany<T extends Meeting_RequestCreateManyArgs>(args?: SelectSubset<T, Meeting_RequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Meeting_Requests and returns the data saved in the database.
+     * @param {Meeting_RequestCreateManyAndReturnArgs} args - Arguments to create many Meeting_Requests.
+     * @example
+     * // Create many Meeting_Requests
+     * const meeting_Request = await prisma.meeting_Request.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Meeting_Requests and only return the `id`
+     * const meeting_RequestWithIdOnly = await prisma.meeting_Request.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Meeting_RequestCreateManyAndReturnArgs>(args?: SelectSubset<T, Meeting_RequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Meeting_RequestPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Meeting_Request.
      * @param {Meeting_RequestDeleteArgs} args - Arguments to delete one Meeting_Request.
      * @example
@@ -9093,6 +10157,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends Meeting_RequestUpdateManyArgs>(args: SelectSubset<T, Meeting_RequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Meeting_Requests and returns the data updated in the database.
+     * @param {Meeting_RequestUpdateManyAndReturnArgs} args - Arguments to update many Meeting_Requests.
+     * @example
+     * // Update many Meeting_Requests
+     * const meeting_Request = await prisma.meeting_Request.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Meeting_Requests and only return the `id`
+     * const meeting_RequestWithIdOnly = await prisma.meeting_Request.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Meeting_RequestUpdateManyAndReturnArgs>(args: SelectSubset<T, Meeting_RequestUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Meeting_RequestPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Meeting_Request.
@@ -9522,6 +10616,29 @@ export namespace Prisma {
   }
 
   /**
+   * Meeting_Request createManyAndReturn
+   */
+  export type Meeting_RequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Meeting_Request
+     */
+    select?: Meeting_RequestSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Meeting_Request
+     */
+    omit?: Meeting_RequestOmit<ExtArgs> | null
+    /**
+     * The data used to create many Meeting_Requests.
+     */
+    data: Meeting_RequestCreateManyInput | Meeting_RequestCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Meeting_RequestIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Meeting_Request update
    */
   export type Meeting_RequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9563,6 +10680,36 @@ export namespace Prisma {
      * Limit how many Meeting_Requests to update.
      */
     limit?: number
+  }
+
+  /**
+   * Meeting_Request updateManyAndReturn
+   */
+  export type Meeting_RequestUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Meeting_Request
+     */
+    select?: Meeting_RequestSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Meeting_Request
+     */
+    omit?: Meeting_RequestOmit<ExtArgs> | null
+    /**
+     * The data used to update Meeting_Requests.
+     */
+    data: XOR<Meeting_RequestUpdateManyMutationInput, Meeting_RequestUncheckedUpdateManyInput>
+    /**
+     * Filter which Meeting_Requests to update
+     */
+    where?: Meeting_RequestWhereInput
+    /**
+     * Limit how many Meeting_Requests to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Meeting_RequestIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -9852,7 +10999,25 @@ export namespace Prisma {
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["attendance"]>
 
+  export type AttendanceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    date?: boolean
+    isPresent?: boolean
+    Issue_For?: boolean
+    ParentId?: boolean
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["attendance"]>
 
+  export type AttendanceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    date?: boolean
+    isPresent?: boolean
+    Issue_For?: boolean
+    ParentId?: boolean
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["attendance"]>
 
   export type AttendanceSelectScalar = {
     id?: boolean
@@ -9864,6 +11029,14 @@ export namespace Prisma {
 
   export type AttendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "isPresent" | "Issue_For" | "ParentId", ExtArgs["result"]["attendance"]>
   export type AttendanceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+  }
+  export type AttendanceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Class?: boolean | ClassDefaultArgs<ExtArgs>
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+  }
+  export type AttendanceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Class?: boolean | ClassDefaultArgs<ExtArgs>
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
   }
@@ -9998,6 +11171,30 @@ export namespace Prisma {
     createMany<T extends AttendanceCreateManyArgs>(args?: SelectSubset<T, AttendanceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Attendances and returns the data saved in the database.
+     * @param {AttendanceCreateManyAndReturnArgs} args - Arguments to create many Attendances.
+     * @example
+     * // Create many Attendances
+     * const attendance = await prisma.attendance.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Attendances and only return the `id`
+     * const attendanceWithIdOnly = await prisma.attendance.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AttendanceCreateManyAndReturnArgs>(args?: SelectSubset<T, AttendanceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AttendancePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Attendance.
      * @param {AttendanceDeleteArgs} args - Arguments to delete one Attendance.
      * @example
@@ -10060,6 +11257,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends AttendanceUpdateManyArgs>(args: SelectSubset<T, AttendanceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Attendances and returns the data updated in the database.
+     * @param {AttendanceUpdateManyAndReturnArgs} args - Arguments to update many Attendances.
+     * @example
+     * // Update many Attendances
+     * const attendance = await prisma.attendance.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Attendances and only return the `id`
+     * const attendanceWithIdOnly = await prisma.attendance.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AttendanceUpdateManyAndReturnArgs>(args: SelectSubset<T, AttendanceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AttendancePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Attendance.
@@ -10489,6 +11716,29 @@ export namespace Prisma {
   }
 
   /**
+   * Attendance createManyAndReturn
+   */
+  export type AttendanceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Attendance
+     */
+    select?: AttendanceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Attendance
+     */
+    omit?: AttendanceOmit<ExtArgs> | null
+    /**
+     * The data used to create many Attendances.
+     */
+    data: AttendanceCreateManyInput | AttendanceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AttendanceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Attendance update
    */
   export type AttendanceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10530,6 +11780,36 @@ export namespace Prisma {
      * Limit how many Attendances to update.
      */
     limit?: number
+  }
+
+  /**
+   * Attendance updateManyAndReturn
+   */
+  export type AttendanceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Attendance
+     */
+    select?: AttendanceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Attendance
+     */
+    omit?: AttendanceOmit<ExtArgs> | null
+    /**
+     * The data used to update Attendances.
+     */
+    data: XOR<AttendanceUpdateManyMutationInput, AttendanceUncheckedUpdateManyInput>
+    /**
+     * Filter which Attendances to update
+     */
+    where?: AttendanceWhereInput
+    /**
+     * Limit how many Attendances to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AttendanceIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -10801,7 +12081,29 @@ export namespace Prisma {
     Subject?: boolean | SubjectDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["academics"]>
 
+  export type AcademicsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ExamName?: boolean
+    id?: boolean
+    Pid?: boolean
+    SubjectID?: boolean
+    Grade?: boolean
+    ReportLink?: boolean
+    Date?: boolean
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Subject?: boolean | SubjectDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["academics"]>
 
+  export type AcademicsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ExamName?: boolean
+    id?: boolean
+    Pid?: boolean
+    SubjectID?: boolean
+    Grade?: boolean
+    ReportLink?: boolean
+    Date?: boolean
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Subject?: boolean | SubjectDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["academics"]>
 
   export type AcademicsSelectScalar = {
     ExamName?: boolean
@@ -10815,6 +12117,14 @@ export namespace Prisma {
 
   export type AcademicsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"ExamName" | "id" | "Pid" | "SubjectID" | "Grade" | "ReportLink" | "Date", ExtArgs["result"]["academics"]>
   export type AcademicsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Subject?: boolean | SubjectDefaultArgs<ExtArgs>
+  }
+  export type AcademicsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Subject?: boolean | SubjectDefaultArgs<ExtArgs>
+  }
+  export type AcademicsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
     Subject?: boolean | SubjectDefaultArgs<ExtArgs>
   }
@@ -10951,6 +12261,30 @@ export namespace Prisma {
     createMany<T extends AcademicsCreateManyArgs>(args?: SelectSubset<T, AcademicsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many Academics and returns the data saved in the database.
+     * @param {AcademicsCreateManyAndReturnArgs} args - Arguments to create many Academics.
+     * @example
+     * // Create many Academics
+     * const academics = await prisma.academics.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Academics and only return the `ExamName`
+     * const academicsWithExamNameOnly = await prisma.academics.createManyAndReturn({
+     *   select: { ExamName: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends AcademicsCreateManyAndReturnArgs>(args?: SelectSubset<T, AcademicsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AcademicsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a Academics.
      * @param {AcademicsDeleteArgs} args - Arguments to delete one Academics.
      * @example
@@ -11013,6 +12347,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends AcademicsUpdateManyArgs>(args: SelectSubset<T, AcademicsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Academics and returns the data updated in the database.
+     * @param {AcademicsUpdateManyAndReturnArgs} args - Arguments to update many Academics.
+     * @example
+     * // Update many Academics
+     * const academics = await prisma.academics.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Academics and only return the `ExamName`
+     * const academicsWithExamNameOnly = await prisma.academics.updateManyAndReturn({
+     *   select: { ExamName: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends AcademicsUpdateManyAndReturnArgs>(args: SelectSubset<T, AcademicsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AcademicsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one Academics.
@@ -11444,6 +12808,29 @@ export namespace Prisma {
   }
 
   /**
+   * Academics createManyAndReturn
+   */
+  export type AcademicsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Academics
+     */
+    select?: AcademicsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Academics
+     */
+    omit?: AcademicsOmit<ExtArgs> | null
+    /**
+     * The data used to create many Academics.
+     */
+    data: AcademicsCreateManyInput | AcademicsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AcademicsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * Academics update
    */
   export type AcademicsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11485,6 +12872,36 @@ export namespace Prisma {
      * Limit how many Academics to update.
      */
     limit?: number
+  }
+
+  /**
+   * Academics updateManyAndReturn
+   */
+  export type AcademicsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Academics
+     */
+    select?: AcademicsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Academics
+     */
+    omit?: AcademicsOmit<ExtArgs> | null
+    /**
+     * The data used to update Academics.
+     */
+    data: XOR<AcademicsUpdateManyMutationInput, AcademicsUncheckedUpdateManyInput>
+    /**
+     * Filter which Academics to update
+     */
+    where?: AcademicsWhereInput
+    /**
+     * Limit how many Academics to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AcademicsIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -11740,7 +13157,25 @@ export namespace Prisma {
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["chatMessages"]>
 
+  export type ChatMessagesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    MessageId?: boolean
+    Pid?: boolean
+    Tid?: boolean
+    Content?: boolean
+    Date?: boolean
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chatMessages"]>
 
+  export type ChatMessagesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    MessageId?: boolean
+    Pid?: boolean
+    Tid?: boolean
+    Content?: boolean
+    Date?: boolean
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chatMessages"]>
 
   export type ChatMessagesSelectScalar = {
     MessageId?: boolean
@@ -11752,6 +13187,14 @@ export namespace Prisma {
 
   export type ChatMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"MessageId" | "Pid" | "Tid" | "Content" | "Date", ExtArgs["result"]["chatMessages"]>
   export type ChatMessagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type ChatMessagesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Parent?: boolean | ParentDefaultArgs<ExtArgs>
+    Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
+  }
+  export type ChatMessagesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
   }
@@ -11886,6 +13329,30 @@ export namespace Prisma {
     createMany<T extends ChatMessagesCreateManyArgs>(args?: SelectSubset<T, ChatMessagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
+     * Create many ChatMessages and returns the data saved in the database.
+     * @param {ChatMessagesCreateManyAndReturnArgs} args - Arguments to create many ChatMessages.
+     * @example
+     * // Create many ChatMessages
+     * const chatMessages = await prisma.chatMessages.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ChatMessages and only return the `MessageId`
+     * const chatMessagesWithMessageIdOnly = await prisma.chatMessages.createManyAndReturn({
+     *   select: { MessageId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ChatMessagesCreateManyAndReturnArgs>(args?: SelectSubset<T, ChatMessagesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
      * Delete a ChatMessages.
      * @param {ChatMessagesDeleteArgs} args - Arguments to delete one ChatMessages.
      * @example
@@ -11948,6 +13415,36 @@ export namespace Prisma {
      * 
      */
     updateMany<T extends ChatMessagesUpdateManyArgs>(args: SelectSubset<T, ChatMessagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ChatMessages and returns the data updated in the database.
+     * @param {ChatMessagesUpdateManyAndReturnArgs} args - Arguments to update many ChatMessages.
+     * @example
+     * // Update many ChatMessages
+     * const chatMessages = await prisma.chatMessages.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ChatMessages and only return the `MessageId`
+     * const chatMessagesWithMessageIdOnly = await prisma.chatMessages.updateManyAndReturn({
+     *   select: { MessageId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ChatMessagesUpdateManyAndReturnArgs>(args: SelectSubset<T, ChatMessagesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
      * Create or update one ChatMessages.
@@ -12377,6 +13874,29 @@ export namespace Prisma {
   }
 
   /**
+   * ChatMessages createManyAndReturn
+   */
+  export type ChatMessagesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to create many ChatMessages.
+     */
+    data: ChatMessagesCreateManyInput | ChatMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
    * ChatMessages update
    */
   export type ChatMessagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -12418,6 +13938,36 @@ export namespace Prisma {
      * Limit how many ChatMessages to update.
      */
     limit?: number
+  }
+
+  /**
+   * ChatMessages updateManyAndReturn
+   */
+  export type ChatMessagesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * The data used to update ChatMessages.
+     */
+    data: XOR<ChatMessagesUpdateManyMutationInput, ChatMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which ChatMessages to update
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * Limit how many ChatMessages to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -12541,7 +14091,8 @@ export namespace Prisma {
   export const ParentScalarFieldEnum: {
     Pid: 'Pid',
     StudentName: 'StudentName',
-    ClassId: 'ClassId'
+    ClassId: 'ClassId',
+    ParentName: 'ParentName'
   };
 
   export type ParentScalarFieldEnum = (typeof ParentScalarFieldEnum)[keyof typeof ParentScalarFieldEnum]
@@ -12567,7 +14118,8 @@ export namespace Prisma {
 
   export const ClassScalarFieldEnum: {
     id: 'id',
-    Name: 'Name'
+    Name: 'Name',
+    ClassTeacherId: 'ClassTeacherId'
   };
 
   export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
@@ -12638,84 +14190,12 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const UserOrderByRelevanceFieldEnum: {
-    id: 'id',
-    name: 'name',
-    password: 'password'
+  export const QueryMode: {
+    default: 'default',
+    insensitive: 'insensitive'
   };
 
-  export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
-
-
-  export const AdminOrderByRelevanceFieldEnum: {
-    id: 'id',
-    UserId: 'UserId'
-  };
-
-  export type AdminOrderByRelevanceFieldEnum = (typeof AdminOrderByRelevanceFieldEnum)[keyof typeof AdminOrderByRelevanceFieldEnum]
-
-
-  export const ParentOrderByRelevanceFieldEnum: {
-    Pid: 'Pid',
-    StudentName: 'StudentName',
-    ClassId: 'ClassId'
-  };
-
-  export type ParentOrderByRelevanceFieldEnum = (typeof ParentOrderByRelevanceFieldEnum)[keyof typeof ParentOrderByRelevanceFieldEnum]
-
-
-  export const TeacherOrderByRelevanceFieldEnum: {
-    Tid: 'Tid',
-    TeacherName: 'TeacherName'
-  };
-
-  export type TeacherOrderByRelevanceFieldEnum = (typeof TeacherOrderByRelevanceFieldEnum)[keyof typeof TeacherOrderByRelevanceFieldEnum]
-
-
-  export const SubjectOrderByRelevanceFieldEnum: {
-    Sid: 'Sid',
-    Name: 'Name',
-    ClassId: 'ClassId',
-    TeacherId: 'TeacherId'
-  };
-
-  export type SubjectOrderByRelevanceFieldEnum = (typeof SubjectOrderByRelevanceFieldEnum)[keyof typeof SubjectOrderByRelevanceFieldEnum]
-
-
-  export const ClassOrderByRelevanceFieldEnum: {
-    id: 'id',
-    Name: 'Name'
-  };
-
-  export type ClassOrderByRelevanceFieldEnum = (typeof ClassOrderByRelevanceFieldEnum)[keyof typeof ClassOrderByRelevanceFieldEnum]
-
-
-  export const AnnoucementsOrderByRelevanceFieldEnum: {
-    id: 'id',
-    Text: 'Text',
-    SenderId: 'SenderId',
-    Title: 'Title'
-  };
-
-  export type AnnoucementsOrderByRelevanceFieldEnum = (typeof AnnoucementsOrderByRelevanceFieldEnum)[keyof typeof AnnoucementsOrderByRelevanceFieldEnum]
-
-
-  export const Meeting_RequestOrderByRelevanceFieldEnum: {
-    id: 'id',
-    SenderId: 'SenderId',
-    content: 'content',
-    TeacherId: 'TeacherId'
-  };
-
-  export type Meeting_RequestOrderByRelevanceFieldEnum = (typeof Meeting_RequestOrderByRelevanceFieldEnum)[keyof typeof Meeting_RequestOrderByRelevanceFieldEnum]
-
-
-  export const AttendanceOrderByRelevanceFieldEnum: {
-    Issue_For: 'Issue_For',
-    ParentId: 'ParentId'
-  };
-
-  export type AttendanceOrderByRelevanceFieldEnum = (typeof AttendanceOrderByRelevanceFieldEnum)[keyof typeof AttendanceOrderByRelevanceFieldEnum]
+  export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
   export const NullsOrder: {
@@ -12724,28 +14204,6 @@ export namespace Prisma {
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-  export const AcademicsOrderByRelevanceFieldEnum: {
-    ExamName: 'ExamName',
-    id: 'id',
-    Pid: 'Pid',
-    SubjectID: 'SubjectID',
-    Grade: 'Grade',
-    ReportLink: 'ReportLink'
-  };
-
-  export type AcademicsOrderByRelevanceFieldEnum = (typeof AcademicsOrderByRelevanceFieldEnum)[keyof typeof AcademicsOrderByRelevanceFieldEnum]
-
-
-  export const ChatMessagesOrderByRelevanceFieldEnum: {
-    MessageId: 'MessageId',
-    Pid: 'Pid',
-    Tid: 'Tid',
-    Content: 'Content'
-  };
-
-  export type ChatMessagesOrderByRelevanceFieldEnum = (typeof ChatMessagesOrderByRelevanceFieldEnum)[keyof typeof ChatMessagesOrderByRelevanceFieldEnum]
 
 
   /**
@@ -12761,9 +14219,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'String[]'
+   */
+  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Role'
    */
   export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
+    
+
+
+  /**
+   * Reference to a field of type 'Role[]'
+   */
+  export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
     
 
 
@@ -12775,6 +14247,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Status[]'
+   */
+  export type ListEnumStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Status[]'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -12782,9 +14261,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 
@@ -12799,6 +14292,13 @@ export namespace Prisma {
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -12830,7 +14330,6 @@ export namespace Prisma {
     Parent?: ParentOrderByWithRelationInput
     Teacher?: TeacherOrderByWithRelationInput
     Admin?: AdminOrderByWithRelationInput
-    _relevance?: UserOrderByRelevanceInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -12883,7 +14382,6 @@ export namespace Prisma {
     id?: SortOrder
     UserId?: SortOrder
     User?: UserOrderByWithRelationInput
-    _relevance?: AdminOrderByRelevanceInput
   }
 
   export type AdminWhereUniqueInput = Prisma.AtLeast<{
@@ -12918,6 +14416,7 @@ export namespace Prisma {
     Pid?: StringFilter<"Parent"> | string
     StudentName?: StringFilter<"Parent"> | string
     ClassId?: StringFilter<"Parent"> | string
+    ParentName?: StringFilter<"Parent"> | string
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
     Class?: XOR<ClassScalarRelationFilter, ClassWhereInput>
     MeetReqSend?: Meeting_RequestListRelationFilter
@@ -12930,13 +14429,13 @@ export namespace Prisma {
     Pid?: SortOrder
     StudentName?: SortOrder
     ClassId?: SortOrder
+    ParentName?: SortOrder
     User?: UserOrderByWithRelationInput
     Class?: ClassOrderByWithRelationInput
     MeetReqSend?: Meeting_RequestOrderByRelationAggregateInput
     Attendance?: AttendanceOrderByRelationAggregateInput
     Academics?: AcademicsOrderByRelationAggregateInput
     ChatMessages?: ChatMessagesOrderByRelationAggregateInput
-    _relevance?: ParentOrderByRelevanceInput
   }
 
   export type ParentWhereUniqueInput = Prisma.AtLeast<{
@@ -12946,6 +14445,7 @@ export namespace Prisma {
     NOT?: ParentWhereInput | ParentWhereInput[]
     StudentName?: StringFilter<"Parent"> | string
     ClassId?: StringFilter<"Parent"> | string
+    ParentName?: StringFilter<"Parent"> | string
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
     Class?: XOR<ClassScalarRelationFilter, ClassWhereInput>
     MeetReqSend?: Meeting_RequestListRelationFilter
@@ -12958,6 +14458,7 @@ export namespace Prisma {
     Pid?: SortOrder
     StudentName?: SortOrder
     ClassId?: SortOrder
+    ParentName?: SortOrder
     _count?: ParentCountOrderByAggregateInput
     _max?: ParentMaxOrderByAggregateInput
     _min?: ParentMinOrderByAggregateInput
@@ -12970,6 +14471,7 @@ export namespace Prisma {
     Pid?: StringWithAggregatesFilter<"Parent"> | string
     StudentName?: StringWithAggregatesFilter<"Parent"> | string
     ClassId?: StringWithAggregatesFilter<"Parent"> | string
+    ParentName?: StringWithAggregatesFilter<"Parent"> | string
   }
 
   export type TeacherWhereInput = {
@@ -12982,6 +14484,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestListRelationFilter
     Subjects?: SubjectListRelationFilter
     ChatMessages?: ChatMessagesListRelationFilter
+    Class?: XOR<ClassNullableScalarRelationFilter, ClassWhereInput> | null
   }
 
   export type TeacherOrderByWithRelationInput = {
@@ -12991,7 +14494,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestOrderByRelationAggregateInput
     Subjects?: SubjectOrderByRelationAggregateInput
     ChatMessages?: ChatMessagesOrderByRelationAggregateInput
-    _relevance?: TeacherOrderByRelevanceInput
+    Class?: ClassOrderByWithRelationInput
   }
 
   export type TeacherWhereUniqueInput = Prisma.AtLeast<{
@@ -13004,6 +14507,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestListRelationFilter
     Subjects?: SubjectListRelationFilter
     ChatMessages?: ChatMessagesListRelationFilter
+    Class?: XOR<ClassNullableScalarRelationFilter, ClassWhereInput> | null
   }, "Tid" | "Tid" | "TeacherName">
 
   export type TeacherOrderByWithAggregationInput = {
@@ -13043,7 +14547,6 @@ export namespace Prisma {
     Class?: ClassOrderByWithRelationInput
     Teacher?: TeacherOrderByWithRelationInput
     Academics?: AcademicsOrderByRelationAggregateInput
-    _relevance?: SubjectOrderByRelevanceInput
   }
 
   export type SubjectWhereUniqueInput = Prisma.AtLeast<{
@@ -13085,34 +14588,40 @@ export namespace Prisma {
     NOT?: ClassWhereInput | ClassWhereInput[]
     id?: StringFilter<"Class"> | string
     Name?: StringFilter<"Class"> | string
+    ClassTeacherId?: StringFilter<"Class"> | string
     Parent?: ParentListRelationFilter
     Subjects?: SubjectListRelationFilter
     Attendance?: AttendanceListRelationFilter
+    Teacher?: XOR<TeacherScalarRelationFilter, TeacherWhereInput>
   }
 
   export type ClassOrderByWithRelationInput = {
     id?: SortOrder
     Name?: SortOrder
+    ClassTeacherId?: SortOrder
     Parent?: ParentOrderByRelationAggregateInput
     Subjects?: SubjectOrderByRelationAggregateInput
     Attendance?: AttendanceOrderByRelationAggregateInput
-    _relevance?: ClassOrderByRelevanceInput
+    Teacher?: TeacherOrderByWithRelationInput
   }
 
   export type ClassWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     Name?: string
+    ClassTeacherId?: string
     AND?: ClassWhereInput | ClassWhereInput[]
     OR?: ClassWhereInput[]
     NOT?: ClassWhereInput | ClassWhereInput[]
     Parent?: ParentListRelationFilter
     Subjects?: SubjectListRelationFilter
     Attendance?: AttendanceListRelationFilter
-  }, "id" | "Name">
+    Teacher?: XOR<TeacherScalarRelationFilter, TeacherWhereInput>
+  }, "id" | "Name" | "ClassTeacherId">
 
   export type ClassOrderByWithAggregationInput = {
     id?: SortOrder
     Name?: SortOrder
+    ClassTeacherId?: SortOrder
     _count?: ClassCountOrderByAggregateInput
     _max?: ClassMaxOrderByAggregateInput
     _min?: ClassMinOrderByAggregateInput
@@ -13124,6 +14633,7 @@ export namespace Prisma {
     NOT?: ClassScalarWhereWithAggregatesInput | ClassScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Class"> | string
     Name?: StringWithAggregatesFilter<"Class"> | string
+    ClassTeacherId?: StringWithAggregatesFilter<"Class"> | string
   }
 
   export type AnnoucementsWhereInput = {
@@ -13135,7 +14645,7 @@ export namespace Prisma {
     SenderId?: StringFilter<"Annoucements"> | string
     Title?: StringFilter<"Annoucements"> | string
     Date?: DateTimeFilter<"Annoucements"> | Date | string
-    Sender?: XOR<UserScalarRelationFilter, UserWhereInput>
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type AnnoucementsOrderByWithRelationInput = {
@@ -13144,8 +14654,7 @@ export namespace Prisma {
     SenderId?: SortOrder
     Title?: SortOrder
     Date?: SortOrder
-    Sender?: UserOrderByWithRelationInput
-    _relevance?: AnnoucementsOrderByRelevanceInput
+    User?: UserOrderByWithRelationInput
   }
 
   export type AnnoucementsWhereUniqueInput = Prisma.AtLeast<{
@@ -13157,7 +14666,7 @@ export namespace Prisma {
     SenderId?: StringFilter<"Annoucements"> | string
     Title?: StringFilter<"Annoucements"> | string
     Date?: DateTimeFilter<"Annoucements"> | Date | string
-    Sender?: XOR<UserScalarRelationFilter, UserWhereInput>
+    User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type AnnoucementsOrderByWithAggregationInput = {
@@ -13203,7 +14712,6 @@ export namespace Prisma {
     TeacherId?: SortOrder
     Sender?: ParentOrderByWithRelationInput
     Teacher?: TeacherOrderByWithRelationInput
-    _relevance?: Meeting_RequestOrderByRelevanceInput
   }
 
   export type Meeting_RequestWhereUniqueInput = Prisma.AtLeast<{
@@ -13262,7 +14770,6 @@ export namespace Prisma {
     ParentId?: SortOrder
     Class?: ClassOrderByWithRelationInput
     Parent?: ParentOrderByWithRelationInput
-    _relevance?: AttendanceOrderByRelevanceInput
   }
 
   export type AttendanceWhereUniqueInput = Prisma.AtLeast<{
@@ -13327,7 +14834,6 @@ export namespace Prisma {
     Date?: SortOrder
     Parent?: ParentOrderByWithRelationInput
     Subject?: SubjectOrderByWithRelationInput
-    _relevance?: AcademicsOrderByRelevanceInput
   }
 
   export type AcademicsWhereUniqueInput = Prisma.AtLeast<{
@@ -13392,7 +14898,6 @@ export namespace Prisma {
     Date?: SortOrder
     Parent?: ParentOrderByWithRelationInput
     Teacher?: TeacherOrderByWithRelationInput
-    _relevance?: ChatMessagesOrderByRelevanceInput
   }
 
   export type ChatMessagesWhereUniqueInput = Prisma.AtLeast<{
@@ -13436,7 +14941,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsCreateNestedManyWithoutUserInput
     Parent?: ParentCreateNestedOneWithoutUserInput
     Teacher?: TeacherCreateNestedOneWithoutUserInput
     Admin?: AdminCreateNestedOneWithoutUserInput
@@ -13448,7 +14953,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutUserInput
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
     Teacher?: TeacherUncheckedCreateNestedOneWithoutUserInput
     Admin?: AdminUncheckedCreateNestedOneWithoutUserInput
@@ -13460,7 +14965,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUpdateManyWithoutUserNestedInput
     Parent?: ParentUpdateOneWithoutUserNestedInput
     Teacher?: TeacherUpdateOneWithoutUserNestedInput
     Admin?: AdminUpdateOneWithoutUserNestedInput
@@ -13472,7 +14977,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUncheckedUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUncheckedUpdateManyWithoutUserNestedInput
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput
     Teacher?: TeacherUncheckedUpdateOneWithoutUserNestedInput
     Admin?: AdminUncheckedUpdateOneWithoutUserNestedInput
@@ -13538,6 +15043,7 @@ export namespace Prisma {
 
   export type ParentCreateInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     Class: ClassCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
@@ -13550,6 +15056,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
@@ -13558,6 +15065,7 @@ export namespace Prisma {
 
   export type ParentUpdateInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
@@ -13570,6 +15078,7 @@ export namespace Prisma {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
@@ -13580,16 +15089,19 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
   }
 
   export type ParentUpdateManyMutationInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
   }
 
   export type ParentUncheckedUpdateManyInput = {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
   }
 
   export type TeacherCreateInput = {
@@ -13598,6 +15110,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesCreateNestedManyWithoutTeacherInput
+    Class?: ClassCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUncheckedCreateInput = {
@@ -13606,6 +15119,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectUncheckedCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutTeacherInput
+    Class?: ClassUncheckedCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUpdateInput = {
@@ -13614,6 +15128,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherUncheckedUpdateInput = {
@@ -13622,6 +15137,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUncheckedUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUncheckedUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherCreateManyInput = {
@@ -13695,11 +15211,13 @@ export namespace Prisma {
     Parent?: ParentCreateNestedManyWithoutClassInput
     Subjects?: SubjectCreateNestedManyWithoutClassInput
     Attendance?: AttendanceCreateNestedManyWithoutClassInput
+    Teacher: TeacherCreateNestedOneWithoutClassInput
   }
 
   export type ClassUncheckedCreateInput = {
     id?: string
     Name: string
+    ClassTeacherId: string
     Parent?: ParentUncheckedCreateNestedManyWithoutClassInput
     Subjects?: SubjectUncheckedCreateNestedManyWithoutClassInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutClassInput
@@ -13711,11 +15229,13 @@ export namespace Prisma {
     Parent?: ParentUpdateManyWithoutClassNestedInput
     Subjects?: SubjectUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUpdateManyWithoutClassNestedInput
+    Teacher?: TeacherUpdateOneRequiredWithoutClassNestedInput
   }
 
   export type ClassUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     Name?: StringFieldUpdateOperationsInput | string
+    ClassTeacherId?: StringFieldUpdateOperationsInput | string
     Parent?: ParentUncheckedUpdateManyWithoutClassNestedInput
     Subjects?: SubjectUncheckedUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutClassNestedInput
@@ -13724,6 +15244,7 @@ export namespace Prisma {
   export type ClassCreateManyInput = {
     id?: string
     Name: string
+    ClassTeacherId: string
   }
 
   export type ClassUpdateManyMutationInput = {
@@ -13734,6 +15255,7 @@ export namespace Prisma {
   export type ClassUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     Name?: StringFieldUpdateOperationsInput | string
+    ClassTeacherId?: StringFieldUpdateOperationsInput | string
   }
 
   export type AnnoucementsCreateInput = {
@@ -13741,7 +15263,7 @@ export namespace Prisma {
     Text: string
     Title: string
     Date: Date | string
-    Sender: UserCreateNestedOneWithoutAnnouncementsInput
+    User: UserCreateNestedOneWithoutAnnouncementsInput
   }
 
   export type AnnoucementsUncheckedCreateInput = {
@@ -13757,7 +15279,7 @@ export namespace Prisma {
     Text?: StringFieldUpdateOperationsInput | string
     Title?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
-    Sender?: UserUpdateOneRequiredWithoutAnnouncementsNestedInput
+    User?: UserUpdateOneRequiredWithoutAnnouncementsNestedInput
   }
 
   export type AnnoucementsUncheckedUpdateInput = {
@@ -14020,8 +15542,8 @@ export namespace Prisma {
 
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -14029,21 +15551,21 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
+    mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type EnumRoleFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
   export type EnumStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
   }
 
@@ -14072,12 +15594,6 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type UserOrderByRelevanceInput = {
-    fields: UserOrderByRelevanceFieldEnum | UserOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -14104,8 +15620,8 @@ export namespace Prisma {
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -14113,7 +15629,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
+    mode?: QueryMode
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
@@ -14122,8 +15638,8 @@ export namespace Prisma {
 
   export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
@@ -14132,8 +15648,8 @@ export namespace Prisma {
 
   export type EnumStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusWithAggregatesFilter<$PrismaModel> | $Enums.Status
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
@@ -14143,12 +15659,6 @@ export namespace Prisma {
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
-  }
-
-  export type AdminOrderByRelevanceInput = {
-    fields: AdminOrderByRelevanceFieldEnum | AdminOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type AdminCountOrderByAggregateInput = {
@@ -14211,28 +15721,25 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type ParentOrderByRelevanceInput = {
-    fields: ParentOrderByRelevanceFieldEnum | ParentOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
   export type ParentCountOrderByAggregateInput = {
     Pid?: SortOrder
     StudentName?: SortOrder
     ClassId?: SortOrder
+    ParentName?: SortOrder
   }
 
   export type ParentMaxOrderByAggregateInput = {
     Pid?: SortOrder
     StudentName?: SortOrder
     ClassId?: SortOrder
+    ParentName?: SortOrder
   }
 
   export type ParentMinOrderByAggregateInput = {
     Pid?: SortOrder
     StudentName?: SortOrder
     ClassId?: SortOrder
+    ParentName?: SortOrder
   }
 
   export type SubjectListRelationFilter = {
@@ -14241,14 +15748,13 @@ export namespace Prisma {
     none?: SubjectWhereInput
   }
 
-  export type SubjectOrderByRelationAggregateInput = {
-    _count?: SortOrder
+  export type ClassNullableScalarRelationFilter = {
+    is?: ClassWhereInput | null
+    isNot?: ClassWhereInput | null
   }
 
-  export type TeacherOrderByRelevanceInput = {
-    fields: TeacherOrderByRelevanceFieldEnum | TeacherOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
+  export type SubjectOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type TeacherCountOrderByAggregateInput = {
@@ -14269,12 +15775,6 @@ export namespace Prisma {
   export type TeacherScalarRelationFilter = {
     is?: TeacherWhereInput
     isNot?: TeacherWhereInput
-  }
-
-  export type SubjectOrderByRelevanceInput = {
-    fields: SubjectOrderByRelevanceFieldEnum | SubjectOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type SubjectCountOrderByAggregateInput = {
@@ -14308,42 +15808,33 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type ClassOrderByRelevanceInput = {
-    fields: ClassOrderByRelevanceFieldEnum | ClassOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
-  }
-
   export type ClassCountOrderByAggregateInput = {
     id?: SortOrder
     Name?: SortOrder
+    ClassTeacherId?: SortOrder
   }
 
   export type ClassMaxOrderByAggregateInput = {
     id?: SortOrder
     Name?: SortOrder
+    ClassTeacherId?: SortOrder
   }
 
   export type ClassMinOrderByAggregateInput = {
     id?: SortOrder
     Name?: SortOrder
+    ClassTeacherId?: SortOrder
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type AnnoucementsOrderByRelevanceInput = {
-    fields: AnnoucementsOrderByRelevanceFieldEnum | AnnoucementsOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type AnnoucementsCountOrderByAggregateInput = {
@@ -14372,8 +15863,8 @@ export namespace Prisma {
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -14387,12 +15878,6 @@ export namespace Prisma {
   export type ParentScalarRelationFilter = {
     is?: ParentWhereInput
     isNot?: ParentWhereInput
-  }
-
-  export type Meeting_RequestOrderByRelevanceInput = {
-    fields: Meeting_RequestOrderByRelevanceFieldEnum | Meeting_RequestOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type Meeting_RequestCountOrderByAggregateInput = {
@@ -14421,8 +15906,8 @@ export namespace Prisma {
 
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -14433,12 +15918,6 @@ export namespace Prisma {
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
-  export type AttendanceOrderByRelevanceInput = {
-    fields: AttendanceOrderByRelevanceFieldEnum | AttendanceOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type AttendanceCountOrderByAggregateInput = {
@@ -14475,8 +15954,8 @@ export namespace Prisma {
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -14499,8 +15978,8 @@ export namespace Prisma {
 
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -14508,7 +15987,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
+    mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
@@ -14520,12 +15999,6 @@ export namespace Prisma {
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
-  }
-
-  export type AcademicsOrderByRelevanceInput = {
-    fields: AcademicsOrderByRelevanceFieldEnum | AcademicsOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type AcademicsCountOrderByAggregateInput = {
@@ -14560,8 +16033,8 @@ export namespace Prisma {
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -14569,17 +16042,11 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
+    mode?: QueryMode
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type ChatMessagesOrderByRelevanceInput = {
-    fields: ChatMessagesOrderByRelevanceFieldEnum | ChatMessagesOrderByRelevanceFieldEnum[]
-    sort: SortOrder
-    search: string
   }
 
   export type ChatMessagesCountOrderByAggregateInput = {
@@ -14606,10 +16073,10 @@ export namespace Prisma {
     Date?: SortOrder
   }
 
-  export type AnnoucementsCreateNestedManyWithoutSenderInput = {
-    create?: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput> | AnnoucementsCreateWithoutSenderInput[] | AnnoucementsUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: AnnoucementsCreateOrConnectWithoutSenderInput | AnnoucementsCreateOrConnectWithoutSenderInput[]
-    createMany?: AnnoucementsCreateManySenderInputEnvelope
+  export type AnnoucementsCreateNestedManyWithoutUserInput = {
+    create?: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput> | AnnoucementsCreateWithoutUserInput[] | AnnoucementsUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: AnnoucementsCreateOrConnectWithoutUserInput | AnnoucementsCreateOrConnectWithoutUserInput[]
+    createMany?: AnnoucementsCreateManyUserInputEnvelope
     connect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
   }
 
@@ -14631,10 +16098,10 @@ export namespace Prisma {
     connect?: AdminWhereUniqueInput
   }
 
-  export type AnnoucementsUncheckedCreateNestedManyWithoutSenderInput = {
-    create?: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput> | AnnoucementsCreateWithoutSenderInput[] | AnnoucementsUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: AnnoucementsCreateOrConnectWithoutSenderInput | AnnoucementsCreateOrConnectWithoutSenderInput[]
-    createMany?: AnnoucementsCreateManySenderInputEnvelope
+  export type AnnoucementsUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput> | AnnoucementsCreateWithoutUserInput[] | AnnoucementsUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: AnnoucementsCreateOrConnectWithoutUserInput | AnnoucementsCreateOrConnectWithoutUserInput[]
+    createMany?: AnnoucementsCreateManyUserInputEnvelope
     connect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
   }
 
@@ -14668,17 +16135,17 @@ export namespace Prisma {
     set?: $Enums.Status
   }
 
-  export type AnnoucementsUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput> | AnnoucementsCreateWithoutSenderInput[] | AnnoucementsUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: AnnoucementsCreateOrConnectWithoutSenderInput | AnnoucementsCreateOrConnectWithoutSenderInput[]
-    upsert?: AnnoucementsUpsertWithWhereUniqueWithoutSenderInput | AnnoucementsUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: AnnoucementsCreateManySenderInputEnvelope
+  export type AnnoucementsUpdateManyWithoutUserNestedInput = {
+    create?: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput> | AnnoucementsCreateWithoutUserInput[] | AnnoucementsUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: AnnoucementsCreateOrConnectWithoutUserInput | AnnoucementsCreateOrConnectWithoutUserInput[]
+    upsert?: AnnoucementsUpsertWithWhereUniqueWithoutUserInput | AnnoucementsUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: AnnoucementsCreateManyUserInputEnvelope
     set?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     disconnect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     delete?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     connect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
-    update?: AnnoucementsUpdateWithWhereUniqueWithoutSenderInput | AnnoucementsUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: AnnoucementsUpdateManyWithWhereWithoutSenderInput | AnnoucementsUpdateManyWithWhereWithoutSenderInput[]
+    update?: AnnoucementsUpdateWithWhereUniqueWithoutUserInput | AnnoucementsUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: AnnoucementsUpdateManyWithWhereWithoutUserInput | AnnoucementsUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: AnnoucementsScalarWhereInput | AnnoucementsScalarWhereInput[]
   }
 
@@ -14712,17 +16179,17 @@ export namespace Prisma {
     update?: XOR<XOR<AdminUpdateToOneWithWhereWithoutUserInput, AdminUpdateWithoutUserInput>, AdminUncheckedUpdateWithoutUserInput>
   }
 
-  export type AnnoucementsUncheckedUpdateManyWithoutSenderNestedInput = {
-    create?: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput> | AnnoucementsCreateWithoutSenderInput[] | AnnoucementsUncheckedCreateWithoutSenderInput[]
-    connectOrCreate?: AnnoucementsCreateOrConnectWithoutSenderInput | AnnoucementsCreateOrConnectWithoutSenderInput[]
-    upsert?: AnnoucementsUpsertWithWhereUniqueWithoutSenderInput | AnnoucementsUpsertWithWhereUniqueWithoutSenderInput[]
-    createMany?: AnnoucementsCreateManySenderInputEnvelope
+  export type AnnoucementsUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput> | AnnoucementsCreateWithoutUserInput[] | AnnoucementsUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: AnnoucementsCreateOrConnectWithoutUserInput | AnnoucementsCreateOrConnectWithoutUserInput[]
+    upsert?: AnnoucementsUpsertWithWhereUniqueWithoutUserInput | AnnoucementsUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: AnnoucementsCreateManyUserInputEnvelope
     set?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     disconnect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     delete?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
     connect?: AnnoucementsWhereUniqueInput | AnnoucementsWhereUniqueInput[]
-    update?: AnnoucementsUpdateWithWhereUniqueWithoutSenderInput | AnnoucementsUpdateWithWhereUniqueWithoutSenderInput[]
-    updateMany?: AnnoucementsUpdateManyWithWhereWithoutSenderInput | AnnoucementsUpdateManyWithWhereWithoutSenderInput[]
+    update?: AnnoucementsUpdateWithWhereUniqueWithoutUserInput | AnnoucementsUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: AnnoucementsUpdateManyWithWhereWithoutUserInput | AnnoucementsUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: AnnoucementsScalarWhereInput | AnnoucementsScalarWhereInput[]
   }
 
@@ -14993,6 +16460,12 @@ export namespace Prisma {
     connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
   }
 
+  export type ClassCreateNestedOneWithoutTeacherInput = {
+    create?: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+    connectOrCreate?: ClassCreateOrConnectWithoutTeacherInput
+    connect?: ClassWhereUniqueInput
+  }
+
   export type Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput = {
     create?: XOR<Meeting_RequestCreateWithoutTeacherInput, Meeting_RequestUncheckedCreateWithoutTeacherInput> | Meeting_RequestCreateWithoutTeacherInput[] | Meeting_RequestUncheckedCreateWithoutTeacherInput[]
     connectOrCreate?: Meeting_RequestCreateOrConnectWithoutTeacherInput | Meeting_RequestCreateOrConnectWithoutTeacherInput[]
@@ -15012,6 +16485,12 @@ export namespace Prisma {
     connectOrCreate?: ChatMessagesCreateOrConnectWithoutTeacherInput | ChatMessagesCreateOrConnectWithoutTeacherInput[]
     createMany?: ChatMessagesCreateManyTeacherInputEnvelope
     connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+  }
+
+  export type ClassUncheckedCreateNestedOneWithoutTeacherInput = {
+    create?: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+    connectOrCreate?: ClassCreateOrConnectWithoutTeacherInput
+    connect?: ClassWhereUniqueInput
   }
 
   export type UserUpdateOneRequiredWithoutTeacherNestedInput = {
@@ -15064,6 +16543,16 @@ export namespace Prisma {
     deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
   }
 
+  export type ClassUpdateOneWithoutTeacherNestedInput = {
+    create?: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+    connectOrCreate?: ClassCreateOrConnectWithoutTeacherInput
+    upsert?: ClassUpsertWithoutTeacherInput
+    disconnect?: ClassWhereInput | boolean
+    delete?: ClassWhereInput | boolean
+    connect?: ClassWhereUniqueInput
+    update?: XOR<XOR<ClassUpdateToOneWithWhereWithoutTeacherInput, ClassUpdateWithoutTeacherInput>, ClassUncheckedUpdateWithoutTeacherInput>
+  }
+
   export type Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput = {
     create?: XOR<Meeting_RequestCreateWithoutTeacherInput, Meeting_RequestUncheckedCreateWithoutTeacherInput> | Meeting_RequestCreateWithoutTeacherInput[] | Meeting_RequestUncheckedCreateWithoutTeacherInput[]
     connectOrCreate?: Meeting_RequestCreateOrConnectWithoutTeacherInput | Meeting_RequestCreateOrConnectWithoutTeacherInput[]
@@ -15104,6 +16593,16 @@ export namespace Prisma {
     update?: ChatMessagesUpdateWithWhereUniqueWithoutTeacherInput | ChatMessagesUpdateWithWhereUniqueWithoutTeacherInput[]
     updateMany?: ChatMessagesUpdateManyWithWhereWithoutTeacherInput | ChatMessagesUpdateManyWithWhereWithoutTeacherInput[]
     deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
+  }
+
+  export type ClassUncheckedUpdateOneWithoutTeacherNestedInput = {
+    create?: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+    connectOrCreate?: ClassCreateOrConnectWithoutTeacherInput
+    upsert?: ClassUpsertWithoutTeacherInput
+    disconnect?: ClassWhereInput | boolean
+    delete?: ClassWhereInput | boolean
+    connect?: ClassWhereUniqueInput
+    update?: XOR<XOR<ClassUpdateToOneWithWhereWithoutTeacherInput, ClassUpdateWithoutTeacherInput>, ClassUncheckedUpdateWithoutTeacherInput>
   }
 
   export type ClassCreateNestedOneWithoutSubjectsInput = {
@@ -15197,6 +16696,12 @@ export namespace Prisma {
     connect?: AttendanceWhereUniqueInput | AttendanceWhereUniqueInput[]
   }
 
+  export type TeacherCreateNestedOneWithoutClassInput = {
+    create?: XOR<TeacherCreateWithoutClassInput, TeacherUncheckedCreateWithoutClassInput>
+    connectOrCreate?: TeacherCreateOrConnectWithoutClassInput
+    connect?: TeacherWhereUniqueInput
+  }
+
   export type ParentUncheckedCreateNestedManyWithoutClassInput = {
     create?: XOR<ParentCreateWithoutClassInput, ParentUncheckedCreateWithoutClassInput> | ParentCreateWithoutClassInput[] | ParentUncheckedCreateWithoutClassInput[]
     connectOrCreate?: ParentCreateOrConnectWithoutClassInput | ParentCreateOrConnectWithoutClassInput[]
@@ -15258,6 +16763,14 @@ export namespace Prisma {
     update?: AttendanceUpdateWithWhereUniqueWithoutClassInput | AttendanceUpdateWithWhereUniqueWithoutClassInput[]
     updateMany?: AttendanceUpdateManyWithWhereWithoutClassInput | AttendanceUpdateManyWithWhereWithoutClassInput[]
     deleteMany?: AttendanceScalarWhereInput | AttendanceScalarWhereInput[]
+  }
+
+  export type TeacherUpdateOneRequiredWithoutClassNestedInput = {
+    create?: XOR<TeacherCreateWithoutClassInput, TeacherUncheckedCreateWithoutClassInput>
+    connectOrCreate?: TeacherCreateOrConnectWithoutClassInput
+    upsert?: TeacherUpsertWithoutClassInput
+    connect?: TeacherWhereUniqueInput
+    update?: XOR<XOR<TeacherUpdateToOneWithWhereWithoutClassInput, TeacherUpdateWithoutClassInput>, TeacherUncheckedUpdateWithoutClassInput>
   }
 
   export type ParentUncheckedUpdateManyWithoutClassNestedInput = {
@@ -15450,8 +16963,8 @@ export namespace Prisma {
 
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -15459,28 +16972,27 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type NestedEnumRoleFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
   export type NestedEnumStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -15488,7 +17000,6 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
@@ -15497,8 +17008,8 @@ export namespace Prisma {
 
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -15508,8 +17019,8 @@ export namespace Prisma {
 
   export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
@@ -15518,8 +17029,8 @@ export namespace Prisma {
 
   export type NestedEnumStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusWithAggregatesFilter<$PrismaModel> | $Enums.Status
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
@@ -15528,8 +17039,8 @@ export namespace Prisma {
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -15539,8 +17050,8 @@ export namespace Prisma {
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -15558,8 +17069,8 @@ export namespace Prisma {
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -15574,8 +17085,8 @@ export namespace Prisma {
 
   export type NestedFloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
@@ -15593,8 +17104,8 @@ export namespace Prisma {
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -15602,14 +17113,13 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -15617,7 +17127,6 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
@@ -15626,8 +17135,8 @@ export namespace Prisma {
 
   export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -15635,32 +17144,33 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type AnnoucementsCreateWithoutSenderInput = {
+  export type AnnoucementsCreateWithoutUserInput = {
     id?: string
     Text: string
     Title: string
     Date: Date | string
   }
 
-  export type AnnoucementsUncheckedCreateWithoutSenderInput = {
+  export type AnnoucementsUncheckedCreateWithoutUserInput = {
     id?: string
     Text: string
     Title: string
     Date: Date | string
   }
 
-  export type AnnoucementsCreateOrConnectWithoutSenderInput = {
+  export type AnnoucementsCreateOrConnectWithoutUserInput = {
     where: AnnoucementsWhereUniqueInput
-    create: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput>
+    create: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput>
   }
 
-  export type AnnoucementsCreateManySenderInputEnvelope = {
-    data: AnnoucementsCreateManySenderInput | AnnoucementsCreateManySenderInput[]
+  export type AnnoucementsCreateManyUserInputEnvelope = {
+    data: AnnoucementsCreateManyUserInput | AnnoucementsCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
   export type ParentCreateWithoutUserInput = {
     StudentName: string
+    ParentName?: string
     Class: ClassCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceCreateNestedManyWithoutParentInput
@@ -15671,6 +17181,7 @@ export namespace Prisma {
   export type ParentUncheckedCreateWithoutUserInput = {
     StudentName: string
     ClassId: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
@@ -15687,6 +17198,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesCreateNestedManyWithoutTeacherInput
+    Class?: ClassCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUncheckedCreateWithoutUserInput = {
@@ -15694,6 +17206,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectUncheckedCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutTeacherInput
+    Class?: ClassUncheckedCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherCreateOrConnectWithoutUserInput = {
@@ -15714,20 +17227,20 @@ export namespace Prisma {
     create: XOR<AdminCreateWithoutUserInput, AdminUncheckedCreateWithoutUserInput>
   }
 
-  export type AnnoucementsUpsertWithWhereUniqueWithoutSenderInput = {
+  export type AnnoucementsUpsertWithWhereUniqueWithoutUserInput = {
     where: AnnoucementsWhereUniqueInput
-    update: XOR<AnnoucementsUpdateWithoutSenderInput, AnnoucementsUncheckedUpdateWithoutSenderInput>
-    create: XOR<AnnoucementsCreateWithoutSenderInput, AnnoucementsUncheckedCreateWithoutSenderInput>
+    update: XOR<AnnoucementsUpdateWithoutUserInput, AnnoucementsUncheckedUpdateWithoutUserInput>
+    create: XOR<AnnoucementsCreateWithoutUserInput, AnnoucementsUncheckedCreateWithoutUserInput>
   }
 
-  export type AnnoucementsUpdateWithWhereUniqueWithoutSenderInput = {
+  export type AnnoucementsUpdateWithWhereUniqueWithoutUserInput = {
     where: AnnoucementsWhereUniqueInput
-    data: XOR<AnnoucementsUpdateWithoutSenderInput, AnnoucementsUncheckedUpdateWithoutSenderInput>
+    data: XOR<AnnoucementsUpdateWithoutUserInput, AnnoucementsUncheckedUpdateWithoutUserInput>
   }
 
-  export type AnnoucementsUpdateManyWithWhereWithoutSenderInput = {
+  export type AnnoucementsUpdateManyWithWhereWithoutUserInput = {
     where: AnnoucementsScalarWhereInput
-    data: XOR<AnnoucementsUpdateManyMutationInput, AnnoucementsUncheckedUpdateManyWithoutSenderInput>
+    data: XOR<AnnoucementsUpdateManyMutationInput, AnnoucementsUncheckedUpdateManyWithoutUserInput>
   }
 
   export type AnnoucementsScalarWhereInput = {
@@ -15754,6 +17267,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutUserInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUpdateManyWithoutParentNestedInput
@@ -15764,6 +17278,7 @@ export namespace Prisma {
   export type ParentUncheckedUpdateWithoutUserInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
@@ -15786,6 +17301,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherUncheckedUpdateWithoutUserInput = {
@@ -15793,6 +17309,7 @@ export namespace Prisma {
     MeetReqRecieve?: Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUncheckedUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUncheckedUpdateOneWithoutTeacherNestedInput
   }
 
   export type AdminUpsertWithoutUserInput = {
@@ -15820,7 +17337,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsCreateNestedManyWithoutUserInput
     Parent?: ParentCreateNestedOneWithoutUserInput
     Teacher?: TeacherCreateNestedOneWithoutUserInput
   }
@@ -15831,7 +17348,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutUserInput
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
     Teacher?: TeacherUncheckedCreateNestedOneWithoutUserInput
   }
@@ -15858,7 +17375,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUpdateManyWithoutUserNestedInput
     Parent?: ParentUpdateOneWithoutUserNestedInput
     Teacher?: TeacherUpdateOneWithoutUserNestedInput
   }
@@ -15869,7 +17386,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUncheckedUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUncheckedUpdateManyWithoutUserNestedInput
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput
     Teacher?: TeacherUncheckedUpdateOneWithoutUserNestedInput
   }
@@ -15880,7 +17397,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsCreateNestedManyWithoutUserInput
     Teacher?: TeacherCreateNestedOneWithoutUserInput
     Admin?: AdminCreateNestedOneWithoutUserInput
   }
@@ -15891,7 +17408,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutUserInput
     Teacher?: TeacherUncheckedCreateNestedOneWithoutUserInput
     Admin?: AdminUncheckedCreateNestedOneWithoutUserInput
   }
@@ -15906,11 +17423,13 @@ export namespace Prisma {
     Name: string
     Subjects?: SubjectCreateNestedManyWithoutClassInput
     Attendance?: AttendanceCreateNestedManyWithoutClassInput
+    Teacher: TeacherCreateNestedOneWithoutClassInput
   }
 
   export type ClassUncheckedCreateWithoutParentInput = {
     id?: string
     Name: string
+    ClassTeacherId: string
     Subjects?: SubjectUncheckedCreateNestedManyWithoutClassInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutClassInput
   }
@@ -16036,7 +17555,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUpdateManyWithoutUserNestedInput
     Teacher?: TeacherUpdateOneWithoutUserNestedInput
     Admin?: AdminUpdateOneWithoutUserNestedInput
   }
@@ -16047,7 +17566,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUncheckedUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUncheckedUpdateManyWithoutUserNestedInput
     Teacher?: TeacherUncheckedUpdateOneWithoutUserNestedInput
     Admin?: AdminUncheckedUpdateOneWithoutUserNestedInput
   }
@@ -16068,11 +17587,13 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Subjects?: SubjectUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUpdateManyWithoutClassNestedInput
+    Teacher?: TeacherUpdateOneRequiredWithoutClassNestedInput
   }
 
   export type ClassUncheckedUpdateWithoutParentInput = {
     id?: StringFieldUpdateOperationsInput | string
     Name?: StringFieldUpdateOperationsInput | string
+    ClassTeacherId?: StringFieldUpdateOperationsInput | string
     Subjects?: SubjectUncheckedUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutClassNestedInput
   }
@@ -16193,7 +17714,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsCreateNestedManyWithoutUserInput
     Parent?: ParentCreateNestedOneWithoutUserInput
     Admin?: AdminCreateNestedOneWithoutUserInput
   }
@@ -16204,7 +17725,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.Role
     status?: $Enums.Status
-    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutSenderInput
+    Announcements?: AnnoucementsUncheckedCreateNestedManyWithoutUserInput
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
     Admin?: AdminUncheckedCreateNestedOneWithoutUserInput
   }
@@ -16286,6 +17807,27 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ClassCreateWithoutTeacherInput = {
+    id?: string
+    Name: string
+    Parent?: ParentCreateNestedManyWithoutClassInput
+    Subjects?: SubjectCreateNestedManyWithoutClassInput
+    Attendance?: AttendanceCreateNestedManyWithoutClassInput
+  }
+
+  export type ClassUncheckedCreateWithoutTeacherInput = {
+    id?: string
+    Name: string
+    Parent?: ParentUncheckedCreateNestedManyWithoutClassInput
+    Subjects?: SubjectUncheckedCreateNestedManyWithoutClassInput
+    Attendance?: AttendanceUncheckedCreateNestedManyWithoutClassInput
+  }
+
+  export type ClassCreateOrConnectWithoutTeacherInput = {
+    where: ClassWhereUniqueInput
+    create: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+  }
+
   export type UserUpsertWithoutTeacherInput = {
     update: XOR<UserUpdateWithoutTeacherInput, UserUncheckedUpdateWithoutTeacherInput>
     create: XOR<UserCreateWithoutTeacherInput, UserUncheckedCreateWithoutTeacherInput>
@@ -16303,7 +17845,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUpdateManyWithoutUserNestedInput
     Parent?: ParentUpdateOneWithoutUserNestedInput
     Admin?: AdminUpdateOneWithoutUserNestedInput
   }
@@ -16314,7 +17856,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    Announcements?: AnnoucementsUncheckedUpdateManyWithoutSenderNestedInput
+    Announcements?: AnnoucementsUncheckedUpdateManyWithoutUserNestedInput
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput
     Admin?: AdminUncheckedUpdateOneWithoutUserNestedInput
   }
@@ -16377,16 +17919,45 @@ export namespace Prisma {
     data: XOR<ChatMessagesUpdateManyMutationInput, ChatMessagesUncheckedUpdateManyWithoutTeacherInput>
   }
 
+  export type ClassUpsertWithoutTeacherInput = {
+    update: XOR<ClassUpdateWithoutTeacherInput, ClassUncheckedUpdateWithoutTeacherInput>
+    create: XOR<ClassCreateWithoutTeacherInput, ClassUncheckedCreateWithoutTeacherInput>
+    where?: ClassWhereInput
+  }
+
+  export type ClassUpdateToOneWithWhereWithoutTeacherInput = {
+    where?: ClassWhereInput
+    data: XOR<ClassUpdateWithoutTeacherInput, ClassUncheckedUpdateWithoutTeacherInput>
+  }
+
+  export type ClassUpdateWithoutTeacherInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    Name?: StringFieldUpdateOperationsInput | string
+    Parent?: ParentUpdateManyWithoutClassNestedInput
+    Subjects?: SubjectUpdateManyWithoutClassNestedInput
+    Attendance?: AttendanceUpdateManyWithoutClassNestedInput
+  }
+
+  export type ClassUncheckedUpdateWithoutTeacherInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    Name?: StringFieldUpdateOperationsInput | string
+    Parent?: ParentUncheckedUpdateManyWithoutClassNestedInput
+    Subjects?: SubjectUncheckedUpdateManyWithoutClassNestedInput
+    Attendance?: AttendanceUncheckedUpdateManyWithoutClassNestedInput
+  }
+
   export type ClassCreateWithoutSubjectsInput = {
     id?: string
     Name: string
     Parent?: ParentCreateNestedManyWithoutClassInput
     Attendance?: AttendanceCreateNestedManyWithoutClassInput
+    Teacher: TeacherCreateNestedOneWithoutClassInput
   }
 
   export type ClassUncheckedCreateWithoutSubjectsInput = {
     id?: string
     Name: string
+    ClassTeacherId: string
     Parent?: ParentUncheckedCreateNestedManyWithoutClassInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutClassInput
   }
@@ -16401,6 +17972,7 @@ export namespace Prisma {
     User: UserCreateNestedOneWithoutTeacherInput
     MeetReqRecieve?: Meeting_RequestCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesCreateNestedManyWithoutTeacherInput
+    Class?: ClassCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUncheckedCreateWithoutSubjectsInput = {
@@ -16408,6 +17980,7 @@ export namespace Prisma {
     TeacherName: string
     MeetReqRecieve?: Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutTeacherInput
+    Class?: ClassUncheckedCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherCreateOrConnectWithoutSubjectsInput = {
@@ -16459,11 +18032,13 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Parent?: ParentUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUpdateManyWithoutClassNestedInput
+    Teacher?: TeacherUpdateOneRequiredWithoutClassNestedInput
   }
 
   export type ClassUncheckedUpdateWithoutSubjectsInput = {
     id?: StringFieldUpdateOperationsInput | string
     Name?: StringFieldUpdateOperationsInput | string
+    ClassTeacherId?: StringFieldUpdateOperationsInput | string
     Parent?: ParentUncheckedUpdateManyWithoutClassNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutClassNestedInput
   }
@@ -16484,6 +18059,7 @@ export namespace Prisma {
     User?: UserUpdateOneRequiredWithoutTeacherNestedInput
     MeetReqRecieve?: Meeting_RequestUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherUncheckedUpdateWithoutSubjectsInput = {
@@ -16491,6 +18067,7 @@ export namespace Prisma {
     TeacherName?: StringFieldUpdateOperationsInput | string
     MeetReqRecieve?: Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUncheckedUpdateOneWithoutTeacherNestedInput
   }
 
   export type AcademicsUpsertWithWhereUniqueWithoutSubjectInput = {
@@ -16511,6 +18088,7 @@ export namespace Prisma {
 
   export type ParentCreateWithoutClassInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceCreateNestedManyWithoutParentInput
@@ -16521,6 +18099,7 @@ export namespace Prisma {
   export type ParentUncheckedCreateWithoutClassInput = {
     Pid: string
     StudentName: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
@@ -16584,6 +18163,27 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type TeacherCreateWithoutClassInput = {
+    TeacherName: string
+    User: UserCreateNestedOneWithoutTeacherInput
+    MeetReqRecieve?: Meeting_RequestCreateNestedManyWithoutTeacherInput
+    Subjects?: SubjectCreateNestedManyWithoutTeacherInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutTeacherInput
+  }
+
+  export type TeacherUncheckedCreateWithoutClassInput = {
+    Tid: string
+    TeacherName: string
+    MeetReqRecieve?: Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput
+    Subjects?: SubjectUncheckedCreateNestedManyWithoutTeacherInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutTeacherInput
+  }
+
+  export type TeacherCreateOrConnectWithoutClassInput = {
+    where: TeacherWhereUniqueInput
+    create: XOR<TeacherCreateWithoutClassInput, TeacherUncheckedCreateWithoutClassInput>
+  }
+
   export type ParentUpsertWithWhereUniqueWithoutClassInput = {
     where: ParentWhereUniqueInput
     update: XOR<ParentUpdateWithoutClassInput, ParentUncheckedUpdateWithoutClassInput>
@@ -16607,6 +18207,7 @@ export namespace Prisma {
     Pid?: StringFilter<"Parent"> | string
     StudentName?: StringFilter<"Parent"> | string
     ClassId?: StringFilter<"Parent"> | string
+    ParentName?: StringFilter<"Parent"> | string
   }
 
   export type SubjectUpsertWithWhereUniqueWithoutClassInput = {
@@ -16639,6 +18240,33 @@ export namespace Prisma {
   export type AttendanceUpdateManyWithWhereWithoutClassInput = {
     where: AttendanceScalarWhereInput
     data: XOR<AttendanceUpdateManyMutationInput, AttendanceUncheckedUpdateManyWithoutClassInput>
+  }
+
+  export type TeacherUpsertWithoutClassInput = {
+    update: XOR<TeacherUpdateWithoutClassInput, TeacherUncheckedUpdateWithoutClassInput>
+    create: XOR<TeacherCreateWithoutClassInput, TeacherUncheckedCreateWithoutClassInput>
+    where?: TeacherWhereInput
+  }
+
+  export type TeacherUpdateToOneWithWhereWithoutClassInput = {
+    where?: TeacherWhereInput
+    data: XOR<TeacherUpdateWithoutClassInput, TeacherUncheckedUpdateWithoutClassInput>
+  }
+
+  export type TeacherUpdateWithoutClassInput = {
+    TeacherName?: StringFieldUpdateOperationsInput | string
+    User?: UserUpdateOneRequiredWithoutTeacherNestedInput
+    MeetReqRecieve?: Meeting_RequestUpdateManyWithoutTeacherNestedInput
+    Subjects?: SubjectUpdateManyWithoutTeacherNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutTeacherNestedInput
+  }
+
+  export type TeacherUncheckedUpdateWithoutClassInput = {
+    Tid?: StringFieldUpdateOperationsInput | string
+    TeacherName?: StringFieldUpdateOperationsInput | string
+    MeetReqRecieve?: Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput
+    Subjects?: SubjectUncheckedUpdateManyWithoutTeacherNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutTeacherNestedInput
   }
 
   export type UserCreateWithoutAnnouncementsInput = {
@@ -16703,6 +18331,7 @@ export namespace Prisma {
 
   export type ParentCreateWithoutMeetReqSendInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     Class: ClassCreateNestedOneWithoutParentInput
     Attendance?: AttendanceCreateNestedManyWithoutParentInput
@@ -16714,6 +18343,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutParentInput
@@ -16729,6 +18359,7 @@ export namespace Prisma {
     User: UserCreateNestedOneWithoutTeacherInput
     Subjects?: SubjectCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesCreateNestedManyWithoutTeacherInput
+    Class?: ClassCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUncheckedCreateWithoutMeetReqRecieveInput = {
@@ -16736,6 +18367,7 @@ export namespace Prisma {
     TeacherName: string
     Subjects?: SubjectUncheckedCreateNestedManyWithoutTeacherInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutTeacherInput
+    Class?: ClassUncheckedCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherCreateOrConnectWithoutMeetReqRecieveInput = {
@@ -16756,6 +18388,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutMeetReqSendInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     Attendance?: AttendanceUpdateManyWithoutParentNestedInput
@@ -16767,6 +18400,7 @@ export namespace Prisma {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutParentNestedInput
@@ -16788,6 +18422,7 @@ export namespace Prisma {
     User?: UserUpdateOneRequiredWithoutTeacherNestedInput
     Subjects?: SubjectUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherUncheckedUpdateWithoutMeetReqRecieveInput = {
@@ -16795,6 +18430,7 @@ export namespace Prisma {
     TeacherName?: StringFieldUpdateOperationsInput | string
     Subjects?: SubjectUncheckedUpdateManyWithoutTeacherNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUncheckedUpdateOneWithoutTeacherNestedInput
   }
 
   export type ClassCreateWithoutAttendanceInput = {
@@ -16802,11 +18438,13 @@ export namespace Prisma {
     Name: string
     Parent?: ParentCreateNestedManyWithoutClassInput
     Subjects?: SubjectCreateNestedManyWithoutClassInput
+    Teacher: TeacherCreateNestedOneWithoutClassInput
   }
 
   export type ClassUncheckedCreateWithoutAttendanceInput = {
     id?: string
     Name: string
+    ClassTeacherId: string
     Parent?: ParentUncheckedCreateNestedManyWithoutClassInput
     Subjects?: SubjectUncheckedCreateNestedManyWithoutClassInput
   }
@@ -16818,6 +18456,7 @@ export namespace Prisma {
 
   export type ParentCreateWithoutAttendanceInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     Class: ClassCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
@@ -16829,6 +18468,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutParentInput
@@ -16855,11 +18495,13 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Parent?: ParentUpdateManyWithoutClassNestedInput
     Subjects?: SubjectUpdateManyWithoutClassNestedInput
+    Teacher?: TeacherUpdateOneRequiredWithoutClassNestedInput
   }
 
   export type ClassUncheckedUpdateWithoutAttendanceInput = {
     id?: StringFieldUpdateOperationsInput | string
     Name?: StringFieldUpdateOperationsInput | string
+    ClassTeacherId?: StringFieldUpdateOperationsInput | string
     Parent?: ParentUncheckedUpdateManyWithoutClassNestedInput
     Subjects?: SubjectUncheckedUpdateManyWithoutClassNestedInput
   }
@@ -16877,6 +18519,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutAttendanceInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
@@ -16888,6 +18531,7 @@ export namespace Prisma {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutParentNestedInput
@@ -16895,6 +18539,7 @@ export namespace Prisma {
 
   export type ParentCreateWithoutAcademicsInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     Class: ClassCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
@@ -16906,6 +18551,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutParentInput
@@ -16948,6 +18594,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutAcademicsInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
@@ -16959,6 +18606,7 @@ export namespace Prisma {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutParentNestedInput
@@ -16991,6 +18639,7 @@ export namespace Prisma {
 
   export type ParentCreateWithoutChatMessagesInput = {
     StudentName: string
+    ParentName?: string
     User: UserCreateNestedOneWithoutParentInput
     Class: ClassCreateNestedOneWithoutParentInput
     MeetReqSend?: Meeting_RequestCreateNestedManyWithoutSenderInput
@@ -17002,6 +18651,7 @@ export namespace Prisma {
     Pid: string
     StudentName: string
     ClassId: string
+    ParentName?: string
     MeetReqSend?: Meeting_RequestUncheckedCreateNestedManyWithoutSenderInput
     Attendance?: AttendanceUncheckedCreateNestedManyWithoutParentInput
     Academics?: AcademicsUncheckedCreateNestedManyWithoutParentInput
@@ -17017,6 +18667,7 @@ export namespace Prisma {
     User: UserCreateNestedOneWithoutTeacherInput
     MeetReqRecieve?: Meeting_RequestCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectCreateNestedManyWithoutTeacherInput
+    Class?: ClassCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherUncheckedCreateWithoutChatMessagesInput = {
@@ -17024,6 +18675,7 @@ export namespace Prisma {
     TeacherName: string
     MeetReqRecieve?: Meeting_RequestUncheckedCreateNestedManyWithoutTeacherInput
     Subjects?: SubjectUncheckedCreateNestedManyWithoutTeacherInput
+    Class?: ClassUncheckedCreateNestedOneWithoutTeacherInput
   }
 
   export type TeacherCreateOrConnectWithoutChatMessagesInput = {
@@ -17044,6 +18696,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutChatMessagesInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     Class?: ClassUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
@@ -17055,6 +18708,7 @@ export namespace Prisma {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
     ClassId?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
@@ -17076,6 +18730,7 @@ export namespace Prisma {
     User?: UserUpdateOneRequiredWithoutTeacherNestedInput
     MeetReqRecieve?: Meeting_RequestUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUpdateOneWithoutTeacherNestedInput
   }
 
   export type TeacherUncheckedUpdateWithoutChatMessagesInput = {
@@ -17083,30 +18738,31 @@ export namespace Prisma {
     TeacherName?: StringFieldUpdateOperationsInput | string
     MeetReqRecieve?: Meeting_RequestUncheckedUpdateManyWithoutTeacherNestedInput
     Subjects?: SubjectUncheckedUpdateManyWithoutTeacherNestedInput
+    Class?: ClassUncheckedUpdateOneWithoutTeacherNestedInput
   }
 
-  export type AnnoucementsCreateManySenderInput = {
+  export type AnnoucementsCreateManyUserInput = {
     id?: string
     Text: string
     Title: string
     Date: Date | string
   }
 
-  export type AnnoucementsUpdateWithoutSenderInput = {
+  export type AnnoucementsUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     Text?: StringFieldUpdateOperationsInput | string
     Title?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AnnoucementsUncheckedUpdateWithoutSenderInput = {
+  export type AnnoucementsUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     Text?: StringFieldUpdateOperationsInput | string
     Title?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AnnoucementsUncheckedUpdateManyWithoutSenderInput = {
+  export type AnnoucementsUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     Text?: StringFieldUpdateOperationsInput | string
     Title?: StringFieldUpdateOperationsInput | string
@@ -17353,6 +19009,7 @@ export namespace Prisma {
   export type ParentCreateManyClassInput = {
     Pid: string
     StudentName: string
+    ParentName?: string
   }
 
   export type SubjectCreateManyClassInput = {
@@ -17370,6 +19027,7 @@ export namespace Prisma {
 
   export type ParentUpdateWithoutClassInput = {
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutParentNestedInput
     MeetReqSend?: Meeting_RequestUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUpdateManyWithoutParentNestedInput
@@ -17380,6 +19038,7 @@ export namespace Prisma {
   export type ParentUncheckedUpdateWithoutClassInput = {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
     MeetReqSend?: Meeting_RequestUncheckedUpdateManyWithoutSenderNestedInput
     Attendance?: AttendanceUncheckedUpdateManyWithoutParentNestedInput
     Academics?: AcademicsUncheckedUpdateManyWithoutParentNestedInput
@@ -17389,6 +19048,7 @@ export namespace Prisma {
   export type ParentUncheckedUpdateManyWithoutClassInput = {
     Pid?: StringFieldUpdateOperationsInput | string
     StudentName?: StringFieldUpdateOperationsInput | string
+    ParentName?: StringFieldUpdateOperationsInput | string
   }
 
   export type SubjectUpdateWithoutClassInput = {

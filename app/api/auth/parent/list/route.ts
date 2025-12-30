@@ -4,8 +4,13 @@ import { NextRequest } from "next/server";
 export async function GET(req:NextRequest){
     
     const User=await VerifyUser(req);
-
+    
     if (User instanceof Response) return User;
+    if(User.role!='Parent'){
+         return Response.json({
+            message:"Role is incorrect"
+        }) 
+    }
     const res=await DB.$transaction(async (ts)=>{
         const classe=await ts.parent.findUnique({
             where:{Pid:User.id},

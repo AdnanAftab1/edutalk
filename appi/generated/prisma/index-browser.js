@@ -137,7 +137,8 @@ exports.Prisma.AdminScalarFieldEnum = {
 exports.Prisma.ParentScalarFieldEnum = {
   Pid: 'Pid',
   StudentName: 'StudentName',
-  ClassId: 'ClassId'
+  ClassId: 'ClassId',
+  ParentName: 'ParentName'
 };
 
 exports.Prisma.TeacherScalarFieldEnum = {
@@ -154,7 +155,8 @@ exports.Prisma.SubjectScalarFieldEnum = {
 
 exports.Prisma.ClassScalarFieldEnum = {
   id: 'id',
-  Name: 'Name'
+  Name: 'Name',
+  ClassTeacherId: 'ClassTeacherId'
 };
 
 exports.Prisma.AnnoucementsScalarFieldEnum = {
@@ -204,78 +206,14 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.UserOrderByRelevanceFieldEnum = {
-  id: 'id',
-  name: 'name',
-  password: 'password'
-};
-
-exports.Prisma.AdminOrderByRelevanceFieldEnum = {
-  id: 'id',
-  UserId: 'UserId'
-};
-
-exports.Prisma.ParentOrderByRelevanceFieldEnum = {
-  Pid: 'Pid',
-  StudentName: 'StudentName',
-  ClassId: 'ClassId'
-};
-
-exports.Prisma.TeacherOrderByRelevanceFieldEnum = {
-  Tid: 'Tid',
-  TeacherName: 'TeacherName'
-};
-
-exports.Prisma.SubjectOrderByRelevanceFieldEnum = {
-  Sid: 'Sid',
-  Name: 'Name',
-  ClassId: 'ClassId',
-  TeacherId: 'TeacherId'
-};
-
-exports.Prisma.ClassOrderByRelevanceFieldEnum = {
-  id: 'id',
-  Name: 'Name'
-};
-
-exports.Prisma.AnnoucementsOrderByRelevanceFieldEnum = {
-  id: 'id',
-  Text: 'Text',
-  SenderId: 'SenderId',
-  Title: 'Title'
-};
-
-exports.Prisma.Meeting_RequestOrderByRelevanceFieldEnum = {
-  id: 'id',
-  SenderId: 'SenderId',
-  content: 'content',
-  TeacherId: 'TeacherId'
-};
-
-exports.Prisma.AttendanceOrderByRelevanceFieldEnum = {
-  Issue_For: 'Issue_For',
-  ParentId: 'ParentId'
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
 };
 
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
-};
-
-exports.Prisma.AcademicsOrderByRelevanceFieldEnum = {
-  ExamName: 'ExamName',
-  id: 'id',
-  Pid: 'Pid',
-  SubjectID: 'SubjectID',
-  Grade: 'Grade',
-  ReportLink: 'ReportLink'
-};
-
-exports.Prisma.ChatMessagesOrderByRelevanceFieldEnum = {
-  MessageId: 'MessageId',
-  Pid: 'Pid',
-  Tid: 'Tid',
-  Content: 'Content'
 };
 exports.Role = exports.$Enums.Role = {
   Parent: 'Parent',

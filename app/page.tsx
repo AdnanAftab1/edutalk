@@ -127,10 +127,13 @@ try{
       });
     
       console.log(res);
-
+      
     if(res.status===200){
-      if(res.data.role=='Parent')
+      if(res.data.role=='Parent'){
       router.push('/parent');
+    }else if(res.data.role=='Teacher'){
+      router.push('/teacher');
+    }
     }
     
     console.log("Login Done");

@@ -4,8 +4,13 @@ import { NextRequest } from "next/server";
 export async function POST(req:NextRequest){
     try{
     const User=await VerifyUser(req);
-
+    
     if (User instanceof Response) return User;
+    if(User.role!='Parent'){
+         return Response.json({
+            message:"Role is incorrect"
+        }) 
+    }
     const data:{
     date: string;
     content: string;

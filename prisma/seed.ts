@@ -1,169 +1,130 @@
-import { PrismaClient } from "../appi/generated/prisma";
+import { PrismaClient, Role, Status } from "../appi/generated/prisma";
 
 const DB = new PrismaClient();
 
+function pad2(n: number) {
+  return String(n).padStart(2, "0");
+}
+
 async function main() {
-  console.log("🌱 Seeding database...");
 
-  // ---------------------------------------------
-  // 1. Create Users
-  // ---------------------------------------------
-  const teacherUser = await DB.user.create({
-    data: {
-      name: "TeacherA",
-      password: "Teacher123",
-      role: "Teacher",
-      status: "Successfull",
-    },
-  });
+  console.log("🌱 Seeding database (auto-generated)...");
+  
+  const CLASS_NAME = "Class 5A";
 
-  const parentUser = await DB.user.create({
-    data: { 
-      name: "ParentA",
-      password: "Parent123",
-      role: "Parent",
-      status: "Successfull",
-    },
-  });
+  const teacherCount = 4;
 
-  console.log("✅ Created Users");
+  const teacherUsers = [];
+  for (let i = 1; i <= teacherCount; i++) {
+    const u = await DB.user.create({
+      data: {
+        name: `Teacher_${CLASS_NAME.replace(/\s+/g, "")}_${pad2(i)}`,
+        password: `Teacher${pad2(i)}123`,
+        role: Role.Teacher,
+        status: Status.Successfull,
+      },
+    });
+    teacherUsers.push(u);
+  }
 
-  // ---------------------------------------------
-  // 2. Create Class
-  // ---------------------------------------------
+
+  const teachers = [];
+  for (const u of teacherUsers) {
+    const t = await DB.teacher.create({
+      data: {
+        Tid: u.id,           // FK -> User.id
+        TeacherName: u.name, // must be unique
+      },
+    });
+    teachers.push(t);
+  }
+
+  // First teacher = homeroom teacher
+  const homeRoomTeacher = teachers[0];
+
+  // -----------------------------
+  // B) Create Class with homeroom teacher
+  //    - Class.ClassTeacherId is @unique => only one class per teacher
+  // -----------------------------
   const classA = await DB.class.create({
     data: {
-      Name: "Class 5A",
+      Name: CLASS_NAME,
+      ClassTeacherId: homeRoomTeacher.Tid,
     },
   });
 
-  console.log("✅ Created Class");
+  // -----------------------------
+  // C) Create 5 parent users + parent profiles (students)
+  // -----------------------------
+  const studentCount = 10;
+  const parents = [];
 
-  // ---------------------------------------------
-  // 3. Create Parent (linked to User + Class)
-  // ---------------------------------------------
-  const parent = await DB.parent.create({
-    data: {
-      Pid: parentUser.id,
-      StudentName: "Rohit Sharma",
+  for (let i = 1; i <= studentCount; i++) {
+    const parentUser = await DB.user.create({
+      data: {
+        name: `Parent_${CLASS_NAME.replace(/\s+/g, "")}_${pad2(i)}`,
+        password: `Parent${pad2(i)}123`,
+        role: Role.Parent,
+        status: Status.Successfull,
+      },
+    });
+
+    const parent = await DB.parent.create({
+      data: {
+        Pid: parentUser.id,                 // FK -> User.id
+        StudentName: `Student_${pad2(i)}`,  // not unique in schema, ok
+        ClassId: classA.id,                 // FK -> Class.id
+      },
+    });
+
+    parents.push(parent);
+  }
+
+  // -----------------------------
+  // D) Create subjects (example: 4 subjects, one per teacher)
+  //    Subject.TeacherId references Teacher.Tid (NOT User.id) in your schema.
+  // -----------------------------
+  const subjectNames = ["Mathematics", "Science", "English", "SocialScience"];
+
+  await DB.subject.createMany({
+    data: teachers.map((t, idx) => ({
+      Name: subjectNames[idx] ?? `Subject_${idx + 1}`,
       ClassId: classA.id,
-    },
+      TeacherId: t.Tid,
+    })),
+    // skipDuplicates is supported on SQL connectors in Prisma createMany. [web:11]
+    skipDuplicates: true,
   });
 
-  console.log("✅ Created Parent");
+  // -----------------------------
+  // E) Attendance for all 5 students for 20 days (10 present + 10 absent)
+  //    Attendance.Issue_For references Class.id in your schema.
+  // -----------------------------
+  const presentDates = Array.from({ length: 10 }, (_, i) => new Date(2026, 0, 1 + i));
+  const absentDates = Array.from({ length: 10 }, (_, i) => new Date(2026, 0, 11 + i));
 
-  // ---------------------------------------------
-  // 4. Create Teacher (linked to User)
-  // ---------------------------------------------
-  const teacher = await DB.teacher.create({
-    data: {
-      Tid: teacherUser.id,
-    },
+  await DB.attendance.createMany({
+    data: parents.flatMap((p) => [
+      ...presentDates.map((date) => ({
+        date,
+        isPresent: true,
+        Issue_For: classA.id,
+        ParentId: p.Pid,
+      })),
+      ...absentDates.map((date) => ({
+        date,
+        isPresent: false,
+        Issue_For: classA.id,
+        ParentId: p.Pid,
+      })),
+    ]),
   });
-
-  console.log("✅ Created Teacher");
-
-  // ---------------------------------------------
-  // 5. Create Subject (linked to Teacher + Class)
-  // ---------------------------------------------
-  
-  await DB.subject.create({
-    data: {
-      Name: "Mathematics",
-      TeacherId: teacher.Tid,
-      ClassId: classA.id,
-    },
-  });
-
-  console.log("✅ Created Subject");
-
-  // ---------------------------------------------
-  // 6. Create Announcements (linked to Teacher user)
-  // ---------------------------------------------
-  await DB.annoucements.createMany({
-    data: [
-      {
-        SenderId: teacherUser.id,
-        Title: "Mid-term Exams Tentative Dates",
-        Date: new Date("2024-07-15T00:00:00.000Z"),
-        Text: "Mid-term exams will be held from Aug 1 to Aug 10.",
-      },
-      {
-        SenderId: teacherUser.id,
-        Title: "Campus Wi-Fi Maintenance",
-        Date: new Date("2024-07-20T00:00:00.000Z"),
-        Text: "WiFi will be offline from 10 AM to 1 PM.",
-      },
-      {
-        SenderId: teacherUser.id,
-        Title: "New Library Books Added",
-        Date: new Date("2024-07-22T00:00:00.000Z"),
-        Text: "500+ new books added to the library.",
-      },
-      {
-        SenderId: teacherUser.id,
-        Title: "Holiday Notice: Independence Day",
-        Date: new Date("2024-08-15T00:00:00.000Z"),
-        Text: "Campus closed on Independence Day.",
-      },
-    ],
-  });
-
-  console.log("✅ Created Announcements");
-
+  console.log("✅ Created: 1 class, 4 teachers (incl. homeroom), 5 students, subjects, attendance");
   console.log("✅ SEED COMPLETE");
 }
-     const  present=[
-    new Date(2025, 10, 1),
-    new Date(2025, 10, 2),
-    new Date(2025, 10, 3),
-    new Date(2025, 10, 4),
-    new Date(2025, 10, 5),
-    new Date(2025, 10, 6),
-    new Date(2025, 10, 7),
-    new Date(2025, 10, 8),
-    new Date(2025, 10, 9),
-    new Date(2025, 10, 10)
-  ]
-  const  absent=[
-    new Date(2025, 10, 11),
-    new Date(2025, 10, 12),
-    new Date(2025, 10, 13),
-    new Date(2025, 10, 14),
-    new Date(2025, 10, 15),
-    new Date(2025, 10, 16),
-    new Date(2025, 10, 17),
-    new Date(2025, 10, 18),
-    new Date(2025, 10, 19),
-    new Date(2025, 10, 20)
-  ]
-
-  
-async function main2() {
-  const res=await DB.attendance.createMany({
-    data: [
-      ...present.map((item)=>{
-      return{
-    date: item,
-    Issue_For:"e7108035-71dd-4270-be4d-8b4d2abed399",
-    isPresent:true,
-    ParentId:"0460d711-f894-4361-8aa6-a600c08cd13e"
-  }
-    }),
-    ...absent.map((item)=>{
-      return{
-    date: item,
-    Issue_For:"e7108035-71dd-4270-be4d-8b4d2abed399",
-    isPresent:false,
-    ParentId:"0460d711-f894-4361-8aa6-a600c08cd13e"
-  }
-  })
-  ]
-  })
-}
 
 
-main2()
+main()
   .catch((e) => {
     console.error("❌ SEED ERROR:", e);
     process.exit(1);

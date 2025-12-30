@@ -13,11 +13,20 @@ export type AcademicRecord = {
 
 }
 
+
+
 export async function GET(req:NextRequest){
     
     const User=await VerifyUser(req);
     
     if (User instanceof Response) return User;
+
+    if(User.role!='Parent'){
+         return Response.json({
+            message:"Role is incorrect"
+        }) 
+    }
+
     try {
         const data=await DB.academics.findMany({
             where:{

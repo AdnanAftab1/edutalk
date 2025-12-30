@@ -4,9 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider =  "postgres"
+  url      = env("DATABASE_URL")
 }
-
 model User {  
   id       String @id @default(uuid())
   name     String @unique
@@ -30,7 +30,8 @@ model Parent{
   User User @relation(references: [id], fields: [Pid])
   StudentName String
   ClassId String
-  Class   Class @relation( fields:[ClassId],references:[id] )
+  Class   Class @relation( fields:[ClassId],references:[id])
+  ParentName String @default("Adnan")
   MeetReqSend Meeting_Request[] @relation(name: "attends")
   Attendance Attendance[]
   Academics Academics[]
@@ -44,6 +45,7 @@ model Parent{
     MeetReqRecieve Meeting_Request[] @relation(name: "recTeach")
     Subjects Subject[]
     ChatMessages ChatMessages[]
+    Class Class?
   }
 
 model Subject{
@@ -54,7 +56,6 @@ model Subject{
   TeacherId String
   Teacher Teacher @relation(references: [Tid],fields: [TeacherId])
   Academics Academics[]
-
 }
 
 model Class{ 
@@ -63,13 +64,16 @@ model Class{
     Parent Parent[] 
     Subjects Subject[]
     Attendance Attendance[]
+    ClassTeacherId String @unique
+    Teacher Teacher @relation(references: [Tid],fields: [ClassTeacherId])
 }
 
 model Annoucements {
   id String @id @default(uuid())
   Text String 
   SenderId String
-   Title String
+  User User @relation(fields: [SenderId], references: [id])
+  Title String
   Date DateTime
 }
 

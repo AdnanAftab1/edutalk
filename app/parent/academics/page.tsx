@@ -12,7 +12,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
           <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
 
-      <Navbar selected={'academics'}/>
+      <Navbar selected={'academics'} />
       <main>
         <div className="flex justify-center items-center w-full ">
         <AcademicTable/>
@@ -26,7 +26,7 @@ export default function Home() {
 
 
 interface SelectedProps{
-  selected:'messages'|'attendance'|'academics'|'None'
+  selected:'messages'|'attendance'|'academics'|'Announcements'
 }
 
 
@@ -59,6 +59,7 @@ export function Navbar({selected}:SelectedProps) {
         </div>
         
         <div className="w-full flex justify-center items-center gap-x-10 ">
+          <Link href={'/parent/'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='Announcements'?'text-amber-600':'')}> Annoucements</Link> 
           <Link href={'/parent/attendance'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='attendance'?'text-amber-600':'')}> Attendance</Link> 
           <Link href={'/parent/academics'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='academics'?'text-amber-600':'')}> Academics</Link>
           <Link href={'/parent/messages'} className={cn("font-['Inter'] text-lg hover:text-amber-600 duration-200",selected==='messages'?'text-amber-600':'')}> Messages</Link>

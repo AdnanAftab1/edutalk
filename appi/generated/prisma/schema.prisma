@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
@@ -32,7 +32,7 @@ model Parent {
   StudentName  String
   ClassId      String
   Class        Class             @relation(fields: [ClassId], references: [id])
-  MeetReqSend  Meeting_Request[] @relation(name: "reqTeach")
+  MeetReqSend  Meeting_Request[] @relation(name: "attends")
   Attendance   Attendance[]
   Academics    Academics[]
   ChatMessages ChatMessages[]
@@ -69,7 +69,7 @@ model Annoucements {
   id       String   @id @default(uuid())
   Text     String
   SenderId String
-  Sender   User     @relation(fields: [SenderId], references: [id], onDelete: Cascade)
+  User     User     @relation(fields: [SenderId], references: [id])
   Title    String
   Date     DateTime
 }
@@ -77,7 +77,7 @@ model Annoucements {
 model Meeting_Request {
   id        String   @id @default(uuid())
   SenderId  String
-  Sender    Parent   @relation(name: "reqTeach", fields: [SenderId], references: [Pid])
+  Sender    Parent   @relation(name: "attends", fields: [SenderId], references: [Pid])
   date      DateTime
   content   String
   TeacherId String

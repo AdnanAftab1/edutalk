@@ -49,6 +49,7 @@ const DB =new PrismaClient();
     console.log("\n\n\n\n\n\n\n User authenticated as", user.role);
 
     return {
+      name:user.name,
       id:user.id,
       role:user.role
     };
@@ -63,6 +64,6 @@ const DB =new PrismaClient();
 
 
 
-
+//Can only be verifed in production
 
 export {VerifyUser,DB,Prisma};
