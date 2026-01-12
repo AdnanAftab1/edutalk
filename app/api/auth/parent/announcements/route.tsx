@@ -13,7 +13,26 @@ export async function GET(req:NextRequest){
         }) 
     }
     try {
-        const announcements=await DB.annoucements.findMany();
+        const classID=await DB.parent.findFirst({
+            where:{
+                Pid: User.id
+            },
+            select:{
+                ClassId:true
+            }
+        })
+        const announcements=await DB.annoucements.findMany({
+            where:{
+                OR:[
+                    {
+                        ClassID:classID?.ClassId
+                    },
+                    {
+                        ClassID:null
+                    }
+                ]
+            }
+        });
 
         const ann=announcements.map((item)=>{
             return {

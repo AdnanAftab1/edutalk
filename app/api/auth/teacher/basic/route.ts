@@ -10,7 +10,9 @@ export async function GET(req: NextRequest) {
   }
 
   try {     
-    return NextResponse.json({ name:user.name }, { status: 201 });
+    
+
+    return NextResponse.json({ name:user.name}, { status: 201 });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ message: "Database error" }, { status: 500 });

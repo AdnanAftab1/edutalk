@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 type SubjectClassInfo = {
@@ -17,6 +18,8 @@ type ClassStudentsResponse = {
 };
 
 export default function StudentsPage() {
+      const router=useRouter();
+
   const [subjectInfos, setSubjectInfos] = useState<SubjectClassInfo[]>([]);
   const [studentsByClassId, setStudentsByClassId] = useState<Record<string, Student[]>>({});
   const [loading, setLoading] = useState(true);
@@ -41,6 +44,7 @@ export default function StudentsPage() {
 
     return Array.from(map.values());
   }, [subjectInfos]);
+
 
   useEffect(() => {
     let cancelled = false;
@@ -95,7 +99,6 @@ export default function StudentsPage() {
       </main>
     );
   }
-
   return (
     <main className="relative z-10 container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-2 text-white">Students</h1>
@@ -105,15 +108,13 @@ export default function StudentsPage() {
         {classes.map((c) => {
           const students = studentsByClassId[c.classId] ?? [];
           return (
-            <section key={c.classId} className="border border-gray-800 rounded-lg p-4 bg-black/40">
+            <section key={c.classId} className="border border-gray-800 rounded-lg p-4 bg-black/40  delay-500 duration-600 animate-fade">
               <div className="flex flex-col gap-1 mb-4">
                 <div className="text-xl font-semibold text-white">{c.className}</div>
                 <div className="text-sm text-gray-400">
                   Subjects: {c.subjects.join(", ")}
                 </div>
-                <div className="text-sm text-gray-400">
-                  Students: {students.length}{typeof c.expectedCount === "number" ? ` / ${c.expectedCount}` : ""}
-                </div>
+                
               </div>
 
               {students.length === 0 ? (
@@ -123,7 +124,15 @@ export default function StudentsPage() {
                   {students.map((s) => (
                     <li key={s.Pid} className="border border-gray-800 rounded p-3 text-white">
                       {s.StudentName}
-                      <div className="text-xs text-gray-500">{s.Pid}</div>
+                      <div className="text-xs text-gray-500">Roll No:</div>
+                      <button
+                        type="button"
+                        onClick={() => router.push(`/teacher/academics#${s.Pid}`)}
+                        className="px-3 py-2 mt-3 text-sm rounded border border-blue-600 text-blue-400 hover:bg-blue-600/10 duration-200 whitespace-nowrap"
+                      >
+                        Issue report
+                      </button>
+
                     </li>
                   ))}
                 </ul>

@@ -15,6 +15,16 @@ export async function GET(req:NextRequest){
     const meeting=await DB.meeting_Request.findMany({
         where:{
             TeacherId:User.id
+        },
+        select:{
+            Sender:{
+                select:{
+                    ParentName:true
+                },
+            },
+            content:true,
+            date:true,
+            
         }
     });
 

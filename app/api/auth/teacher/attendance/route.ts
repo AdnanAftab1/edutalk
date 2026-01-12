@@ -17,12 +17,11 @@ export async function POST(req: NextRequest) {
 
   try {
     const reqB: Body = await req.json();
-
-    if (!reqB.IssuedFor || !reqB.date || !Array.isArray(reqB.list) || reqB.list.length === 0) {
+    if (!reqB.IssuedFor || !Array.isArray(reqB.list) || reqB.list.length === 0) {
       return NextResponse.json({ message: "Invalid payload" }, { status: 400 });
     }
 
-    const attendanceDate = new Date(reqB.date);
+    const attendanceDate = new Date();
     if (Number.isNaN(attendanceDate.getTime())) {
       return NextResponse.json({ message: "Invalid date" }, { status: 400 });
     }

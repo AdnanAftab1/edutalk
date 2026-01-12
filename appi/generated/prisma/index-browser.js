@@ -164,15 +164,18 @@ exports.Prisma.AnnoucementsScalarFieldEnum = {
   Text: 'Text',
   SenderId: 'SenderId',
   Title: 'Title',
-  Date: 'Date'
+  Date: 'Date',
+  ClassID: 'ClassID'
 };
 
 exports.Prisma.Meeting_RequestScalarFieldEnum = {
   id: 'id',
-  SenderId: 'SenderId',
+  ParentId: 'ParentId',
   date: 'date',
   content: 'content',
-  TeacherId: 'TeacherId'
+  TeacherId: 'TeacherId',
+  MeetStatus: 'MeetStatus',
+  Rejection_Reason: 'Rejection_Reason'
 };
 
 exports.Prisma.AttendanceScalarFieldEnum = {
@@ -190,7 +193,8 @@ exports.Prisma.AcademicsScalarFieldEnum = {
   SubjectID: 'SubjectID',
   Grade: 'Grade',
   ReportLink: 'ReportLink',
-  Date: 'Date'
+  Date: 'Date',
+  TeacherID: 'TeacherID'
 };
 
 exports.Prisma.ChatMessagesScalarFieldEnum = {
@@ -206,14 +210,83 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
+exports.Prisma.UserOrderByRelevanceFieldEnum = {
+  id: 'id',
+  name: 'name',
+  password: 'password'
+};
+
+exports.Prisma.AdminOrderByRelevanceFieldEnum = {
+  id: 'id',
+  UserId: 'UserId'
+};
+
+exports.Prisma.ParentOrderByRelevanceFieldEnum = {
+  Pid: 'Pid',
+  StudentName: 'StudentName',
+  ClassId: 'ClassId',
+  ParentName: 'ParentName'
+};
+
+exports.Prisma.TeacherOrderByRelevanceFieldEnum = {
+  Tid: 'Tid',
+  TeacherName: 'TeacherName'
+};
+
+exports.Prisma.SubjectOrderByRelevanceFieldEnum = {
+  Sid: 'Sid',
+  Name: 'Name',
+  ClassId: 'ClassId',
+  TeacherId: 'TeacherId'
+};
+
+exports.Prisma.ClassOrderByRelevanceFieldEnum = {
+  id: 'id',
+  Name: 'Name',
+  ClassTeacherId: 'ClassTeacherId'
 };
 
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
+};
+
+exports.Prisma.AnnoucementsOrderByRelevanceFieldEnum = {
+  id: 'id',
+  Text: 'Text',
+  SenderId: 'SenderId',
+  Title: 'Title',
+  ClassID: 'ClassID'
+};
+
+exports.Prisma.Meeting_RequestOrderByRelevanceFieldEnum = {
+  id: 'id',
+  ParentId: 'ParentId',
+  content: 'content',
+  TeacherId: 'TeacherId',
+  Rejection_Reason: 'Rejection_Reason'
+};
+
+exports.Prisma.AttendanceOrderByRelevanceFieldEnum = {
+  Issue_For: 'Issue_For',
+  ParentId: 'ParentId'
+};
+
+exports.Prisma.AcademicsOrderByRelevanceFieldEnum = {
+  ExamName: 'ExamName',
+  id: 'id',
+  Pid: 'Pid',
+  SubjectID: 'SubjectID',
+  Grade: 'Grade',
+  ReportLink: 'ReportLink',
+  TeacherID: 'TeacherID'
+};
+
+exports.Prisma.ChatMessagesOrderByRelevanceFieldEnum = {
+  MessageId: 'MessageId',
+  Pid: 'Pid',
+  Tid: 'Tid',
+  Content: 'Content'
 };
 exports.Role = exports.$Enums.Role = {
   Parent: 'Parent',
@@ -225,6 +298,12 @@ exports.Status = exports.$Enums.Status = {
   Unverified: 'Unverified',
   Rejected: 'Rejected',
   Successfull: 'Successfull'
+};
+
+exports.StatusMeet = exports.$Enums.StatusMeet = {
+  Pending: 'Pending',
+  Rejected: 'Rejected',
+  Approved: 'Approved'
 };
 
 exports.Prisma.ModelName = {

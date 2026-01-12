@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider =  "postgres"
+  provider =  "mysql"
   url      = env("DATABASE_URL")
 }
 model User {  
@@ -13,7 +13,6 @@ model User {
   password String
   role     Role   @default(Parent)
   status   Status @default(Unverified)
-  Announcements Annoucements[]
   Parent   Parent?
   Teacher  Teacher?
   Admin    Admin?
@@ -45,6 +44,8 @@ model Parent{
     MeetReqRecieve Meeting_Request[] @relation(name: "recTeach")
     Subjects Subject[]
     ChatMessages ChatMessages[]
+    Announcements Annoucements[]
+    Academics Academics[]
     Class Class?
   }
 
@@ -66,24 +67,29 @@ model Class{
     Attendance Attendance[]
     ClassTeacherId String @unique
     Teacher Teacher @relation(references: [Tid],fields: [ClassTeacherId])
+    Annoucements Annoucements[]
 }
 
 model Annoucements {
   id String @id @default(uuid())
   Text String 
-  SenderId String
-  User User @relation(fields: [SenderId], references: [id])
+  SenderId String?
+  Teacher Teacher? @relation(fields: [SenderId], references: [Tid])
   Title String
   Date DateTime
-}
+  ClassID String? 
+  Class Class? @relation(fields: [ClassID], references: [id])
+} 
 
 model Meeting_Request{
     id String @id @default(uuid())
-    SenderId String
-    Sender Parent @relation(name: "attends", fields:[SenderId], references:[Pid] )
+    ParentId String 
+    Sender Parent @relation(name: "attends", fields:[ParentId], references:[Pid] )
     date DateTime
     content String
     TeacherId String
+    MeetStatus StatusMeet @default(Pending)
+    Rejection_Reason String?
     Teacher Teacher @relation(name: "recTeach", fields:[TeacherId], references: [Tid])
 }
 
@@ -105,6 +111,8 @@ model Academics{
   Grade String 
   ReportLink String?
   Date DateTime
+  TeacherID String
+  Teacher Teacher @relation(fields:[TeacherID],references: [Tid] ) 
   Parent Parent @relation(references:[Pid],fields: [Pid] ) 
   Subject Subject @relation(references:[Sid],fields: [SubjectID] ) 
 }
@@ -136,4 +144,9 @@ enum Status {
   Unverified
   Rejected
   Successfull
+}
+enum StatusMeet {
+  Pending
+  Rejected
+  Approved
 }

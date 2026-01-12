@@ -4,20 +4,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgres"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id            String         @id @default(uuid())
-  name          String         @unique
-  password      String
-  role          Role           @default(Parent)
-  status        Status         @default(Unverified)
-  Announcements Annoucements[]
-  Parent        Parent?
-  Teacher       Teacher?
-  Admin         Admin?
+  id       String   @id @default(uuid())
+  name     String   @unique
+  password String
+  role     Role     @default(Parent)
+  status   Status   @default(Unverified)
+  Parent   Parent?
+  Teacher  Teacher?
+  Admin    Admin?
 }
 
 model Admin {
@@ -32,6 +31,7 @@ model Parent {
   StudentName  String
   ClassId      String
   Class        Class             @relation(fields: [ClassId], references: [id])
+  ParentName   String            @default("Adnan")
   MeetReqSend  Meeting_Request[] @relation(name: "attends")
   Attendance   Attendance[]
   Academics    Academics[]
@@ -45,6 +45,9 @@ model Teacher {
   MeetReqRecieve Meeting_Request[] @relation(name: "recTeach")
   Subjects       Subject[]
   ChatMessages   ChatMessages[]
+  Announcements  Annoucements[]
+  Academics      Academics[]
+  Class          Class?
 }
 
 model Subject {
@@ -58,18 +61,20 @@ model Subject {
 }
 
 model Class {
-  id         String       @id @default(uuid())
-  Name       String       @unique
-  Parent     Parent[]
-  Subjects   Subject[]
-  Attendance Attendance[]
+  id             String       @id @default(uuid())
+  Name           String       @unique
+  Parent         Parent[]
+  Subjects       Subject[]
+  Attendance     Attendance[]
+  ClassTeacherId String       @unique
+  Teacher        Teacher      @relation(references: [Tid], fields: [ClassTeacherId])
 }
 
 model Annoucements {
   id       String   @id @default(uuid())
   Text     String
-  SenderId String
-  User     User     @relation(fields: [SenderId], references: [id])
+  SenderId String?
+  Teacher  Teacher? @relation(fields: [SenderId], references: [Tid])
   Title    String
   Date     DateTime
 }
@@ -102,6 +107,8 @@ model Academics {
   Grade      String
   ReportLink String?
   Date       DateTime
+  TeacherID  String
+  Teacher    Teacher  @relation(fields: [TeacherID], references: [Tid])
   Parent     Parent   @relation(references: [Pid], fields: [Pid])
   Subject    Subject  @relation(references: [Sid], fields: [SubjectID])
 }

@@ -1,52 +1,58 @@
-import { DB, VerifyUser } from "@/app/api/essentials"
-import { NextRequest } from "next/server";
+import { DB, VerifyUser } from "@/app/api/essentials";
+import { NextRequest, NextResponse } from "next/server";
 
+export async function GET(req: NextRequest) {
+  const user = await VerifyUser(req);
+  if (user instanceof Response) return user;
 
+  if (user.role !== "Teacher") {
+    return NextResponse.json({ message: "Role is incorrect" }, { status: 403 });
+  }
 
-export async function POST(req:NextRequest){
-    
-    const User=await VerifyUser(req);
-    
-    if (User instanceof Response) return User;
+  // const reqB: { StudentId?: string } = await req.json();
+  // if (!reqB.StudentId) {
+  //   return NextResponse.json({ message: "StudentId is required" }, { status: 400 });
+  // }
 
-    if(User.role!='Teacher'){
-         return Response.json({
-            message:"Role is incorrect"
-        }) 
-    }
-    const reqB=await req.json();
-    console.log(reqB);
-    try {
-        const studentSubject=await DB.parent.findMany({
-            where:{
-                Pid: (reqB.StudentId),
-                Class:{
-                    Subjects:{
-                        some:{
-                            TeacherId:User.id
-                        }
-                    }
-                }
+  try {
+    const student = await DB.parent.findMany({
+      where: {
+        // optional guard: ensure teacher actually teaches something in that class
+        Class: {
+          Subjects: {
+            some: { TeacherId: user.id },
+          },
+        },
+      },
+      select: {
+        StudentName:true,
+        Pid:true,
+        Class: {
+          select: {
+            Subjects: {
+              where: { TeacherId: user.id }, // only teacher's subjects
+              select: { Name: true, Sid: true },
             },
-            select:{
-                Class:{
-                    select:{
-                        Subjects:{
-                            select:{
-                                Name:true
-                            }
-                        }
-                    }
-                }
-            }
-        })
-
-        return Response.json(studentSubject.map(value=> {return {subject:value.Class.Subjects}}))
-
-    } catch {
-        return Response.json({
-            message:"Database error"
-        })
+          },
+        },
+      },
+    });
+    if (!student) {
+      return NextResponse.json(
+        { message: "No students found for you..." },
+        { status: 404 }
+      );
     }
-    
+
+    return NextResponse.json(
+        student.map((item)=>{
+          return {Name:item.StudentName,Pid:item.Pid,Subjects:item.Class.Subjects}
+        })
+      ,
+      { status: 200 }
+    );
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ message: "Database error" }, { status: 500 });
+  }
 }

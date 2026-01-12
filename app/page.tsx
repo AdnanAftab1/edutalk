@@ -15,7 +15,7 @@ export default function Home() {
     <div className="min-h-screen bg-saas-black text-white ">
       <Navbar />
       <main>
-        <div className="relative bg-gradient-to-b from-black to-[#1c160c] overflow-hidden min-h-[90vh] flex items-center">
+        <div className="relative bg-gradient-to-b from-black to-[#1c160c] overflow-hidden min-h-[90vh] flex items-center  delay-500 duration-600 animate-fade">
           {/* Orange glow effects */}
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#F97316] opacity-10 rounded-full blur-[100px]"></div>
           <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>

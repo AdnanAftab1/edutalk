@@ -11,9 +11,23 @@ export async function GET(req: NextRequest) {
 
   try {
     const reqB: Body = await req.json();
+    const basicData=await DB.parent.findFirst({
+      where:{
+        Pid:user.id
+      },
+      select:{
+        ClassId:true,
+        Class:{
+          select:{
+            Name:true 
+          }
+        },
+        StudentName:true
+      }
+    })
     
 
-    return NextResponse.json({ name:user.name }, { status: 201 });
+    return NextResponse.json({ name:user.name ,studentName:basicData?.StudentName ,ClassID:basicData?.ClassId ,ClassName:basicData?.Class.Name  }, { status: 201 });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ message: "Database error" }, { status: 500 });
