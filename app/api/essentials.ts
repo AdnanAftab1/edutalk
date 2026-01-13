@@ -51,7 +51,8 @@ const DB =new PrismaClient();
     return {
       name:user.name,
       id:user.id,
-      role:user.role
+      role:user.role,
+      email:user.email
     };
   } catch (err) {
     console.log("Invalid token:",err);

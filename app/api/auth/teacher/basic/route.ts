@@ -5,7 +5,7 @@ export async function GET(req: NextRequest) {
   const user = await VerifyUser(req);
   if (user instanceof Response) return user;
 
-  if (user.role !== "Teacher") {
+  if (user.role !== "Teacher" && user.role !== "Admin") {
     return NextResponse.json({ message: "Role is incorrect" }, { status: 403 });
   }
 

@@ -1954,6 +1954,9 @@ export namespace Prisma {
     id: string | null
     name: string | null
     password: string | null
+    email: string | null
+    phoneNumber: string | null
+    AuthFile: string | null
     role: $Enums.Role | null
     status: $Enums.Status | null
   }
@@ -1962,6 +1965,9 @@ export namespace Prisma {
     id: string | null
     name: string | null
     password: string | null
+    email: string | null
+    phoneNumber: string | null
+    AuthFile: string | null
     role: $Enums.Role | null
     status: $Enums.Status | null
   }
@@ -1970,6 +1976,9 @@ export namespace Prisma {
     id: number
     name: number
     password: number
+    email: number
+    phoneNumber: number
+    AuthFile: number
     role: number
     status: number
     _all: number
@@ -1980,6 +1989,9 @@ export namespace Prisma {
     id?: true
     name?: true
     password?: true
+    email?: true
+    phoneNumber?: true
+    AuthFile?: true
     role?: true
     status?: true
   }
@@ -1988,6 +2000,9 @@ export namespace Prisma {
     id?: true
     name?: true
     password?: true
+    email?: true
+    phoneNumber?: true
+    AuthFile?: true
     role?: true
     status?: true
   }
@@ -1996,6 +2011,9 @@ export namespace Prisma {
     id?: true
     name?: true
     password?: true
+    email?: true
+    phoneNumber?: true
+    AuthFile?: true
     role?: true
     status?: true
     _all?: true
@@ -2077,6 +2095,9 @@ export namespace Prisma {
     id: string
     name: string
     password: string
+    email: string
+    phoneNumber: string
+    AuthFile: string
     role: $Enums.Role
     status: $Enums.Status
     _count: UserCountAggregateOutputType | null
@@ -2102,6 +2123,9 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     password?: boolean
+    email?: boolean
+    phoneNumber?: boolean
+    AuthFile?: boolean
     role?: boolean
     status?: boolean
     Parent?: boolean | User$ParentArgs<ExtArgs>
@@ -2115,11 +2139,14 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     password?: boolean
+    email?: boolean
+    phoneNumber?: boolean
+    AuthFile?: boolean
     role?: boolean
     status?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "password" | "role" | "status", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "password" | "email" | "phoneNumber" | "AuthFile" | "role" | "status", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Parent?: boolean | User$ParentArgs<ExtArgs>
     Teacher?: boolean | User$TeacherArgs<ExtArgs>
@@ -2137,6 +2164,9 @@ export namespace Prisma {
       id: string
       name: string
       password: string
+      email: string
+      phoneNumber: string
+      AuthFile: string
       role: $Enums.Role
       status: $Enums.Status
     }, ExtArgs["result"]["user"]>
@@ -2514,6 +2544,9 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly name: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
+    readonly email: FieldRef<"User", 'String'>
+    readonly phoneNumber: FieldRef<"User", 'String'>
+    readonly AuthFile: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'Role'>
     readonly status: FieldRef<"User", 'Status'>
   }
@@ -12725,6 +12758,9 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     password: 'password',
+    email: 'email',
+    phoneNumber: 'phoneNumber',
+    AuthFile: 'AuthFile',
     role: 'role',
     status: 'status'
   };
@@ -12849,7 +12885,10 @@ export namespace Prisma {
   export const UserOrderByRelevanceFieldEnum: {
     id: 'id',
     name: 'name',
-    password: 'password'
+    password: 'password',
+    email: 'email',
+    phoneNumber: 'phoneNumber',
+    AuthFile: 'AuthFile'
   };
 
   export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
@@ -13032,6 +13071,9 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
+    email?: StringFilter<"User"> | string
+    phoneNumber?: StringFilter<"User"> | string
+    AuthFile?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
     status?: EnumStatusFilter<"User"> | $Enums.Status
     Parent?: XOR<ParentNullableScalarRelationFilter, ParentWhereInput> | null
@@ -13043,6 +13085,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     password?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+    AuthFile?: SortOrder
     role?: SortOrder
     status?: SortOrder
     Parent?: ParentOrderByWithRelationInput
@@ -13058,6 +13103,9 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     password?: StringFilter<"User"> | string
+    email?: StringFilter<"User"> | string
+    phoneNumber?: StringFilter<"User"> | string
+    AuthFile?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
     status?: EnumStatusFilter<"User"> | $Enums.Status
     Parent?: XOR<ParentNullableScalarRelationFilter, ParentWhereInput> | null
@@ -13069,6 +13117,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     password?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+    AuthFile?: SortOrder
     role?: SortOrder
     status?: SortOrder
     _count?: UserCountOrderByAggregateInput
@@ -13083,6 +13134,9 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     name?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
+    email?: StringWithAggregatesFilter<"User"> | string
+    phoneNumber?: StringWithAggregatesFilter<"User"> | string
+    AuthFile?: StringWithAggregatesFilter<"User"> | string
     role?: EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
     status?: EnumStatusWithAggregatesFilter<"User"> | $Enums.Status
   }
@@ -13702,6 +13756,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentCreateNestedOneWithoutUserInput
@@ -13713,6 +13770,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
@@ -13724,6 +13784,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUpdateOneWithoutUserNestedInput
@@ -13735,6 +13798,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput
@@ -13746,6 +13812,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
   }
@@ -13754,6 +13823,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
   }
@@ -13762,6 +13834,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
   }
@@ -14391,6 +14466,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     password?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+    AuthFile?: SortOrder
     role?: SortOrder
     status?: SortOrder
   }
@@ -14399,6 +14477,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     password?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+    AuthFile?: SortOrder
     role?: SortOrder
     status?: SortOrder
   }
@@ -14407,6 +14488,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     password?: SortOrder
+    email?: SortOrder
+    phoneNumber?: SortOrder
+    AuthFile?: SortOrder
     role?: SortOrder
     status?: SortOrder
   }
@@ -16325,6 +16409,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentCreateNestedOneWithoutUserInput
@@ -16335,6 +16422,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
@@ -16361,6 +16451,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUpdateOneWithoutUserNestedInput
@@ -16371,6 +16464,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput
@@ -16381,6 +16477,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Teacher?: TeacherCreateNestedOneWithoutUserInput
@@ -16391,6 +16490,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Teacher?: TeacherUncheckedCreateNestedOneWithoutUserInput
@@ -16545,6 +16647,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Teacher?: TeacherUpdateOneWithoutUserNestedInput
@@ -16555,6 +16660,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Teacher?: TeacherUncheckedUpdateOneWithoutUserNestedInput
@@ -16707,6 +16815,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentCreateNestedOneWithoutUserInput
@@ -16717,6 +16828,9 @@ export namespace Prisma {
     id?: string
     name: string
     password: string
+    email?: string
+    phoneNumber?: string
+    AuthFile?: string
     role?: $Enums.Role
     status?: $Enums.Status
     Parent?: ParentUncheckedCreateNestedOneWithoutUserInput
@@ -16898,6 +17012,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUpdateOneWithoutUserNestedInput
@@ -16908,6 +17025,9 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: StringFieldUpdateOperationsInput | string
+    AuthFile?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     Parent?: ParentUncheckedUpdateOneWithoutUserNestedInput

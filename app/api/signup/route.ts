@@ -1,38 +1,74 @@
-import { cookies } from "next/headers";
-import * as jwt from 'jsonwebtoken';
-import { DB } from "../essentials";
+import { NextRequest, NextResponse } from "next/server";
+import { writeFile } from "fs/promises";
+import path from "path";
+import { DB } from "@/app/api/essentials";
+export const runtime = "nodejs";
 
+export async function POST(req: NextRequest) {
+  try {
+    const formData = await req.formData();
 
-export async function POST(req:Request){
-
-   try{ console.log("Login API Hit")
-    const {name,password}=await req.json();
-    if(!name || !password){
-        return Response.json({message:"Invalid credentials"},{status:200});
-    }
-    const User=await DB.user.create({
-        data:{name,password}
-    }).catch((err:Error)=>{
-        console.log("Error in 1st DB Call",err);
-    }) 
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const confirmPassword = formData.get("confirmPassword") as string;
+    const file = formData.get("authorizationFile") as File;
+    const phoneNumber = formData.get("phoneNumber") as string;
+    const role = formData.get("role") as string;
     
-    console.log("Created User:",User);
-
-    if(!User){
-        return Response.json({message:"User Already Exists"},{status:200});
+    // Validation
+    if (!name?.trim() || !email?.trim() || !password || !confirmPassword || !file) {
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
+
+    if (password !== confirmPassword) {
+      return NextResponse.json({ error: "Passwords don't match" }, { status: 400 });
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      return NextResponse.json({ error: "File too large (5MB max)" }, { status: 400 });
+    }
+
+    // Check if user already exists
+    const existingUser = await DB.user.findUnique({
+      where: { name } // name is unique in your schema
+    });
+
+    if (existingUser) {
+      return NextResponse.json({ error: "User with this name already exists" }, { status: 409 });
+    }
+
+    // Handle file upload
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, "")}`;
+    const filepath = path.join(process.cwd(), "public/uploads", filename);
     
-    const token=jwt.sign(User.id,"secretkey");
+    await writeFile(filepath, buffer);
+    const authFileUrl = `/uploads/${filename}`;
 
-    (await cookies()).set("token",token,{
-        httpOnly:true,
-        secure:true,
-        path:"/",
-        maxAge:60*60*24*2
-    })
-    return Response.json({message:"SignUp Successful",token:token},{status:200})
-}catch(err){
-        console.log("Error in Api:");
-        return Response.json({message:"SignUp Not Successfull"},{status:200})
-    }
+    
+    const newUser = await DB.user.create({
+      data: {
+        name: name.trim(),
+        email: email.trim(),
+        password: password,
+        phoneNumber: phoneNumber, 
+        AuthFile: authFileUrl, 
+        role: role as "Parent"|"Teacher"|"Admin", 
+        status: "Unverified" 
+      }
+    });
+
+    return NextResponse.json({ 
+      message: "Registration successful! Awaiting admin approval.",
+      userId: newUser.id 
+    });
+
+  } catch (error) {
+    console.error("Registration error:", error);
+    return NextResponse.json({ 
+      error: "Registration failed. Please try again." 
+    }, { status: 500 });
+  }
 }

@@ -10,7 +10,7 @@ interface Anns{
 } 
 
 export default function View_Announcements(){
-    const [Announcemetns,setAnnoucements] =useState<Anns[]>([]);
+    const [Announcements,setAnnoucements] =useState<Anns[]>([]);
     useEffect( ()=>{
       async function Load() {
           axios.get('http://localhost:3000/api/auth/parent/announcements').then((data)=>{
@@ -30,7 +30,7 @@ export default function View_Announcements(){
             <p>Announcements</p>
              <div className="overflow-scroll w-full">
             {
-                Announcemetns.map((an,index)=>{
+                Announcements.map((an,index)=>{
                     return (
                             <Dialog key={index}>
                     <DialogTrigger asChild>

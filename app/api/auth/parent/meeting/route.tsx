@@ -6,7 +6,7 @@ export async function POST(req:NextRequest){
     const User=await VerifyUser(req);
     
     if (User instanceof Response) return User;
-    if(User.role!='Parent'){
+    if(User.role!='Teacher'){
          return Response.json({
             message:"Role is incorrect"
         }) 
@@ -14,8 +14,13 @@ export async function POST(req:NextRequest){
     const data:{
     date: string;
     content: string;
-    teacher: string;
+    teacher: string; 
     }=await req.json();
+
+    if((new Date())<(new Date(data.date))){
+        return Response.json({response:"Date is in the future"},{status:200})
+
+    }
 
     const res=await DB.$transaction(async (ts)=>{
         const Teacher=await ts.teacher.findUnique({
