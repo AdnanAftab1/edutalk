@@ -23,17 +23,18 @@ export async function POST(req:NextRequest){
         return await ts.meeting_Request.create({
             data:{
                 ParentId:data.studentID,
-                date:new Date(data.date),
+                date:(new Date(data.date)).setHours(12),
                 content:data.content,
-                TeacherId:User.id || "Something Not Right"
+                TeacherId:User.id || "Something Not Right",
+                MeetStatus:"Approved"
             }
         }).catch((err)=>{
             console.log("last DB error",err)
         })
     })
+    
 
-
-    return Response.json({id:res.id},{status:200})
+    return Response.json({res,id:res.id},{status:200})
 }catch(err){
     console.log(err)
     return Response.json({
