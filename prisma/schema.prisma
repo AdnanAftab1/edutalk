@@ -127,6 +127,7 @@ model ChatMessages {
   Tid       String
   Parent    Parent   @relation(references: [Pid], fields: [Pid])
   Teacher   Teacher  @relation(references: [Tid], fields: [Tid])
+  Sender    Role @default(Parent)
   Content   String
   Date      DateTime
 }

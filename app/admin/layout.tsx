@@ -84,15 +84,15 @@ function AdminNavbar() {
           >
             Verify Registration
           </Link>
-{/* 
+
 
           <Link
-            href={'/admin/parents'}
-            className={cn("font-['Inter'] text-lg hover:text-emerald-500 duration-200", selected === '/admin/parents' ? 'text-emerald-500' : '')}
+            href={'/admin/ptescore'}
+            className={cn("font-['Inter'] text-lg hover:text-emerald-500 duration-200", selected === '/admin/ptescore' ? 'text-emerald-500' : '')}
           >
-            Parents
+            PTE Score
           </Link>
-
+{/* 
           <Link
             href={'/admin/classes'}
             className={cn("font-['Inter'] text-lg hover:text-emerald-500 duration-200", selected === '/admin/classes' ? 'text-emerald-500' : '')}
