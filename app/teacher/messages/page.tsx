@@ -1,281 +1,270 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-// Types
-type ClassListItem = {
-  id: string;
-  Name: string;
-};
+type Subject = { Sid: string; Name: string };
 
-type ParentInfo = {
+type StudentPeer = {
   Pid: string;
-  StudentName: string;
+  Name: string;
+  Subjects: Subject[];
 };
 
-type ClassData = {
-  Name: string;
-  Parent: ParentInfo[];
+type ApiMessage = {
+  MessageId: string;
+  Content: string;
+  Sender: "Teacher" | "Parent" | string;
+  Date: string;
 };
 
 type Message = {
+  MessageId: string;
   text: string;
-  isSender: boolean; // true = Teacher, false = Parent
+  isSender: boolean; 
+  timestamp: string;
 };
 
-export default function TeacherChatPage() {
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background Ambience - Blue tint for Teacher side */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600 opacity-10 rounded-full blur-[100px] pointer-events-none"></div>
-      
-      <main className="relative z-10 p-4 md:p-6 flex justify-center items-center min-h-[calc(100vh-80px)]">
-        <TeacherChatInterface />
-      </main>
-    </div>
-  );
-}
+export default function ChatInterface() {
+  const [students, setStudents] = useState<StudentPeer[]>([]);
+  const [selectedStudent, setSelectedStudent] = useState<StudentPeer | null>(null);
 
-function TeacherChatInterface() {
-  // Class selection state
-  const [classes, setClasses] = useState<ClassListItem[]>([]);
-  const [selectedClassId, setSelectedClassId] = useState("");
-  const [classData, setClassData] = useState<ClassData | null>(null);
-  const [selectedStudent, setSelectedStudent] = useState<ParentInfo | null>(null);
-  const [loadingClasses, setLoadingClasses] = useState(true);
-  const [loadingStudents, setLoadingStudents] = useState(false);
+  const [loadingStudents, setLoadingStudents] = useState(true);
+  const [loadingMessages, setLoadingMessages] = useState(false);
 
-  // Chat State
-  const [messages, setMessages] = useState<Message[]>([
-    { text: "Hello, I wanted to discuss the recent assignment.", isSender: false },
-    { text: "Sure, let's go over the details.", isSender: true },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [sending, setSending] = useState(false);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // STEP 1: Fetch teacher's classes on mount
-  useEffect(() => {
-    async function fetchClasses() {
-      try {
-        // You'll need to create this API endpoint to return teacher's assigned classes
-        const res = await fetch('/api/auth/teacher/classes');
-        const data = await res.json();
-        
-        if (res.ok && Array.isArray(data)) {
-          setClasses(data);
-          if (data.length > 0) {
-            setSelectedClassId(data[0].id); // Auto-select first class
-          }
-        }
-      } catch (err) {
-        console.error("Failed to load classes:", err);
-      } finally {
-        setLoadingClasses(false);
-      }
-    }
-    fetchClasses();
-  }, []);
+  const selectedSubtitle = useMemo(() => {
+    if (!selectedStudent) return "";
+    const subjects = selectedStudent.Subjects?.map((s) => s.Name).filter(Boolean) ?? [];
+    return subjects.length ? subjects.join(" • ") : "No subjects";
+  }, [selectedStudent]);
 
-  // STEP 2: Fetch class details when class is selected
+  const mapMessages = (data: ApiMessage[]): Message[] =>
+    data.map((m) => ({
+      MessageId: m.MessageId,
+      text: m.Content,
+      isSender: m.Sender === "Teacher",
+      timestamp: new Date(m.Date).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    }));
+
   useEffect(() => {
-    if (!selectedClassId) return;
-    
-    async function loadClassData() {
-      setLoadingStudents(true);
+    async function loadStudents() {
       try {
-        const res = await fetch(`/api/auth/teacher/classes/classdetails?classid=${selectedClassId}`);
+        const res = await fetch("/api/auth/teacher/students/subjects");
         const data = await res.json();
-        
-        if (res.ok && data.Parent) {
-          setClassData(data);
-          if (data.Parent.length > 0) {
-            setSelectedStudent(data.Parent[0]);
-          }
+
+        if (res.ok && Array.isArray(data)) {
+          setStudents(data);
+          if (data.length > 0) setSelectedStudent(data[0]);
         } else {
-          console.error("Failed to load class details", data);
+          setStudents([]);
         }
-      } catch (err) {
-        console.error("Error occurred:", err);
+      } catch (e) {
+        console.error("Failed to load students:", e);
+        setStudents([]);
       } finally {
         setLoadingStudents(false);
       }
     }
-    
-    loadClassData();
-  }, [selectedClassId]);
+    loadStudents();
+  }, []);
+
+  useEffect(() => {
+    if (!selectedStudent) return;
+
+    async function loadMessages() {
+      setLoadingMessages(true);
+      try {
+        const res = await fetch(`/api/auth/teacher/messages/view?Pid=${selectedStudent?.Pid}`);
+        const data = await res.json();
+
+        if (res.ok && Array.isArray(data)) setMessages(mapMessages(data));
+        else setMessages([]);
+      } catch (e) {
+        console.error("Failed to load messages:", e);
+        setMessages([]);
+      } finally {
+        setLoadingMessages(false);
+      }
+    }
+
+    loadMessages();
+  }, [selectedStudent]);
 
   // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, loadingMessages]);
 
-  function handleSend() {
-    if (input.trim() === "") return;
-    setMessages((prev) => [...prev, { text: input, isSender: true }]);
+  const handleSend = useCallback(async () => {
+    if (!input.trim() || !selectedStudent || sending) return;
+
+    const text = input.trim();
+    const tempId = `temp-${Date.now()}`;
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        MessageId: tempId,
+        text,
+        isSender: true,
+        timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      },
+    ]);
+
     setInput("");
-  }
+    setSending(true);
 
-  const inputClass = "relative z-20 w-full border border-gray-700 rounded-lg p-3 bg-zinc-900 text-white focus:border-white focus:ring-1 focus:ring-white outline-none transition-all placeholder-gray-500 resize-none";
+    try {
+      const res = await fetch("/api/auth/teacher/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ Pid: selectedStudent.Pid, Content: text }),
+      });
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      const viewRes = await fetch(`/api/auth/teacher/messages/view?Pid=${selectedStudent.Pid}`);
+      const viewData = await viewRes.json();
+
+      if (viewRes.ok && Array.isArray(viewData)) setMessages(mapMessages(viewData));
+      else {
+        setMessages((prev) => prev.filter((m) => m.MessageId !== tempId));
+      }
+    } catch (e) {
+      console.error("Send error:", e);
+      setMessages((prev) => prev.filter((m) => m.MessageId !== tempId));
+      setInput(text);
+    } finally {
+      setSending(false);
+    }
+  }, [input, selectedStudent, sending]);
+
+  const inputClass =
+    "w-full border border-gray-800 rounded-lg p-3 bg-zinc-950 text-white " +
+    "focus:border-white focus:ring-1 focus:ring-white outline-none transition " +
+    "placeholder:text-gray-500 resize-none disabled:opacity-60";
 
   return (
-    <div className="relative z-10 w-full max-w-5xl mx-auto border border-gray-800 rounded-xl bg-black shadow-2xl overflow-hidden flex h-[80vh] animate-fade">
-      
-      {/* LEFT SIDEBAR: TWO-LEVEL - Classes → Students */}
-      <div className="w-1/3 border-r border-gray-800 flex flex-col bg-zinc-950/50">
-        
-        {/* Class Selection */}
+    <div className="w-full max-w-5xl mx-auto border border-gray-800 rounded-xl bg-black shadow-2xl overflow-hidden flex h-[80vh]">
+      <aside className="w-1/3 border-r border-gray-800 bg-zinc-950/40 flex flex-col">
         <div className="p-5 border-b border-gray-800">
-          <h2 className="text-lg font-bold text-white mb-3">My Classes</h2>
-          <div className="space-y-2 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800">
-            {loadingClasses ? (
-              <div className="text-sm text-gray-500">Loading classes...</div>
-            ) : classes.length === 0 ? (
-              <div className="text-sm text-gray-500">No classes assigned</div>
-            ) : (
-              classes.map((cls) => (
-                <button
-                  key={cls.id}
-                  onClick={() => setSelectedClassId(cls.id)}
-                  className={`w-full text-left p-3 rounded-lg transition-all flex items-center gap-3 ${
-                    selectedClassId === cls.id 
-                      ? "bg-blue-900/50 border border-blue-700 text-white shadow-sm" 
-                      : "hover:bg-zinc-900 border border-transparent text-gray-300"
-                  }`}
-                >
-                  <div className="w-2 h-2 rounded-full bg-blue-400 flex-shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <span className="font-semibold text-sm block truncate">{cls.Name}</span>
-                  </div>
-                </button>
-              ))
-            )}
-          </div>
+          <h2 className="text-lg font-bold text-white">Teacher Inbox</h2>
+          <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">Select a student</p>
         </div>
 
-        {/* Student List (shows when class selected) */}
-        {selectedClassId && (
-          <div className="flex-1 flex flex-col border-t border-gray-800 overflow-hidden">
-            <div className="p-4 border-b border-gray-800 bg-black/50">
-              <h3 className="font-bold text-sm text-white truncate">{classData?.Name}</h3>
-              <p className="text-xs text-gray-500 mt-1">{classData?.Parent?.length || 0} Students</p>
-            </div>
-            
-            <div className="flex-1 overflow-y-auto p-2 space-y-1 scrollbar-thin scrollbar-thumb-gray-800">
-              {loadingStudents ? (
-                <div className="p-4 text-sm text-gray-500 text-center">Loading students...</div>
-              ) : classData?.Parent?.length === 0 ? (
-                <div className="p-4 text-sm text-gray-500 text-center">No students found</div>
-              ) : (
-                classData?.Parent.map((p) => (
-                  <button
-                    key={p.Pid}
-                    onClick={() => setSelectedStudent(p)}
-                    className={`w-full text-left p-3 rounded-lg transition-all flex flex-col gap-1 ${
-                      selectedStudent?.Pid === p.Pid 
-                        ? "bg-zinc-800 border border-gray-700 shadow-sm" 
-                        : "hover:bg-zinc-900 border border-transparent"
-                    }`}
-                  >
-                    <span className="font-semibold text-sm text-white truncate">{p.StudentName}</span>
-                    <span className="text-xs text-gray-400">Parent ID: {p.Pid.substring(0, 8)}...</span>
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-        )}
-      </div>
+        <div className="flex-1 overflow-y-auto p-2 space-y-1">
+          {loadingStudents ? (
+            <div className="p-4 text-sm text-gray-500 text-center">Loading students...</div>
+          ) : students.length === 0 ? (
+            <div className="p-4 text-sm text-gray-500 text-center">No students found.</div>
+          ) : (
+            students.map((s) => {
+              const active = selectedStudent?.Pid === s.Pid;
+              const subtitle = (s.Subjects ?? []).map((x) => x.Name).filter(Boolean).join(" • ");
 
-      {/* RIGHT MAIN: CHAT AREA */}
-      <div className="flex-1 flex flex-col bg-black relative">
+              return (
+                <button
+                  key={s.Pid}
+                  onClick={() => setSelectedStudent(s)}
+                  className={
+                    "w-full text-left p-3 rounded-lg transition border " +
+                    (active
+                      ? "bg-zinc-800/60 border-gray-700"
+                      : "bg-transparent border-transparent hover:bg-zinc-900/60 hover:border-gray-800")
+                  }
+                >
+                  <div className="font-semibold text-sm text-white">{s.Name}</div>
+                  <div className="text-xs text-gray-400 line-clamp-1">{subtitle || "No subjects"}</div>
+                </button>
+              );
+            })
+          )}
+        </div>
+      </aside>
+
+      <section className="flex-1 flex flex-col bg-black">
         {selectedStudent ? (
           <>
-            {/* Header */}
-            <div className="p-5 border-b border-gray-800 bg-black/80 backdrop-blur-md z-30 flex items-center gap-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold text-white">T</span>
-              </div>
+            <header className="p-5 border-b border-gray-800 bg-black/80 backdrop-blur-md flex justify-between items-center">
               <div>
-                <h1 className="text-xl font-bold text-white truncate">{selectedStudent.StudentName}</h1>
-                <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mt-1">
-                  Parent Chat
+                <h1 className="text-xl font-bold text-white">{selectedStudent.Name}</h1>
+                <p className="text-xs text-gray-500 uppercase tracking-wider mt-1 font-semibold">
+                  {selectedSubtitle}
                 </p>
               </div>
-            </div>
+            </header>
 
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-4 scrollbar-thin scrollbar-thumb-gray-800">
-              {messages.map((msg, index) => (
-                <Chatbubble key={index} text={msg.text} isSender={msg.isSender} />
-              ))}
+            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+              {loadingMessages ? (
+                <div className="flex items-center justify-center h-32 text-gray-500">Loading messages...</div>
+              ) : messages.length === 0 ? (
+                <div className="flex items-center justify-center h-32 text-gray-500">
+                  No messages yet. Start the conversation!
+                </div>
+              ) : (
+                messages.map((m) => (
+                  <ChatBubble key={m.MessageId} text={m.text} isSender={m.isSender} timestamp={m.timestamp} />
+                ))
+              )}
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
-            <div className="p-4 border-t border-gray-800 bg-black z-30">
-              <div className="relative flex items-end gap-3">
+            <footer className="p-4 border-t border-gray-800 bg-black">
+              <div className="flex items-end gap-3">
                 <textarea
                   className={`${inputClass} min-h-[50px] max-h-[120px]`}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder={`Message parent of ${selectedStudent.StudentName}...`}
+                  placeholder={`Message ${selectedStudent.Name}...`}
                   rows={1}
+                  disabled={sending}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
+                    if (e.key === "Enter" && !e.shiftKey) {
                       e.preventDefault();
                       handleSend();
                     }
                   }}
                 />
+
                 <button
                   onClick={handleSend}
-                  disabled={!input.trim()}
-                  className="h-[50px] px-6 bg-white text-black font-bold rounded-lg hover:bg-gray-200 active:scale-[0.98] disabled:bg-gray-800 disabled:text-gray-600 transition-all flex items-center justify-center shrink-0"
+                  disabled={!input.trim() || sending}
+                  className="h-[50px] px-6 rounded-lg font-bold transition
+                             bg-white text-black hover:bg-gray-200 active:scale-[0.98]
+                             disabled:bg-zinc-900 disabled:text-gray-600 disabled:cursor-not-allowed"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-                    <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Z" />
-                  </svg>
+                  {sending ? "Sending..." : "Send"}
                 </button>
               </div>
-            </div>
+            </footer>
           </>
-        ) : selectedClassId ? (
-          <div className="flex-1 flex items-center justify-center text-gray-500 flex-col gap-4 p-8">
-            <div className="w-16 h-16 rounded-full bg-zinc-900 border border-gray-800 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="currentColor">
-                <path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/>
-              </svg>
-            </div>
-            <p className="text-center">Select a student to start chatting</p>
-          </div>
         ) : (
-          <div className="flex-1 flex items-center justify-center text-gray-500">
-            Select a class to begin
-          </div>
+          <div className="flex-1 flex items-center justify-center text-gray-500">Select a student to start chatting</div>
         )}
-      </div>
+      </section>
     </div>
   );
 }
 
-function Chatbubble({ text, isSender }: { text: string; isSender: boolean }) {
-  if (isSender) {
-    // TEACHER (SENDER) -> BLUE
-    return (
-      <div className="flex w-full justify-end animate-fade-left">
-        <div className="max-w-[80%] p-3 rounded-lg rounded-tr-none bg-blue-700 text-white font-medium border border-blue-600 shadow-md text-sm">
-          {text}
-        </div>
+function ChatBubble({ text, isSender, timestamp }: { text: string; isSender: boolean; timestamp: string }) {
+  return isSender ? (
+    <div className="flex w-full justify-end">
+      <div className="max-w-[80%] p-3 rounded-lg rounded-tr-none bg-orange-600/25 border border-orange-500/50 text-sm">
+        <div className="text-white">{text}</div>
+        <div className="text-xs text-orange-300 mt-1 opacity-80">{timestamp}</div>
       </div>
-    );
-  } else {
-    // PARENT (RECEIVER) -> ORANGE
-    return (
-      <div className="flex w-full justify-start animate-fade-right">
-        <div className="max-w-[80%] p-3 rounded-lg rounded-tl-none bg-orange-600 text-white font-medium border border-orange-500 shadow-md text-sm">
-          {text}
-        </div>
+    </div>
+  ) : (
+    <div className="flex w-full justify-start">
+      <div className="max-w-[80%] p-3 rounded-lg rounded-tl-none bg-blue-700/25 border border-blue-600/40 text-sm">
+        <div className="text-white">{text}</div>
+        <div className="text-xs text-blue-300 mt-1 opacity-80">{timestamp}</div>
       </div>
-    );
-  }
+    </div>
+  );
 }

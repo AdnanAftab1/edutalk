@@ -37,7 +37,7 @@ export async function GET(req:NextRequest){
         const ann=announcements.map((item)=>{
             return {
                 title:item.Title,
-                date:`${item.Date.getDate()}-${item.Date.getMonth()}-${item.Date.getFullYear()}`,
+                date:`${item.Date.getDate()}-${item.Date.getMonth()+1}-${item.Date.getFullYear()}`,
                 content:item.Text
             }
         })
