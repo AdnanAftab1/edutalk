@@ -17,7 +17,7 @@ export default function TeacherMeetingRequests() {
   const [submitting, setSubmitting] = useState<{ [key: string]: boolean }>({});
   const [msg, setMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  // FETCH REQUESTS (Updated for new API format)
+  // FETCH REQUESTS
   useEffect(() => {
     async function fetchRequests() {
       try {
@@ -38,7 +38,59 @@ export default function TeacherMeetingRequests() {
     fetchRequests();
   }, []);
 
-  // HANDLE APPROVE/REJECT
+  // NEW: CREATE MEETING REQUEST (Matches your API exactly)
+  const [showForm, setShowForm] = useState(true);
+  const [formData, setFormData] = useState({
+    date: "",
+    content: "",
+    teacher: "",
+    studentID: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  async function handleCreateMeeting() {
+    if (!formData.date || !formData.content || !formData.studentID) {
+      setMsg({ type: "error", text: "Please fill all fields" });
+      return;
+    }
+
+    setSubmitting({ true: true });
+    setMsg(null);
+
+    try {
+      const res = await fetch("/api/auth/teacher/meeting/create", { // Your API endpoint
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          date: formData.date,
+          content: formData.content,
+          teacher: formData.teacher,
+          studentID: formData.studentID
+        }),
+      });
+
+      const data = await res.json();
+      
+      if (res.ok) {
+        setMsg({ type: "success", text: "Meeting request created successfully!" });
+        setFormData({ date: "", content: "", teacher: "", studentID: "" });
+        setShowForm(false);
+        // Refresh requests
+        window.location.reload();
+      } else {
+        setMsg({ type: "error", text: data.error || "Failed to create meeting" });
+      }
+    } catch (err: any) {
+      setMsg({ type: "error", text: err.message || "Network error" });
+    } finally {
+      setSubmitting({ true: false });
+    }
+  }
+
+  // HANDLE APPROVE/REJECT (Updated for your API)
   async function handleAction(requestId: string, approved: boolean) {
     setSubmitting((prev) => ({ ...prev, [requestId]: true }));
     setMsg(null);
@@ -47,7 +99,10 @@ export default function TeacherMeetingRequests() {
       const res = await fetch("/api/auth/teacher/meeting/approve", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ approved, meetID: requestId }),
+        body: JSON.stringify({ 
+          approved, 
+          meetID: requestId 
+        }),
       });
 
       const data = await res.json();
@@ -65,15 +120,89 @@ export default function TeacherMeetingRequests() {
     }
   }
 
-  // BB1 INPUT CLASS
   const inputClass = "relative z-20 border border-gray-700 rounded-lg p-3 bg-zinc-900 text-white focus:border-white focus:ring-1 focus:ring-white outline-none disabled:opacity-30 disabled:cursor-not-allowed transition-all pointer-events-auto cursor-pointer";
 
   return (
     <div className="relative z-10 max-w-2xl mx-auto p-8 mt-10 border border-gray-800 rounded-xl bg-black text-white shadow-2xl pointer-events-auto animate-fade">
       
-      <h1 className="text-2xl font-bold mb-6 text-white border-b border-gray-800 pb-4">
-        Meeting Requests ({requests.length})
-      </h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-2xl font-bold text-white border-b border-gray-800 pb-2">
+          Meeting Requests ({requests.length})
+        </h1>
+        
+        {/* CREATE NEW MEETING BUTTON */}
+        <button 
+          onClick={() => setShowForm(!showForm)}
+          className="px-6 py-2 bg-blue-900/50 text-blue-400 border border-blue-900/50 rounded-lg hover:bg-blue-900/70 font-medium transition-all"
+        >
+          {showForm ? "Cancel" : "+ New Meeting"}
+        </button>
+      </div>
+
+      {/* CREATE MEETING FORM */}
+      {showForm && (
+        <div className="mb-8 p-6 bg-zinc-900/50 border border-zinc-700 rounded-xl">
+          <h3 className="text-lg font-semibold mb-4 text-white">Schedule New Meeting</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Date & Time</label>
+              <input
+                type="date"
+                name="date"
+                className={inputClass}
+                value={formData.date}
+                onChange={handleInputChange}
+                disabled={submitting.true}
+              />
+            </div>
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Student ID</label>
+              <input
+                type="text"
+                name="studentID"
+                placeholder="Parent/Student ID"
+                className={inputClass}
+                value={formData.studentID}
+                onChange={handleInputChange}
+                disabled={submitting.true}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm text-gray-400 mb-2">Message</label>
+            <textarea
+              name="content"
+              rows={4}
+              placeholder="Meeting purpose..."
+              className={`${inputClass} resize-none`}
+              value={formData.content}
+              onChange={handleInputChange}
+              disabled={submitting.true}
+            />
+          </div>
+
+          <div className="flex gap-3 mt-6">
+            <button
+              onClick={handleCreateMeeting}
+              disabled={submitting.true || !formData.date || !formData.content || !formData.studentID}
+              className="flex-1 bg-emerald-900/50 text-emerald-400 border border-emerald-900/50 font-semibold py-3 px-6 rounded-lg hover:bg-emerald-900/70 disabled:opacity-50 flex items-center justify-center gap-2"
+            >
+              {
+                submitting.true ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-emerald-400"></div>
+                  Creating...
+                </>
+              ) :
+               (
+                "Create Meeting"
+              )}
+            </button>
+          </div>
+        </div>
+      )}
 
       {msg && (
         <div className={`p-4 mb-6 text-sm rounded-lg font-medium ${
@@ -98,7 +227,7 @@ export default function TeacherMeetingRequests() {
             </svg>
           </div>
           <h3 className="text-lg font-semibold mb-2">No Meeting Requests</h3>
-          <p className="text-sm">Parents will request meetings here</p>
+          <p className="text-sm">Use "New Meeting" to schedule or wait for parent requests</p>
         </div>
       ) : (
         <div className="space-y-4 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800">
@@ -114,7 +243,7 @@ export default function TeacherMeetingRequests() {
                     Meeting Request from {request.Sender.ParentName}
                   </h3>
                   <p className="text-sm text-gray-400 mb-2">
-                   Preferred DateTime: {new Date(request.date).toLocaleString()}
+                    Preferred DateTime: {new Date(request.date).toLocaleString()}
                   </p>
                 </div>
                 <span className="text-xs px-3 py-1 rounded-full font-medium bg-blue-900/50 text-blue-400 border border-blue-900/50">
@@ -168,6 +297,7 @@ export default function TeacherMeetingRequests() {
           ))}
         </div>
       )}
+
     </div>
   );
 }

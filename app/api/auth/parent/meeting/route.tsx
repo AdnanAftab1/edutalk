@@ -6,7 +6,7 @@ export async function POST(req:NextRequest){
     const User=await VerifyUser(req);
     
     if (User instanceof Response) return User;
-    if(User.role!='Teacher'){
+    if(User.role!='Parent'){
          return Response.json({
             message:"Role is incorrect"
         }) 
@@ -17,7 +17,7 @@ export async function POST(req:NextRequest){
     teacher: string; 
     }=await req.json();
 
-    if((new Date())<(new Date(data.date))){
+    if((new Date())>(new Date(data.date))){
         return Response.json({response:"Date is in the future"},{status:200})
 
     }
@@ -33,7 +33,7 @@ export async function POST(req:NextRequest){
 
         return await ts.meeting_Request.create({
             data:{
-                SenderId:User.id,
+                ParentId:User.id,
                 date:new Date(data.date),
                 content:data.content,
                 TeacherId:Teacher?.Tid ||"Something Not Right"
@@ -45,7 +45,7 @@ export async function POST(req:NextRequest){
     })
 
 
-    return Response.json({id:res.id},{status:200})
+    return Response.json({id:res?.id},{status:200})
 }catch(err){
     console.log(err)
     return Response.json({

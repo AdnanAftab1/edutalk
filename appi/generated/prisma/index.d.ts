@@ -11821,6 +11821,7 @@ export namespace Prisma {
     MessageId: string | null
     Pid: string | null
     Tid: string | null
+    Sender: $Enums.Role | null
     Content: string | null
     Date: Date | null
   }
@@ -11829,6 +11830,7 @@ export namespace Prisma {
     MessageId: string | null
     Pid: string | null
     Tid: string | null
+    Sender: $Enums.Role | null
     Content: string | null
     Date: Date | null
   }
@@ -11837,6 +11839,7 @@ export namespace Prisma {
     MessageId: number
     Pid: number
     Tid: number
+    Sender: number
     Content: number
     Date: number
     _all: number
@@ -11847,6 +11850,7 @@ export namespace Prisma {
     MessageId?: true
     Pid?: true
     Tid?: true
+    Sender?: true
     Content?: true
     Date?: true
   }
@@ -11855,6 +11859,7 @@ export namespace Prisma {
     MessageId?: true
     Pid?: true
     Tid?: true
+    Sender?: true
     Content?: true
     Date?: true
   }
@@ -11863,6 +11868,7 @@ export namespace Prisma {
     MessageId?: true
     Pid?: true
     Tid?: true
+    Sender?: true
     Content?: true
     Date?: true
     _all?: true
@@ -11944,6 +11950,7 @@ export namespace Prisma {
     MessageId: string
     Pid: string
     Tid: string
+    Sender: $Enums.Role
     Content: string
     Date: Date
     _count: ChatMessagesCountAggregateOutputType | null
@@ -11969,6 +11976,7 @@ export namespace Prisma {
     MessageId?: boolean
     Pid?: boolean
     Tid?: boolean
+    Sender?: boolean
     Content?: boolean
     Date?: boolean
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
@@ -11981,11 +11989,12 @@ export namespace Prisma {
     MessageId?: boolean
     Pid?: boolean
     Tid?: boolean
+    Sender?: boolean
     Content?: boolean
     Date?: boolean
   }
 
-  export type ChatMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"MessageId" | "Pid" | "Tid" | "Content" | "Date", ExtArgs["result"]["chatMessages"]>
+  export type ChatMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"MessageId" | "Pid" | "Tid" | "Sender" | "Content" | "Date", ExtArgs["result"]["chatMessages"]>
   export type ChatMessagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Parent?: boolean | ParentDefaultArgs<ExtArgs>
     Teacher?: boolean | TeacherDefaultArgs<ExtArgs>
@@ -12001,6 +12010,7 @@ export namespace Prisma {
       MessageId: string
       Pid: string
       Tid: string
+      Sender: $Enums.Role
       Content: string
       Date: Date
     }, ExtArgs["result"]["chatMessages"]>
@@ -12377,6 +12387,7 @@ export namespace Prisma {
     readonly MessageId: FieldRef<"ChatMessages", 'String'>
     readonly Pid: FieldRef<"ChatMessages", 'String'>
     readonly Tid: FieldRef<"ChatMessages", 'String'>
+    readonly Sender: FieldRef<"ChatMessages", 'Role'>
     readonly Content: FieldRef<"ChatMessages", 'String'>
     readonly Date: FieldRef<"ChatMessages", 'DateTime'>
   }
@@ -12867,6 +12878,7 @@ export namespace Prisma {
     MessageId: 'MessageId',
     Pid: 'Pid',
     Tid: 'Tid',
+    Sender: 'Sender',
     Content: 'Content',
     Date: 'Date'
   };
@@ -13700,6 +13712,7 @@ export namespace Prisma {
     MessageId?: StringFilter<"ChatMessages"> | string
     Pid?: StringFilter<"ChatMessages"> | string
     Tid?: StringFilter<"ChatMessages"> | string
+    Sender?: EnumRoleFilter<"ChatMessages"> | $Enums.Role
     Content?: StringFilter<"ChatMessages"> | string
     Date?: DateTimeFilter<"ChatMessages"> | Date | string
     Parent?: XOR<ParentScalarRelationFilter, ParentWhereInput>
@@ -13710,6 +13723,7 @@ export namespace Prisma {
     MessageId?: SortOrder
     Pid?: SortOrder
     Tid?: SortOrder
+    Sender?: SortOrder
     Content?: SortOrder
     Date?: SortOrder
     Parent?: ParentOrderByWithRelationInput
@@ -13724,6 +13738,7 @@ export namespace Prisma {
     NOT?: ChatMessagesWhereInput | ChatMessagesWhereInput[]
     Pid?: StringFilter<"ChatMessages"> | string
     Tid?: StringFilter<"ChatMessages"> | string
+    Sender?: EnumRoleFilter<"ChatMessages"> | $Enums.Role
     Content?: StringFilter<"ChatMessages"> | string
     Date?: DateTimeFilter<"ChatMessages"> | Date | string
     Parent?: XOR<ParentScalarRelationFilter, ParentWhereInput>
@@ -13734,6 +13749,7 @@ export namespace Prisma {
     MessageId?: SortOrder
     Pid?: SortOrder
     Tid?: SortOrder
+    Sender?: SortOrder
     Content?: SortOrder
     Date?: SortOrder
     _count?: ChatMessagesCountOrderByAggregateInput
@@ -13748,6 +13764,7 @@ export namespace Prisma {
     MessageId?: StringWithAggregatesFilter<"ChatMessages"> | string
     Pid?: StringWithAggregatesFilter<"ChatMessages"> | string
     Tid?: StringWithAggregatesFilter<"ChatMessages"> | string
+    Sender?: EnumRoleWithAggregatesFilter<"ChatMessages"> | $Enums.Role
     Content?: StringWithAggregatesFilter<"ChatMessages"> | string
     Date?: DateTimeWithAggregatesFilter<"ChatMessages"> | Date | string
   }
@@ -14360,6 +14377,7 @@ export namespace Prisma {
 
   export type ChatMessagesCreateInput = {
     MessageId?: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
     Parent: ParentCreateNestedOneWithoutChatMessagesInput
@@ -14370,12 +14388,14 @@ export namespace Prisma {
     MessageId?: string
     Pid: string
     Tid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
 
   export type ChatMessagesUpdateInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     Parent?: ParentUpdateOneRequiredWithoutChatMessagesNestedInput
@@ -14386,6 +14406,7 @@ export namespace Prisma {
     MessageId?: StringFieldUpdateOperationsInput | string
     Pid?: StringFieldUpdateOperationsInput | string
     Tid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14394,12 +14415,14 @@ export namespace Prisma {
     MessageId?: string
     Pid: string
     Tid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
 
   export type ChatMessagesUpdateManyMutationInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14408,6 +14431,7 @@ export namespace Prisma {
     MessageId?: StringFieldUpdateOperationsInput | string
     Pid?: StringFieldUpdateOperationsInput | string
     Tid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -15029,6 +15053,7 @@ export namespace Prisma {
     MessageId?: SortOrder
     Pid?: SortOrder
     Tid?: SortOrder
+    Sender?: SortOrder
     Content?: SortOrder
     Date?: SortOrder
   }
@@ -15037,6 +15062,7 @@ export namespace Prisma {
     MessageId?: SortOrder
     Pid?: SortOrder
     Tid?: SortOrder
+    Sender?: SortOrder
     Content?: SortOrder
     Date?: SortOrder
   }
@@ -15045,6 +15071,7 @@ export namespace Prisma {
     MessageId?: SortOrder
     Pid?: SortOrder
     Tid?: SortOrder
+    Sender?: SortOrder
     Content?: SortOrder
     Date?: SortOrder
   }
@@ -16610,6 +16637,7 @@ export namespace Prisma {
 
   export type ChatMessagesCreateWithoutParentInput = {
     MessageId?: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
     Teacher: TeacherCreateNestedOneWithoutChatMessagesInput
@@ -16618,6 +16646,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedCreateWithoutParentInput = {
     MessageId?: string
     Tid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
@@ -16807,6 +16836,7 @@ export namespace Prisma {
     MessageId?: StringFilter<"ChatMessages"> | string
     Pid?: StringFilter<"ChatMessages"> | string
     Tid?: StringFilter<"ChatMessages"> | string
+    Sender?: EnumRoleFilter<"ChatMessages"> | $Enums.Role
     Content?: StringFilter<"ChatMessages"> | string
     Date?: DateTimeFilter<"ChatMessages"> | Date | string
   }
@@ -16896,6 +16926,7 @@ export namespace Prisma {
 
   export type ChatMessagesCreateWithoutTeacherInput = {
     MessageId?: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
     Parent: ParentCreateNestedOneWithoutChatMessagesInput
@@ -16904,6 +16935,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedCreateWithoutTeacherInput = {
     MessageId?: string
     Pid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
@@ -18177,6 +18209,7 @@ export namespace Prisma {
   export type ChatMessagesCreateManyParentInput = {
     MessageId?: string
     Tid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
@@ -18260,6 +18293,7 @@ export namespace Prisma {
 
   export type ChatMessagesUpdateWithoutParentInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     Teacher?: TeacherUpdateOneRequiredWithoutChatMessagesNestedInput
@@ -18268,6 +18302,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedUpdateWithoutParentInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
     Tid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -18275,6 +18310,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedUpdateManyWithoutParentInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
     Tid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -18297,6 +18333,7 @@ export namespace Prisma {
   export type ChatMessagesCreateManyTeacherInput = {
     MessageId?: string
     Pid: string
+    Sender?: $Enums.Role
     Content: string
     Date: Date | string
   }
@@ -18368,6 +18405,7 @@ export namespace Prisma {
 
   export type ChatMessagesUpdateWithoutTeacherInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
     Parent?: ParentUpdateOneRequiredWithoutChatMessagesNestedInput
@@ -18376,6 +18414,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedUpdateWithoutTeacherInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
     Pid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -18383,6 +18422,7 @@ export namespace Prisma {
   export type ChatMessagesUncheckedUpdateManyWithoutTeacherInput = {
     MessageId?: StringFieldUpdateOperationsInput | string
     Pid?: StringFieldUpdateOperationsInput | string
+    Sender?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Content?: StringFieldUpdateOperationsInput | string
     Date?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -93,6 +93,7 @@ export async function POST(req: NextRequest) {
     // 3. SEND EMAIL NOTIFICATION
     const action = reqB.status === "Successfull" ? "approved" : "rejected";
     
+    console.log("\n\n\Email:   ",targetUser.email);
     // Success Email
     if (reqB.status === "Successfull") {
       await sendEmail({

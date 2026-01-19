@@ -37,7 +37,8 @@ export default function Meetings() {
 
     ).then((res)=>{
             if(res.status===200){
-              console.log("Output:",res.data)  
+              console.log("Output:",res.data)
+              alert("Successfully Sent Request.")  
             }
           }).catch((err)=>{
             console.log("Error occured",err);
@@ -68,15 +69,22 @@ export default function Meetings() {
           </div>
           {/* Time */}
           <div className="flex flex-col text-base">
-            <label className="mb-1">Select Date</label>
-            <input
-              type="date"
-              className="p-2 rounded-md bg-white/10 backdrop-blur border border-white/30"
-              onChange={(e)=>{
-                setD(e.target.value)
-              }}
-            />
-          </div>
+  <label className="mb-1">Select Date</label>
+  <input
+    type="date"
+    className="p-2 rounded-md bg-white/10 backdrop-blur border border-white/30"
+    min={new Date().toISOString().split('T')[0]}  // Today onwards
+    max={(() => {
+      const maxDate = new Date();
+      maxDate.setMonth(maxDate.getMonth() + 6);
+      return maxDate.toISOString().split('T')[0];
+    })()}  // 6 months from now
+    onChange={(e) => {
+      setD(e.target.value)
+    }}
+  />
+</div>
+
             
            {/* Teacher Dropdown */}
 <div className="flex flex-col text-base">
